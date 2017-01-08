@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="assets/plugins/prism/prism.css">
     <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/slicknav.min.css">
     
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
@@ -69,5 +70,6 @@
         <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>                                                                
         <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.slicknav.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
 </body>

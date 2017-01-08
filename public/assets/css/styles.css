@@ -1395,6 +1395,25 @@ select {
   margin-left: 230px;
 }
 
+
+
+.slicknav_menu {
+  position: absolute;
+  right: 10px;
+  background: none;
+  top: 30px;
+}
+
+.slicknav_nav.affix {
+    top: 95px;
+    right: 10px;
+    z-index: 1;
+    background: #494d55;
+}
+.slicknav_nav .slicknav_row:hover, .slicknav_nav a:hover {
+    background: #494d55; 
+}
+
 @-moz-keyframes swing{
     0%{-moz-transform:rotate(-3deg)}
     50%{-moz-transform:rotate(3deg)}

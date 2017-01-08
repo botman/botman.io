@@ -15,7 +15,10 @@ $(document).ready(function() {
     $(window).on('load resize', function() {
         $(window).trigger('scroll'); 
     });
-    
+
+    $('#doc-menu').slicknav({
+      appendTo: '#header'
+    });
     
     /* Smooth scrolling */
 	$('a.scrollto').on('click', function(e){
