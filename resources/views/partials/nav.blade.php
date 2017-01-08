@@ -10,6 +10,7 @@
             <li><a href="/configuration#nexmo">Nexmo</a></li>
             <li><a href="/configuration#slack">Slack</a></li>
             <li><a href="/configuration#telegram">Telegram</a></li>
+            <li><a href="/configuration#wechat">WeChat</a></li>
         </ul>
     </li>
     <li>
