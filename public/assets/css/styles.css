@@ -1426,6 +1426,16 @@ select {
 }
 
 
+.slicknav_menu {
+  display:none;
+}
+
+@media screen and (max-width: 40em) {
+  .slicknav_menu {
+    display:block;
+  }
+}
+
 
 @-moz-keyframes stomp{
     0%{ top: 204px;}
