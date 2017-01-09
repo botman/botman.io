@@ -1425,9 +1425,15 @@ select {
     100%{-webkit-transform:rotate(-3deg)}
 }
 
-
 .slicknav_menu {
   display:none;
+}
+
+h1.logo a > span {
+  text-transform: none;
+  display: inline-block;
+  padding: 25px 0 25px 100px;
+  color: #fff;
 }
 
 @media screen and (max-width: 40em) {

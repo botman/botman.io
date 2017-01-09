@@ -8,7 +8,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
 {
-    public function show($page = 'index')
+    public function show($page = 'installation')
     {
     	$path = base_path('resources/docs/'.$page.'.md');
     	if (File::exists($path)) {
@@ -18,6 +18,7 @@ class DocumentationController extends Controller
 			$title = (new Crawler($content))->filterXPath('//h1');
 
 	    	return view('docs', [
+                'page' => $page,
 	    		'documentation' => $content,
 	    		'title' => count($title) ? $title->text() : null
     		])->with('documentation', markdown($file));

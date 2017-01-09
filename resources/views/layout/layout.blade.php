@@ -43,6 +43,7 @@
                                 <img src="/img/botman-leg-left.png" class="botman-leg-left" height="27" />
                                 <img src="/img/botman-leg-right.png" class="botman-leg-right" height="26" />
                             </div>
+                            <span>BotMan</span>
                         </a>
                     </h1>
                 </div><!--//branding-->
@@ -61,6 +62,10 @@
                             @include('partials.nav')
                         </nav>
                     </div><!--//doc-sidebar-->
+                </div>
+                <div class="text-center">
+                    <hr></hr>
+                    BotMan - Developed and maintained by <a href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
                 </div>
             </div>
         </div>
