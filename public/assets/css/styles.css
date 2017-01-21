@@ -1424,9 +1424,23 @@ select {
     50%{-webkit-transform:rotate(3deg)}
     100%{-webkit-transform:rotate(-3deg)}
 }
-
+.doc-content ul li ul {
+    margin: 0px;
+    padding: 0 0 0 20px;
+}
+.doc-content ul li ul li {
+    font-size: 15px;
+    padding: 5px;
+}
+pre[class*="language-"] {
+  margin: 1.5em 0;
+}
 .slicknav_menu {
   display:none;
+}
+
+.col-xs-12.col-md-8 {
+  padding-left: 0px;
 }
 
 h1.logo a > span {
