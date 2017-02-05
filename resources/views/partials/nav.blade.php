@@ -17,6 +17,9 @@
         <a href="/receiving">Hearing Messages</a>
     </li>
     <li>
+        <a href="/nlp">Natural Language Processing</a>
+    </li>
+    <li>
         <a href="/sending">Sending Messages</a>
     </li>
     <li>
