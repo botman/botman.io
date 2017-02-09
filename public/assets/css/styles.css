@@ -1450,6 +1450,10 @@ h1.logo a > span {
   color: #fff;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 40em) {
   .slicknav_menu {
     display:block;
