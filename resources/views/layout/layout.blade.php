@@ -45,6 +45,7 @@
                             </div>
                             <span>BotMan</span>
                         </a>
+                        <script async defer src="https://rauchg-slackin-jtdkltstsj.now.sh/slackin.js"></script>
                     </h1>
                 </div><!--//branding-->
             </div><!--//container-->
