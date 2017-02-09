@@ -45,6 +45,7 @@
                             </div>
                             <span>BotMan</span>
                         </a>
+                        <a href="https://github.com/mpociot/botman"><i class="fa fa-github"></i></a>
                         <script async defer src="https://rauchg-slackin-jtdkltstsj.now.sh/slackin.js"></script>
                     </h1>
                 </div><!--//branding-->
