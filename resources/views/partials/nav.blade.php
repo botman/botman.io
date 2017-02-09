@@ -26,6 +26,12 @@
         <a href="/conversations">Conversations</a>
     </li>
     <li>
+        <a href="/user-information">User Information</a>
+    </li>
+    <li>
+        <a href="/storing-information">Storing Information</a>
+    </li>
+    <li>
         <a href="/extending-botman">Extending BotMan</a>
     </li>
     <li><a href="/faq">FAQ</a></li>
