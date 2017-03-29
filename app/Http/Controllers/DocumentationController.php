@@ -8,7 +8,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
 {
-    public function show($version, $page = 'installation')
+    public function show($version = 'master', $page = 'installation')
     {
         if (! $this->isVersion($version)) {
             return redirect('/master/installation', 301);

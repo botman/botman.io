@@ -48,7 +48,20 @@
                         <a href="https://github.com/mpociot/botman"><i class="fa fa-github"></i></a>
                         <script async defer src="https://rauchg-slackin-jtdkltstsj.now.sh/slackin.js"></script>
                     </h1>
+
+                    <div class="dropdown switch">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Version
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+                            <li><a href="/master/installation">Master</a></li>
+                            <li><a href="/1.5/installation">1.5</a></li>
+                        </ul>
+                    </div><!--//version switch-->
+
                 </div><!--//branding-->
+
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
