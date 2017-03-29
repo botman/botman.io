@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>{{$title}} BotMan - Create messaging bots in PHP with ease</title>
     <!-- Meta -->
@@ -9,26 +9,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BotMan - Create messaging bots in PHP with ease">
-    <meta name="author" content="Marcel Pociot">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <meta name="author" content="Marcel Pociot">
+    <link rel="shortcut icon" href="favicon.ico">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
-    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
-    <link id="theme-style" rel="stylesheet" href="assets/css/slicknav.min.css">
-    
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="/assets/plugins/elegant_font/css/style.css">
+    <link id="theme-style" rel="/stylesheet" href="assets/css/slicknav.min.css">
+
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="/assets/css/styles.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-</head> 
+
+</head>
 
 <body class="body-blue">
     <div class="page-wrapper">
@@ -66,19 +66,19 @@
                     </div><!--//doc-sidebar-->
                 </div>
                 <div class="text-center">
-                    <hr></hr>
+                    <hr>
                     BotMan - Developed and maintained by <a href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
                 </div>
             </div>
         </div>
 
-        <!-- Main Javascript -->          
-        <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>                                                                
-        <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.slicknav.min.js"></script>
-        <script type="text/javascript" src="assets/js/main.js"></script>
+        <!-- Main Javascript -->
+        <script type="text/javascript" src="/assets/plugins/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/plugins/prism/prism.js"></script>
+        <script type="text/javascript" src="/assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.slicknav.min.js"></script>
+        <script type="text/javascript" src="/assets/js/main.js"></script>
         <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -88,4 +88,5 @@
   ga('create', 'UA-75386803-2', 'auto');
   ga('send', 'pageview');
 </script>
+    </div>
 </body>

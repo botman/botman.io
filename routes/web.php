@@ -29,5 +29,5 @@ function markdown($text)
     return $converter->convertToHtml($text);
 }
 
-Route::get('/', 'DocumentationController@show');
-Route::get('/{page}', 'DocumentationController@show');
+Route::get('/{version}/', 'DocumentationController@show');
+Route::get('/{version}/{page}', 'DocumentationController@show');
