@@ -8,9 +8,21 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
 {
-    public function show($page = 'installation')
+    public function show($version = null, $page = 'installation')
     {
-    	$path = base_path('resources/docs/'.$page.'.md');
+        if (is_null($version)) {
+            $version = config('botman.default_version');
+        }
+
+        if (! $this->isVersion($version)) {
+            return redirect('/master/installation', 301);
+        }
+
+        if (! defined('CURRENT_VERSION')) {
+            define('CURRENT_VERSION', $version);
+        }
+
+    	$path = base_path('resources/docs/'.$version.'/'.$page.'.md');
     	if (File::exists($path)) {
 			$file = File::get($path);
 
@@ -24,5 +36,16 @@ class DocumentationController extends Controller
     		])->with('documentation', markdown($file));
     	}
     	abort(404);
+    }
+
+    /**
+     * Determine if the given URL segment is a valid version.
+     *
+     * @param  string  $version
+     * @return bool
+     */
+    protected function isVersion($version)
+    {
+        return in_array($version, config('botman.available_versions'));
     }
 }

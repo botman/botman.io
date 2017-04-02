@@ -321,6 +321,7 @@ select {
 .branding {
   text-transform: uppercase;
   margin-bottom: 10px;
+  position: relative;
 }
 .branding .logo {
   font-size: 28px;
@@ -1351,6 +1352,19 @@ select {
     -webkit-animation:swing 3s infinite ease-in-out;
     -webkit-transform-origin:top;
 }
+
+.switch {
+  position: absolute;
+  right: 0;
+  margin-top: -8px;
+}
+
+@media (max-width: 640px) {
+  .switch {
+    display: none;
+  }
+}
+
 .not-found .botman-leg-right,
 .not-found .botman-leg-left {
   top: 204px;

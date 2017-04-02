@@ -19,15 +19,17 @@ use Webuni\CommonMark\TableExtension\TableExtension;
 /**
  * Convert some text to Markdown...
  */
-function markdown($text)
-{
-    $environment = Environment::createCommonMarkEnvironment();
-    $environment->addExtension(new TableExtension());
+if (!function_exists('markdown')) {
+    function markdown($text)
+    {
+        $environment = Environment::createCommonMarkEnvironment();
+        $environment->addExtension(new TableExtension());
 
-    $converter = new Converter(new DocParser($environment), new HtmlRenderer($environment));
+        $converter = new Converter(new DocParser($environment), new HtmlRenderer($environment));
 
-    return $converter->convertToHtml($text);
+        return $converter->convertToHtml($text);
+    }
 }
-
 Route::get('/', 'DocumentationController@show');
-Route::get('/{page}', 'DocumentationController@show');
+Route::get('/{version}/', 'DocumentationController@show');
+Route::get('/{version}/{page}', 'DocumentationController@show');

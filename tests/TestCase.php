@@ -1,5 +1,7 @@
 <?php
 
+use Dotenv\Dotenv;
+
 abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     /**
@@ -19,6 +21,8 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
         $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+        $this->baseUrl = env('APP_URL', $this->baseUrl);
 
         return $app;
     }
