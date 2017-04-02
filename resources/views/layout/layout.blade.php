@@ -74,8 +74,8 @@
                         </div>
                     </div>
                     <div class="doc-sidebar hidden-xs">
-                        <nav id="doc-nav">
-                            @include('partials.nav')
+                        <nav id="doc-nav" data-spy="affix">
+                            {!! $index !!}
                         </nav>
                     </div><!--//doc-sidebar-->
                 </div>

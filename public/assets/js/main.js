@@ -4,7 +4,7 @@ $(document).ready(function() {
 	/* Ref: http://getbootstrap.com/javascript/#affix-examples */
 
     	
-	$('#doc-menu').affix({
+	$('#doc-nav').affix({
         offset: {
             top: ($('#header').outerHeight(true) + $('#doc-header').outerHeight(true)) + 45,
             bottom: ($('#footer').outerHeight(true) + $('#promo-block').outerHeight(true)) + 75
@@ -16,7 +16,7 @@ $(document).ready(function() {
         $(window).trigger('scroll'); 
     });
 
-    $('#doc-menu').slicknav({
+    $('#doc-nav').slicknav({
       appendTo: '#header'
     });
     

@@ -3,11 +3,29 @@
 namespace App\Http\Controllers;
 
 use File;
+use App\Documentation;
 use Illuminate\Http\Request;
 use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
 {
+    /**
+     * The documentation repository.
+     *
+     * @var Documentation
+     */
+    protected $docs;
+    /**
+     * Create a new controller instance.
+     *
+     * @param  Documentation  $docs
+     * @return void
+     */
+    public function __construct(Documentation $docs)
+    {
+        $this->docs = $docs;
+    }
+
     public function show($version = null, $page = 'installation')
     {
         if (is_null($version)) {
@@ -30,6 +48,7 @@ class DocumentationController extends Controller
 			$title = (new Crawler($content))->filterXPath('//h1');
 
 	    	return view('docs', [
+                'index' => $this->docs->getIndex($version),
                 'page' => $page,
 	    		'documentation' => $content,
 	    		'title' => count($title) ? $title->text() : null
