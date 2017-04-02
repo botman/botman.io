@@ -8,8 +8,12 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
 {
-    public function show($version = 'master', $page = 'installation')
+    public function show($version = null, $page = 'installation')
     {
+        if (is_null($version)) {
+            $version = config('botman.default_version');
+        }
+
         if (! $this->isVersion($version)) {
             return redirect('/master/installation', 301);
         }
@@ -42,6 +46,6 @@ class DocumentationController extends Controller
      */
     protected function isVersion($version)
     {
-        return in_array($version, ['master', '1.5']);
+        return in_array($version, config('botman.available_versions'));
     }
 }

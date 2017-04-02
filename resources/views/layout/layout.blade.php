@@ -55,8 +55,9 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
-                            <li><a href="/master/installation">Master</a></li>
-                            <li><a href="/1.5/installation">1.5</a></li>
+                            @foreach(config('botman.available_versions') as $version)
+                                <li><a href="/{{ $version }}/installation">{{ $version }}</a></li>
+                            @endforeach
                         </ul>
                     </div><!--//version switch-->
 
