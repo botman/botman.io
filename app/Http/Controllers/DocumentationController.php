@@ -35,7 +35,12 @@ class DocumentationController extends Controller
         if (is_null($page)) {
             $page = $version;
             $version = config('botman.default_version');
-            return redirect('/'.$version.'/'.$page, 301);
+            $path = base_path('resources/docs/'.$version.'/'.$page.'.md');
+            if (File::exists($path)) {
+                return redirect('/'.$version.'/'.$page, 301);
+            } else {
+                return redirect('/'.$version.'/installation', 301);
+            }
         }
 
         if (! $this->isVersion($version)) {
