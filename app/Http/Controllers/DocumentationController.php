@@ -26,10 +26,16 @@ class DocumentationController extends Controller
         $this->docs = $docs;
     }
 
-    public function show($version = null, $page = 'installation')
+    public function show($version = null, $page = null)
     {
         if (is_null($version)) {
             $version = config('botman.default_version');
+        }
+
+        if (is_null($page)) {
+            $page = $version;
+            $version = config('botman.default_version');
+            return redirect('/'.$version.'/'.$page, 301);
         }
 
         if (! $this->isVersion($version)) {
