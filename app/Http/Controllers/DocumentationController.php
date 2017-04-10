@@ -61,9 +61,9 @@ class DocumentationController extends Controller
 	    	return view('docs', [
                 'index' => $this->docs->getIndex($version),
                 'page' => $page,
-	    		'documentation' => $content,
+	    		'documentation' => $this->docs->getContent($version, $page),
 	    		'title' => count($title) ? $title->text() : null
-    		])->with('documentation', markdown($file));
+    		]);
     	}
     	abort(404);
     }

@@ -54,6 +54,23 @@ class Documentation
     }
 
     /**
+     * Get the documentation content.
+     * 
+     * @param  string $version
+     * @param  string $page
+     * @return string
+     */
+    public function getContent($version, $page)
+    {
+        $path = base_path('resources/docs/'.$version.'/'.$page.'.md');
+        if ($this->files->exists($path)) {
+            return $this->replaceLinks($version, markdown($this->files->get($path)));
+        }
+
+        return null;
+    }
+
+    /**
      * Replace the version place-holder in links.
      *
      * @param  string  $version
