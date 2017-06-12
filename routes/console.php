@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
+use App\Services\Indexer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,6 @@ use Illuminate\Foundation\Inspiring;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->describe('Display an inspiring quote');
+Artisan::command('docs:index', function () {
+    app(Indexer::class)->indexAllDocuments();
+})->describe('Index all documentation on Algolia');

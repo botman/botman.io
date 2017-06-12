@@ -30,6 +30,9 @@ if (!function_exists('markdown')) {
         return $converter->convertToHtml($text);
     }
 }
-Route::get('/', 'DocumentationController@show');
+Route::get('/', 'DocumentationController@landing');
+Route::get('/imprint', function(){
+    return view('imprint')->with('title', 'Imprint');
+});
 Route::get('/{version}/', 'DocumentationController@show');
 Route::get('/{version}/{page}', 'DocumentationController@show');

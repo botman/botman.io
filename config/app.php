@@ -166,8 +166,8 @@ return [
         /*
          * Package Service Providers...
          */
-
-        //
+        BladeSvg\BladeSvgServiceProvider::class,
+        Vinkla\Algolia\AlgoliaServiceProvider::class,
 
         /*
          * Application Service Providers...

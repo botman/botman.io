@@ -1,9 +1,29 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
 // Variables
-@import "variables";
+@import "node_modules/bulma/sass/utilities/initial-variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// 2. Set your own initial variables
+$font-family-sans-serif: "Varela Round";
+
+$radius-small: 40px;
+$background: transparent;
+$link: #05b2bc;
+$primary: black;
+$warning: #ffaf48;
+
+@import "node_modules/bulma/bulma";
+@import "botman";
+
+.number {
+  background-color: transparent;
+  border-radius: 0;
+  display: relative;
+  margin: 0;
+  padding: 0;
+  align-items: initial;
+  font-size: inherit;
+  height: auto;
+}

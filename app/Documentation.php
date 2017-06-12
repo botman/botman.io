@@ -42,7 +42,7 @@ class Documentation
      */
     public function getIndex($version)
     {
-        return $this->cache->remember('docs.'.$version.'.index', 5, function () use ($version) {
+        return $this->cache->remember('docs.'.$version.'.index', 0, function () use ($version) {
             $path = base_path('resources/docs/'.$version.'/documentation.md');
 
             if ($this->files->exists($path)) {

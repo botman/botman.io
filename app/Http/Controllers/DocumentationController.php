@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use File;
+use Cache;
 use App\Documentation;
-use Illuminate\Http\Request;
 use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
@@ -24,6 +24,16 @@ class DocumentationController extends Controller
     public function __construct(Documentation $docs)
     {
         $this->docs = $docs;
+    }
+
+    public function landing()
+    {
+        $stars = Cache::remember('github_stars', 120, function() {
+            $stars = json_decode(file_get_contents('https://packagist.org/packages/mpociot/botman.json'),true);
+            return array_get($stars, 'package.github_stars');
+        });
+
+        return view('landing')->with('stars', $stars);
     }
 
     public function show($version = null, $page = null)
@@ -60,6 +70,7 @@ class DocumentationController extends Controller
 
 	    	return view('docs', [
                 'index' => $this->docs->getIndex($version),
+                'currentVersion' => $version,
                 'page' => $page,
 	    		'documentation' => $this->docs->getContent($version, $page),
 	    		'title' => count($title) ? $title->text() : null

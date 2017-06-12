@@ -1,0 +1,135 @@
+<svg viewBox="0 0 225 212" width="225" height="212" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style type="text/css">.st0{fill:url(#SVGID_1_);}
+        .st1{fill:url(#SVGID_2_);}
+        .st2{fill:url(#SVGID_3_);}
+        .st3{fill:url(#SVGID_4_);}
+        .st5{fill:#FDD800;}
+        .st6{fill:none;stroke:#231F20;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st7{fill:none;stroke:#EB0D8C;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st8{fill:none;stroke:#4EC3C8;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st9{fill:#FFFFFF;stroke:#4EC3C8;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st10{fill:#4EC3C8;}
+        .st11{fill:none;stroke:#49C8F5;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st12{fill:none;stroke:#FEDA00;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st13{fill:#231F20;}
+        .st14{fill:#DBDAD9;stroke:#193946;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st15{fill:none;stroke:#193946;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st16{fill:#F8B232;stroke:#193946;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st17{fill:#FFFFFF;stroke:#193946;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st18{fill:#193946;}
+        .st19{fill:none;stroke:#F1F2F2;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st20{clip-path:url(#XMLID_10_);fill:none;stroke:#E4E5E6;stroke-width:33;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st21{clip-path:url(#XMLID_11_);fill:none;stroke:#E4E5E6;stroke-width:33;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st22{clip-path:url(#XMLID_11_);fill:none;stroke:#E4E5E6;stroke-width:25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st23{clip-path:url(#XMLID_12_);fill:none;stroke:#BE8A25;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st24{clip-path:url(#XMLID_13_);fill:none;stroke:#BE8A25;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st25{fill:none;stroke:#F1F2F2;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st26{fill:none;stroke:#F8B232;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st27{clip-path:url(#XMLID_14_);fill:none;stroke:#E4E5E6;stroke-width:33;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st28{clip-path:url(#XMLID_15_);fill:none;stroke:#E4E5E6;stroke-width:33;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st29{clip-path:url(#XMLID_15_);fill:none;stroke:#E4E5E6;stroke-width:25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st30{clip-path:url(#XMLID_16_);fill:none;stroke:#BE8A25;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+        .st31{clip-path:url(#XMLID_17_);fill:none;stroke:#BE8A25;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st32{fill:#FEDA00;}
+        .st33{fill:#FFFFFF;stroke:#FEDA00;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st34{fill:#49C8F5;}
+        .st35{fill:#EB0D8C;}
+        .st36{fill:#FFFFFF;stroke:#EB0D8C;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st37{fill:#F8B232;}
+        .st38{fill:#FFFFFF;stroke:#F8B232;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st39{fill:#DBDAD9;}
+        .st40{fill:none;stroke:#DBDAD9;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st41{fill:#FFFFFF;stroke:#DBDAD9;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+        .st42{fill:#DBDAD9;stroke:#193946;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style>
+    <g>
+        <title>background</title>
+        <rect fill="none" id="canvas_background" height="214" width="227" y="-1" x="-1"/>
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <g id="Layer_2">
+            <path id="svg_2" d="m62.899752,40.299669c1.6,-5 7.9,-8.6 13.5,-7.6" class="st15"/>
+            <path id="svg_3" d="m184.599752,34.099669c4.9,-2 11.7,0.5 14.5,5.4" class="st15"/>
+            <path id="svg_4" d="m165.899752,117.899669c0.7,-0.1 1.2,-0.2 2,-0.2c6.2,0 11.2,5 11.2,11.2c0,6.2 -5,11.2 -11.2,11.2c-0.7,0 -1.3,-0.1 -2,-0.2" class="st14"/>
+            <path id="svg_5" d="m94.199752,117.899669c-0.7,-0.1 -1.2,-0.2 -2,-0.2c-6.2,0 -11.2,5 -11.2,11.2c0,6.2 5,11.2 11.2,11.2c0.7,0 1.3,-0.1 2,-0.2" class="st14"/>
+            <path id="svg_17" d="m109.199752,45.399669c0.2,-14.6 3.8,-20 9.5,-24.5" class="st14"/>
+            <circle id="svg_18" r="7.7" cy="13.299669" cx="126.299752" class="st16"/>
+            <g id="svg_19">
+                <defs transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) ">
+                    <path d="m218.5,246.9l-53.2,0c-4.8,0 -8.7,-3.9 -8.7,-8.7l0,-42.3l70.6,0l0,42.3c0,4.8 -3.9,8.7 -8.7,8.7z" id="XMLID_4_"/>
+                </defs>
+                <use x="-62.000248" y="-82.500331" id="svg_20" fill="#DBDAD9" xlink:href="#XMLID_4_"/>
+                <clipPath transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) " id="XMLID_10_">
+                    <use id="svg_21" xlink:href="#XMLID_4_"/>
+                </clipPath>
+                <use x="-62.000248" y="-82.500331" id="svg_23" fill="none" stroke="#193946" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" xlink:href="#XMLID_4_"/>
+            </g>
+            <line id="svg_24" y2="133.299669" x2="156.799752" y1="133.199669" x1="145.999752" class="st14"/>
+            <path id="svg_25" d="m179.599752,127.799669c16.6,0 20.8,20.1 20.8,20.1" class="st15"/>
+            <polyline id="svg_26" points="215.899742603302,162.99967241287231 215.69976091384888,151.8996663093567 200.49974870681763,147.8996663093567 188.59975481033325,159.09967851638794 197.19976091384888,170.1996693611145 " class="st15"/>
+            <path id="svg_27" d="m80.799752,131.999669c-14.6,7.9 -29,-9.6 -29,-9.6" class="st15"/>
+            <polyline id="svg_28" points="31.099750995635986,116.59967851638794 36.49975252151489,126.1996693611145 51.799755573272705,122.49967241287231 56.8997540473938,106.89966630935669 43.99975252151489,101.39966630935669 " class="st15"/>
+            <rect id="svg_29" height="26.8" width="15" class="st14" y="164.399669" x="108.099752"/>
+            <rect id="svg_30" height="26.8" width="15" class="st14" y="164.399669" x="138.599752"/>
+            <path id="svg_31" d="m168.199752,203.799669l-29.6,0l0,-12.6l22.1,0c4.1,0 7.5,3.3 7.5,7.5l0,5.1z" class="st14"/>
+            <path id="svg_32" d="m93.299752,203.799669l29.8,0l0,-12.6l-22.3,0c-4.1,0 -7.5,3.3 -7.5,7.5l0,5.1z" class="st14"/>
+            <g id="svg_33">
+                <g id="svg_34">
+                    <defs transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) ">
+                        <path d="m246.8,184.5l-107.1,0c-2.8,0 -5.1,-2.3 -5.1,-5.1l0,-46.3c0,-2.8 2.3,-5.1 5.1,-5.1l107.2,0c2.8,0 5.1,2.3 5.1,5.1l0,46.3c0,2.8 -2.3,5.1 -5.2,5.1z" id="XMLID_3_"/>
+                    </defs>
+                    <use x="-62.000248" y="-82.500331" id="svg_35" fill="#DBDAD9" xlink:href="#XMLID_3_"/>
+                    <clipPath transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) " id="XMLID_11_">
+                        <use id="svg_36" xlink:href="#XMLID_3_"/>
+                    </clipPath>
+                    <use x="-62.000248" y="-82.500331" id="svg_39" fill="none" stroke="#193946" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" xlink:href="#XMLID_3_"/>
+                </g>
+                <path id="svg_40" d="m147.399752,74.499669c-3.8,4.5 -9.5,7.3 -15.9,7.3c-6.7,0 -12.7,-3.1 -16.5,-8" class="st15"/>
+            </g>
+            <g id="svg_45">
+                <path id="svg_46" d="m53.899752,65.599669c7.1,8.2 6.3,20.7 -1.9,27.8c-0.5,0.4 -1,0.8 -1.5,1.2c-0.4,0.3 -0.8,0.6 -1.3,0.8c-2.2,1.3 -3.6,3.4 -4.1,5.9l-4.7,28.1c-0.4,2.5 0.3,5 1.9,6.9c7,8.3 5.9,20.8 -2.5,27.7c-0.4,0.3 -0.8,0.7 -1.3,1c-0.5,0.4 -1.1,0.7 -1.6,1c-1.3,0.7 -2.9,0.7 -4.1,-0.2c-1.3,-0.9 -1.9,-2.4 -1.6,-3.9l1.4,-8c0.3,-1.7 -0.8,-3.3 -2.5,-3.5l-6.1,-1c-1.7,-0.2 -3.2,0.9 -3.5,2.5l-1.4,8c-0.3,2.1 -2.3,3.6 -4.5,3.3c-0.9,-0.1 -1.7,-0.6 -2.3,-1.3c-7.1,-8.2 -6.2,-20.7 2,-27.8c0.5,-0.4 1,-0.8 1.5,-1.2c0.4,-0.3 0.8,-0.6 1.3,-0.8c2.2,-1.3 3.6,-3.4 4.1,-5.9l4.7,-28.1c0.4,-2.5 -0.3,-5 -1.9,-6.9c-7,-8.3 -5.9,-20.8 2.5,-27.7c0.9,-0.7 1.8,-1.4 2.9,-2c1.3,-0.8 2.9,-0.7 4.1,0.2c1.3,0.9 1.9,2.4 1.6,3.9l-1.4,8.1c-0.3,1.7 0.8,3.2 2.5,3.5l6.1,1c1.7,0.2 3.2,-0.9 3.5,-2.5l1.4,-8c0.3,-2.1 2.3,-3.6 4.5,-3.3c0.8,0.1 1.6,0.5 2.2,1.2z" class="st7"/>
+            </g>
+            <line id="svg_47" y2="101.399669" x2="43.999752" y1="106.899669" x1="56.899752" class="st14"/>
+            <g id="svg_51">
+                <defs transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) ">
+                    <polygon points="201.9,195.9 193.2,201.2 185.2,195.9 186.9,184.5 200.4,184.5    " id="XMLID_2_"/>
+                </defs>
+                <use x="-62.000248" y="-82.500331" id="svg_52" fill="#F8B232" xlink:href="#XMLID_2_"/>
+                <clipPath transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) " id="XMLID_12_">
+                    <use id="svg_53" xlink:href="#XMLID_2_"/>
+                </clipPath>
+                <use x="-62.000248" y="-82.500331" id="svg_55" fill="none" stroke="#193946" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" xlink:href="#XMLID_2_"/>
+            </g>
+            <g id="svg_56">
+                <defs transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) ">
+                    <polygon points="193.2,200.4 202.5,227.8 193.2,238.9 183.2,227.8    " id="XMLID_1_"/>
+                </defs>
+                <use x="-62.000248" y="-82.500331" id="svg_57" fill="#F8B232" xlink:href="#XMLID_1_"/>
+                <clipPath transform="translate(2.0000081062316895,2.0000081062316895) translate(-2.0000081062316895,3.000012159347534) translate(-62.000247955322266,-87.50035095214844) " id="XMLID_13_">
+                    <use id="svg_58" xlink:href="#XMLID_1_"/>
+                </clipPath>
+                <use x="-62.000248" y="-82.500331" id="svg_61" fill="none" stroke="#193946" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" xlink:href="#XMLID_1_"/>
+            </g>
+            <line id="svg_62" y2="156.399669" x2="141.799752" y1="156.399669" x1="142.899752" class="st19"/>
+            <line id="svg_63" y2="170.199669" x2="147.399752" y1="177.799669" x1="147.399752" class="st25"/>
+            <path id="svg_64" d="m157.099752,143.599669l0,9.1c0,2 -1.7,3.7 -3.7,3.7l-4.9,0" class="st19"/>
+            <polyline id="svg_65" points="108.09976243972778,121.39966630935669 102.99975633621216,121.39966630935669 102.99975633621216,125.49967241287231 " class="st19"/>
+        </g>
+        <g id="svg_68">
+            <path id="svg_67" d="m173.399752,68.799669c0,6.3 -0.6,11.5 -6.4,11.5s-6.4,-5.1 -6.4,-11.5s1.2,-11.5 6.4,-11.5c5.2,0.1 6.4,5.2 6.4,11.5z" class="st18"/>
+        </g>
+        <g id="svg_70">
+            <path id="svg_69" d="m102.399752,69.799669c0,6.3 -0.6,11.5 -6.4,11.5s-6.4,-5.1 -6.4,-11.5s1.2,-11.5 6.4,-11.5c5.2,0.1 6.4,5.2 6.4,11.5z" class="st18"/>
+        </g>
+    </g>
+</svg>
