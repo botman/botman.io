@@ -12,7 +12,7 @@
                                 <span>BotMan</span>
                             </a>
                         </div>
-                        <span class="nav-toggle">
+                        <span class="nav-toggle is-hidden-mobile">
               <span></span>
               <span></span>
               <span></span>
