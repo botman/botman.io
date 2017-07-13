@@ -1,5 +1,4 @@
 /node_modules
-/resources/docs
 /public/storage
 /storage/*.key
 /vendor
