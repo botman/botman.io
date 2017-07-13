@@ -8,20 +8,35 @@ footer {
 
 nav .brand {
   svg {
-    height: 39px;
-    width: 100px;
+    width: 100%;
+    height: 100%;
+    max-height: 39px;
+    max-width: 100px;
   }
   span {
     margin-top: 12px;
   }
 }
 
+@media all and (max-device-width: 768px) {
+  nav .brand-docs {
+    svg {
+      max-width: 50px;
+    }
+    span {
+      margin-top: 5px;
+    }
+  }
+}
+
 .botman-hero {
-  width: 310px;
-  height: 310px;
-  margin-right: 50px;
+  width:100%;
+  height:100%;
+  max-width: 310px;
+  margin-left: -40px;
   padding-bottom: 30px;
 }
+
 .claim {
   line-height: 50px;
   display: inline-block;
@@ -105,6 +120,9 @@ body,html {
 #documentation {
   .column {
     padding: 3rem 1.5rem;
+  }
+  .columns:last-child {
+    margin-bottom: 0rem;
   }
   margin-top: 30px;
 
@@ -333,4 +351,12 @@ body,html {
 #ad .carbon-poweredby {
   color: #aaa;
   font-weight: normal;
+}
+
+/* Helpers */
+
+@media all and (max-device-width: 393px) {
+  .mobile-margin-top-10 {
+    margin-top: 10px
+  }
 }

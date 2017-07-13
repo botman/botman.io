@@ -18,7 +18,7 @@
         <nav class="nav">
           <div class="container is-fluid">
             <div class="nav-left">
-              <a class="nav-item brand" href="/">
+              <a class="nav-item brand brand-docs" href="/">
                 @svg('botman-head')
                 <span class="is-hidden-mobile">BotMan</span>
               </a>
