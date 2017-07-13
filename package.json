@@ -16,6 +16,6 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
-    "bulma": "^0.4.2"
+    "bulma": "^0.4.3"
   }
 }

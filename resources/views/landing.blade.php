@@ -45,7 +45,7 @@
                 <h2 class="subtitle is-4">The only PHP chatbot framework you will ever need.</h2>
                 <div class="buttons">
                     <a class="button is-large" href="https://github.com/botman/botman">GitHub</a>
-                    <a class="button is-inverted is-primary is-outlined is-large" href="/{{ config('botman.default_version') }}">Documentation</a>
+                    <a class="button is-inverted is-primary is-outlined is-large mobile-margin-top-10" href="/{{ config('botman.default_version') }}">Documentation</a>
                 </div>
             </div>
         </div>
