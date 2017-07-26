@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Cisco Spark",
+    "package": "botman/driver-cisco-spark",
+    "description": "Use BotMan with Cisco Spark."
+  },
+  {
+    "name": "Discord",
+    "package": "botman/driver-discord",
+    "description": "Use BotMan with Discord."
+  },
+  {
+    "name": "Facebook",
+    "package": "botman/driver-facebook",
+    "description": "Use BotMan with the Facebook messenger platform."
+  },
+  {
+    "name": "HipChat",
+    "package": "botman/driver-hipchat",
+    "description": "Use BotMan with Atlassian HipChat."
+  },
+  {
+    "name": "Kik",
+    "package": "botman/driver-kik",
+    "description": "Use BotMan with the Kik messenger."
+  },
+  {
+    "name": "Microsoft Bot Framework",
+    "package": "botman/driver-botframework",
+    "description": "Use BotMan with the Microsoft Bot Framework."
+  },
+  {
+    "name": "Nexmo",
+    "package": "botman/driver-nexmo",
+    "description": "Use BotMan with Nexmo to send and listen to SMS."
+  },
+  {
+    "name": "Slack",
+    "package": "botman/driver-slack",
+    "description": "Use BotMan with Slack."
+  },
+  {
+    "name": "Telegram",
+    "package": "botman/driver-telegram",
+    "description": "Use BotMan with the Telegram messenger."
+  },
+  {
+    "name": "WeChat",
+    "package": "botman/driver-wechat",
+    "description": "Use BotMan with the WeChat messenger."
+  }
+]
