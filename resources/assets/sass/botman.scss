@@ -356,6 +356,12 @@ body,html {
   font-weight: normal;
 }
 
+// Notifications
+#documentation .notification {
+  margin: 1.5rem 0;
+  min-height: 80px;
+}
+
 /* Helpers */
 
 @media all and (max-device-width: 393px) {
