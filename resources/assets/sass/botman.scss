@@ -135,7 +135,17 @@ body,html {
 
   h1 {
     @extend .title;
+    font-size: 2.5em;
   }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
   h2, h3, h4, h5, h6 {
     @extend .subtitle;
   }
@@ -145,6 +155,7 @@ body,html {
   h3:not(:first-child),
   h4:not(:first-child) {
     margin-top: 1.5rem;
+    margin-bottom: 1em;
   }
 
   ul {
