@@ -8244,12 +8244,16 @@ body, html {
   font-size: 1.5em;
 }
 
+#documentation h2, #documentation h3, #documentation h4, #documentation h5, #documentation h6 {
+  margin: 1em 0;
+}
+
 #documentation h1:not(:first-child),
 #documentation h2:not(:first-child),
 #documentation h3:not(:first-child),
 #documentation h4:not(:first-child) {
-  margin-top: 1.5rem;
-  margin-bottom: 1em;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 #documentation ul + p {

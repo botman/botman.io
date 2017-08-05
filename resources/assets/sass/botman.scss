@@ -148,14 +148,15 @@ body,html {
 
   h2, h3, h4, h5, h6 {
     @extend .subtitle;
+    margin: 1em 0;
   }
 
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child),
   h4:not(:first-child) {
-    margin-top: 1.5rem;
-    margin-bottom: 1em;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 
   ul {
