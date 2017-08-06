@@ -135,16 +135,28 @@ body,html {
 
   h1 {
     @extend .title;
+    font-size: 2.5em;
   }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
   h2, h3, h4, h5, h6 {
     @extend .subtitle;
+    margin: 1em 0;
   }
 
   h1:not(:first-child),
   h2:not(:first-child),
   h3:not(:first-child),
   h4:not(:first-child) {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 
   ul {
