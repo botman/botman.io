@@ -71,7 +71,7 @@
                             </a>
                         </div>
                         <div class="column">
-                            <a href="https://rauchg-slackin-jtdkltstsj.now.sh/">
+                            <a href="https://slack.botman.io/">
                 <span class="icon">
                     <i class="fa fa-slack"></i>
                 </span> Slack
