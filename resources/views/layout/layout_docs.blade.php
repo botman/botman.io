@@ -44,7 +44,7 @@
               <a class="nav-item" href="https://twitter.com/botman_io">
                 Twitter
               </a>
-              <a class="nav-item" href="https://rauchg-slackin-jtdkltstsj.now.sh/">
+              <a class="nav-item" href="https://slack.botman.io/">
                 Community
               </a>
           </div>
