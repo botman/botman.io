@@ -16,6 +16,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "botui": "^0.3.4",
     "bulma": "^0.4.3"
   }
 }

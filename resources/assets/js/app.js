@@ -8,12 +8,46 @@
 require('./bootstrap');
 require('./bootstrap/bootstrap.js');
 
-
 const algoliasearch = require('./vendor/algoliasearch.js');
 const Hogan = require('./vendor/hogan.js');
+import BotUI from 'botui'
+
+if ($('#landing-bot').length > 0) {    
+    var botui = new BotUI('landing-bot');
+
+    botui.message.add({
+        delay: 700,
+        human: true,
+        content: 'Hello BotMan!'
+    }).then(() => {
+
+        botui.message.add({
+            delay: 1200,
+            loading: true,
+            human: false,
+            content: 'Hello!'
+        });
+        botui.message.add({ // show a message
+            delay: 1400,
+          content: 'Whats your name?'
+        }).then(function () { // wait till its shown
+          botui.action.text({ // show 'text' action
+            action: {
+              placeholder: 'Your name'
+            }
+          }).then(function (res) { // get the result
+          botui.message.add({
+            delay: 1200,
+            loading: true,
+            content: 'Welcome ' + res.value
+          });
+        });
+        })
+
+    });
+}
 
 $(function(){
-
     $('#index').affix({
         offset: {
             top: 25,
@@ -54,7 +88,7 @@ $(function(){
     initAlgoliaSearch();
 
     function initAlgoliaSearch() {
-        if (window.algolia_app_id === '') {
+        if (window.algolia_app_id === '' || window.algolia_app_id === undefined) {
             return;
         }
 

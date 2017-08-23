@@ -43,6 +43,26 @@
                 <br>
                 <h1 class="title is-3">BotMan</h1>
                 <h2 class="subtitle is-4">The only PHP chatbot framework you will ever need.</h2>
+                <div class="columns is-hidden-mobile">
+                    <div class="column is-5 is-offset-1">
+                        <div class="landing-code browser-mockup">
+                            <pre><code class="language-php">
+$botman->hears('Hello BotMan!', function($bot) {
+    $bot->reply('Hello!');
+    $bot->ask('Whats your name?', function($answer, $bot) {
+        $bot->say('Welcome '.$answer->getText());
+    });
+});
+$botman->listen();</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <div class="botui-app-container browser-mockup" id="landing-bot">
+                            <bot-ui></bot-ui>
+                        </div>
+                    </div>
+                </div>
                 <div class="buttons">
                     <a class="button is-large" href="https://github.com/botman/botman">GitHub</a>
                     <a class="button is-inverted is-primary is-outlined is-large mobile-margin-top-10" href="/{{ config('botman.default_version') }}">Documentation</a>
@@ -71,7 +91,7 @@
                             </a>
                         </div>
                         <div class="column">
-                            <a href="https://rauchg-slackin-jtdkltstsj.now.sh/">
+                            <a href="https://slack.botman.io">
                 <span class="icon">
                     <i class="fa fa-slack"></i>
                 </span> Slack

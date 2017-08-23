@@ -3,7 +3,10 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
+// BotUI
 // Variables
+@import "botui.min.css";
+
 @import "node_modules/bulma/sass/utilities/initial-variables";
 
 // 2. Set your own initial variables
@@ -17,6 +20,7 @@ $warning: #ffaf48;
 
 @import "node_modules/bulma/bulma";
 @import "botman";
+@import "landing";
 
 .number {
   background-color: transparent;
