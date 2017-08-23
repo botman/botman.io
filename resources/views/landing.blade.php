@@ -53,6 +53,7 @@ $botman->hears('Hello BotMan!', function($bot) {
         $bot->say('Welcome '.$answer->getText());
     });
 });
+
 $botman->listen();</code>
                             </pre>
                         </div>
