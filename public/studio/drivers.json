@@ -5,11 +5,6 @@
     "description": "Use BotMan with Cisco Spark."
   },
   {
-    "name": "Discord",
-    "package": "botman/driver-discord",
-    "description": "Use BotMan with Discord."
-  },
-  {
     "name": "Facebook",
     "package": "botman/driver-facebook",
     "description": "Use BotMan with the Facebook messenger platform."

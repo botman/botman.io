@@ -43,7 +43,7 @@
                 <br>
                 <h1 class="title is-3">BotMan</h1>
                 <h2 class="subtitle is-4">The only PHP chatbot framework you will ever need.</h2>
-                <div class="columns is-hidden-mobile">
+                <div class="columns">
                     <div class="column is-5 is-offset-1">
                         <div class="landing-code browser-mockup">
                             <pre><code class="language-php">
