@@ -40,6 +40,11 @@
     "description": "Use BotMan with the Telegram messenger."
   },
   {
+    "name": "Web",
+    "package": "botman/driver-web",
+    "description": "Use BotMan with your API/Website."
+  },
+  {
     "name": "WeChat",
     "package": "botman/driver-wechat",
     "description": "Use BotMan with the WeChat messenger."
