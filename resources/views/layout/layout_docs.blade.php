@@ -47,7 +47,16 @@
               <a class="nav-item" href="https://slack.botman.io/">
                 Community
               </a>
-          </div>
+              <div class="navbar-item">
+                <div class="field is-grouped">
+                  <p class="control">
+                    <a class="button is-inverted is-rounded is-outlined is-primary" href="https://buildachatbot.io/?utm_source=docs&utm_medium=navigation&utm_campaign=video_course" target="_blank">
+                      Video Course
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
