@@ -19,18 +19,27 @@
             </span>
                         <div class="nav-right nav-menu">
                             <a class="nav-item" href="https://github.com/mpociot/botman">
-                <span class="icon">
-                    <i class="fa fa-github"></i>
-                </span>
+                                <span class="icon">
+                                    <i class="fa fa-github"></i>
+                                </span>
                             </a>
                             <a class="nav-item" href="https://twitter.com/botman_io">
-                <span class="icon">
-                    <i class="fa fa-twitter"></i>
-                </span>
+                                <span class="icon">
+                                    <i class="fa fa-twitter"></i>
+                                </span>
                             </a>
                             <a class="nav-item" href="/{{ config('botman.default_version') }}">
                                 Documentation
                             </a>
+                            <div class="navbar-item">
+                                <div class="field is-grouped">
+                                    <p class="control">
+                                        <a class="button is-inverted is-rounded is-outlined is-primary" href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course" target="_blank">
+                                            Video Course
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -79,23 +88,30 @@ $botman->listen();</code>
                     <div class="columns">
                         <div class="column">
                             <a href="https://github.com/botman/botman/stargazers">
-                <span class="icon">
-                    <i class="fa fa-star"></i>
-                </span> {{ $stars }} stargazers
+                                <span class="icon">
+                                    <i class="fa fa-star"></i>
+                                </span> {{ $stars }} stargazers
                             </a>
                         </div>
                         <div class="column">
                             <a href="https://twitter.com/botman_io">
-                <span class="icon">
-                    <i class="fa fa-twitter"></i>
-                </span> @botman_io
+                                <span class="icon">
+                                    <i class="fa fa-twitter"></i>
+                                </span> @botman_io
                             </a>
                         </div>
                         <div class="column">
                             <a href="https://slack.botman.io">
-                <span class="icon">
-                    <i class="fa fa-slack"></i>
-                </span> Slack
+                                <span class="icon">
+                                    <i class="fa fa-slack"></i>
+                                </span> Slack
+                            </a>
+                        </div>
+                        <div class="column is-hidden-tablet">
+                            <a href="https://buildachatbot.io/?utm_source=landing&utm_medium=footer&utm_campaign=video_course" target="_blank">
+                                <span class="icon">
+                                    <i class="fa fa-play"></i>
+                                </span> Video Course
                             </a>
                         </div>
                     </div>
