@@ -78,6 +78,11 @@ body,html {
   padding: 0 20px;
 }
 
+.is-rounded {
+  border-radius: 50px;
+  padding: 0 20px;
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
