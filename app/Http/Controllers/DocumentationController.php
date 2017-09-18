@@ -29,7 +29,7 @@ class DocumentationController extends Controller
     public function landing()
     {
         $stars = Cache::remember('github_stars', 120, function() {
-            $stars = json_decode(file_get_contents('https://packagist.org/packages/mpociot/botman.json'),true);
+            $stars = json_decode(file_get_contents('https://packagist.org/packages/botman/botman.json'),true);
             return array_get($stars, 'package.github_stars');
         });
 
