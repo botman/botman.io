@@ -1,121 +1,63 @@
 @extends('layout.layout')
 
 @section('content')
-    <section class="hero is-fullheight has-text-centered">
-        <div class="hero-head">
-            <div class="container is-fluid">
-                <nav class="nav">
-                    <div class="container is-fluid">
-                        <div class="nav-left">
-                            <a class="nav-item brand" href="/{{ config('botman.default_version') }}">
-                                @svg('botman-head')
-                                <span>BotMan</span>
-                            </a>
-                        </div>
-                        <span class="nav-toggle is-hidden-mobile">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-                        <div class="nav-right nav-menu">
-                            <a class="nav-item" href="https://github.com/mpociot/botman">
-                                <span class="icon">
-                                    <i class="fa fa-github"></i>
-                                </span>
-                            </a>
-                            <a class="nav-item" href="https://twitter.com/botman_io">
-                                <span class="icon">
-                                    <i class="fa fa-twitter"></i>
-                                </span>
-                            </a>
-                            <a class="nav-item" href="/{{ config('botman.default_version') }}">
-                                Documentation
-                            </a>
-                            <div class="navbar-item">
-                                <div class="field is-grouped">
-                                    <p class="control">
-                                        <a class="button is-inverted is-rounded is-outlined is-primary" href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course" target="_blank">
-                                            Video Course
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+    <section class="font-sans bg-teal min-h-screen">
+        @include('partials.menu')
+
+        <div class="container mx-auto text-center md:mt-8">
+            <div class="w-full text-center">
+                @svg('botman', ['class' => '-ml-8'])
+                <h1 class="text-3xl text-white font-normal mt-4 tracking-wide">
+                    BotMan
+                </h1>
+                <h2 class="text-xl text-white font-normal mt-4 px-4 leading-normal">
+                    The only PHP chatbot framework you will ever need.
+                </h2>
             </div>
-        </div>
-
-        <div class="hero-body">
-            <div class="container">
-                @svg('botman', 'botman-hero')
-                <br>
-                <h1 class="title is-3">BotMan</h1>
-                <h2 class="subtitle is-4">The only PHP chatbot framework you will ever need.</h2>
-                <div class="columns">
-                    <div class="column is-5 is-offset-1">
-                        <div class="landing-code browser-mockup">
-                            <pre><code class="language-php">
-$botman->hears('Hello BotMan!', function($bot) {
-    $bot->reply('Hello!');
-    $bot->ask('Whats your name?', function($answer, $bot) {
-        $bot->say('Welcome '.$answer->getText());
-    });
-});
-
-$botman->listen();</code>
-                            </pre>
-                        </div>
-                    </div>
-                    <div class="column is-5">
-                        <div class="botui-app-container browser-mockup" id="landing-bot">
-                            <bot-ui></bot-ui>
-                        </div>
+            <div class="w-full flex flex-wrap mt-8 md:mt-16">
+                <div class="w-full mx-1 overflow-hidden md:w-1/3 md:ml-auto">
+                    <div class="browser-mockup landing-code h-64 w-full ">
+                        <pre>@include('partials.landing-code')</pre>
                     </div>
                 </div>
-                <div class="buttons">
-                    <a class="button is-large" href="https://github.com/botman/botman">GitHub</a>
-                    <a class="button is-inverted is-primary is-outlined is-large mobile-margin-top-10" href="/{{ config('botman.default_version') }}">Documentation</a>
+                <div class="w-full mt-1 mx-1 md:w-1/3 md:mt-0 md:mr-auto" id="landing-bot">
+                    <div class="browser-mockup botui-app-container h-64 w-full">
+                        <bot-ui></bot-ui>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full flex flex-wrap text-center mt-8">
+                <div class="w-full md:w-1/2 md:text-right">
+                    <a class="btn btn-outline text-white border-white"
+                       href="https://github.com/botman/botman">
+                        GitHub
+                    </a>
+                </div>
+                <div class="w-full mt-4 md:w-1/2 md:mt-0 md:text-left">
+                    <a class="btn bg-white rounded-full text-black"
+                       href="/{{ config('botman.default_version') }}">
+                        Documentation
+                    </a>
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="container">
-                <div class="content has-text-centered">
-                    <p>
-                        <strong>BotMan</strong> by <a href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
-                    </p>
-                    <div class="columns">
-                        <div class="column">
-                            <a href="https://github.com/botman/botman/stargazers">
-                                <span class="icon">
-                                    <i class="fa fa-star"></i>
-                                </span> {{ $stars }} stargazers
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a href="https://twitter.com/botman_io">
-                                <span class="icon">
-                                    <i class="fa fa-twitter"></i>
-                                </span> @botman_io
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a href="https://slack.botman.io">
-                                <span class="icon">
-                                    <i class="fa fa-slack"></i>
-                                </span> Slack
-                            </a>
-                        </div>
-                        <div class="column is-hidden-tablet">
-                            <a href="https://buildachatbot.io/?utm_source=landing&utm_medium=footer&utm_campaign=video_course" target="_blank">
-                                <span class="icon">
-                                    <i class="fa fa-play"></i>
-                                </span> Video Course
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <footer class="p-4 mt-8 text-sm md:mt-16">
+            <div class="text-center text-white">
+                <p>
+                    <span>BotMan by</span>
+                    <a class="text-white" href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
+                </p>
+                <p class="mt-2">
+                    <a class="text-white px-1" href="https://github.com/botman/botman/stargazers">
+                        <i class="fa fa-star"></i> {{ $stars }} stargazers
+                    </a>
+                    <a class="text-white px-1" href="https://twitter.com/botman_io">
+                        <i class="fa fa-twitter"></i> @botman_io
+                    </a>
+                    <a class="text-white px-1" href="https://slack.botman.io">
+                        <i class="fa fa-slack"></i> Slack
+                    </a>
+                </p>
             </div>
         </footer>
     </section>

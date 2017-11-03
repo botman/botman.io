@@ -194,6 +194,7 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'Source Sans Pro',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -203,7 +204,7 @@ module.exports = {
       'Cantarell',
       'Fira Sans',
       'Droid Sans',
-      'Helvetica Neue',
+      'Helvetica Neue'
     ],
     'serif': [
       'Constantia',
@@ -651,6 +652,8 @@ module.exports = {
     '4': '1rem',
     '6': '1.5rem',
     '8': '2rem',
+    '16': '4rem',
+    '32': '8rem'
   },
 
 
