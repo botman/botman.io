@@ -43,7 +43,10 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "php artisan optimize",
+            "git clone -b 1.4 https://github.com/botman/docs.git resources/docs/1.4",
+            "git clone -b 1.5 https://github.com/botman/docs.git resources/docs/1.5",
+            "git clone -b master https://github.com/botman/docs.git resources/docs/master"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
