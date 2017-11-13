@@ -78,6 +78,26 @@ a {
     @apply .bg-white .text-black
 }
 
+.botman-sidebar ul {
+    @apply .list-reset
+}
+
+.botman-sidebar > ul > li > ul {
+    @apply .mb-8
+}
+
+.botman-sidebar p {
+    @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide
+}
+
+.botman-sidebar p > a {
+    @apply .text-base .normal-case .leading-normal .text-black .tracking-normal
+}
+
+.botman-sidebar a {
+    @apply .leading-normal .text-black
+}
+
 @import "../../../node_modules/botui/build/botui.min.css";
 
 /**

@@ -681,6 +681,37 @@ a {
   color: #222b2f;
 }
 
+.botman-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.botman-sidebar > ul > li > ul {
+  margin-bottom: 2rem;
+}
+
+.botman-sidebar p {
+  font-size: .875rem;
+  text-transform: uppercase;
+  line-height: 2;
+  color: #596a73;
+  letter-spacing: 0.05em;
+}
+
+.botman-sidebar p > a {
+  font-size: 1rem;
+  text-transform: none;
+  line-height: 1.5;
+  color: #222b2f;
+  letter-spacing: 0;
+}
+
+.botman-sidebar a {
+  line-height: 1.5;
+  color: #222b2f;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -2487,6 +2518,22 @@ a {
   width: 83.33333%;
 }
 
+.w-8\/5-screen {
+  width: 160vw;
+}
+
+.w-3\/5-screen {
+  width: 60vw;
+}
+
+.w-4\/3-screen {
+  width: 133vw;
+}
+
+.w-1\/3-screen {
+  width: 33vw;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2839,6 +2886,36 @@ a {
 
 .p-8 {
   padding: 2rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pr-16 {
+  padding-right: 4rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
+.pl-16 {
+  padding-left: 4rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.p-16 {
+  padding: 4rem;
 }
 
 .pt-px {
@@ -5575,6 +5652,22 @@ a {
     width: 83.33333%;
   }
 
+  .sm\:w-8\/5-screen {
+    width: 160vw;
+  }
+
+  .sm\:w-3\/5-screen {
+    width: 60vw;
+  }
+
+  .sm\:w-4\/3-screen {
+    width: 133vw;
+  }
+
+  .sm\:w-1\/3-screen {
+    width: 33vw;
+  }
+
   .sm\:w-full {
     width: 100%;
   }
@@ -5927,6 +6020,36 @@ a {
 
   .sm\:p-8 {
     padding: 2rem;
+  }
+
+  .sm\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .sm\:pr-16 {
+    padding-right: 4rem;
+  }
+
+  .sm\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
+  .sm\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .sm\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .sm\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .sm\:p-16 {
+    padding: 4rem;
   }
 
   .sm\:pt-px {
@@ -8649,6 +8772,22 @@ a {
     width: 83.33333%;
   }
 
+  .md\:w-8\/5-screen {
+    width: 160vw;
+  }
+
+  .md\:w-3\/5-screen {
+    width: 60vw;
+  }
+
+  .md\:w-4\/3-screen {
+    width: 133vw;
+  }
+
+  .md\:w-1\/3-screen {
+    width: 33vw;
+  }
+
   .md\:w-full {
     width: 100%;
   }
@@ -9001,6 +9140,36 @@ a {
 
   .md\:p-8 {
     padding: 2rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .md\:pr-16 {
+    padding-right: 4rem;
+  }
+
+  .md\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
+  .md\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .md\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .md\:p-16 {
+    padding: 4rem;
   }
 
   .md\:pt-px {
@@ -11723,6 +11892,22 @@ a {
     width: 83.33333%;
   }
 
+  .lg\:w-8\/5-screen {
+    width: 160vw;
+  }
+
+  .lg\:w-3\/5-screen {
+    width: 60vw;
+  }
+
+  .lg\:w-4\/3-screen {
+    width: 133vw;
+  }
+
+  .lg\:w-1\/3-screen {
+    width: 33vw;
+  }
+
   .lg\:w-full {
     width: 100%;
   }
@@ -12075,6 +12260,36 @@ a {
 
   .lg\:p-8 {
     padding: 2rem;
+  }
+
+  .lg\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .lg\:pr-16 {
+    padding-right: 4rem;
+  }
+
+  .lg\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
+  .lg\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .lg\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .lg\:p-16 {
+    padding: 4rem;
   }
 
   .lg\:pt-px {
@@ -14797,6 +15012,22 @@ a {
     width: 83.33333%;
   }
 
+  .xl\:w-8\/5-screen {
+    width: 160vw;
+  }
+
+  .xl\:w-3\/5-screen {
+    width: 60vw;
+  }
+
+  .xl\:w-4\/3-screen {
+    width: 133vw;
+  }
+
+  .xl\:w-1\/3-screen {
+    width: 33vw;
+  }
+
   .xl\:w-full {
     width: 100%;
   }
@@ -15149,6 +15380,36 @@ a {
 
   .xl\:p-8 {
     padding: 2rem;
+  }
+
+  .xl\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .xl\:pr-16 {
+    padding-right: 4rem;
+  }
+
+  .xl\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
+  .xl\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .xl\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .xl\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .xl\:p-16 {
+    padding: 4rem;
   }
 
   .xl\:pt-px {
