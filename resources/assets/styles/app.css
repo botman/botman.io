@@ -36,6 +36,12 @@ a {
     }
 }
 
+@media(min-width: 577px) and (max-width: 768px) {
+    .menu-closed {
+        transform: translateX(-33vw);
+    }
+}
+
 .browser-mockup {
     background-color: #fff;
     border-top: 2em solid rgba(230, 230, 230, 0.7);
