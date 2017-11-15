@@ -334,6 +334,15 @@ $(function () {
     }
 });
 
+document.querySelector('.js-content-container').classList.add('menu-closed');
+
+document.querySelector('.js-toggle').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.querySelector('.js-content-container').classList.toggle('menu-closed');
+    document.querySelector('.js-toggle-close').classList.toggle('hidden');
+    document.querySelector('.js-toggle-open').classList.toggle('hidden');
+});
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {

@@ -30,6 +30,12 @@ a {
     @apply .no-underline
 }
 
+@media(max-width: 576px) {
+    .menu-closed {
+        transform: translateX(-60vw);
+    }
+}
+
 .browser-mockup {
     background-color: #fff;
     border-top: 2em solid rgba(230, 230, 230, 0.7);
@@ -120,3 +126,7 @@ a {
  * @import "utilities/backgrond-patterns";
  * @import "utilities/skew-transforms";
  */
+
+ .transition-200ms {
+     transition: 200ms;
+ }

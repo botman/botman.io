@@ -168,3 +168,12 @@ $(function(){
     }
 
 });
+
+document.querySelector('.js-content-container').classList.add('menu-closed');
+
+document.querySelector('.js-toggle').addEventListener('click', event => {
+    event.preventDefault();
+    document.querySelector('.js-content-container').classList.toggle('menu-closed');
+    document.querySelector('.js-toggle-close').classList.toggle('hidden');
+    document.querySelector('.js-toggle-open').classList.toggle('hidden');
+})

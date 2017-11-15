@@ -616,6 +616,13 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 576px) {
+  .menu-closed {
+    -webkit-transform: translateX(-60vw);
+            transform: translateX(-60vw);
+  }
+}
+
 .browser-mockup {
   background-color: #fff;
   border-top: 2em solid rgba(230, 230, 230, 0.7);
@@ -3876,6 +3883,11 @@ a {
  * @import "utilities/backgrond-patterns";
  * @import "utilities/skew-transforms";
  */
+
+.transition-200ms {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
 
 @media (min-width: 576px) {
   .sm\:appearance-none {
