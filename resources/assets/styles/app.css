@@ -129,7 +129,7 @@ h1, h2, h3, h4 {
  }
  
  .botman-sidebar p {
-     @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide
+     @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide .mb-0
  }
  
  .botman-sidebar p > a {
