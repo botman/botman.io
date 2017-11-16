@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "botui": "^0.3.4",
-        "bulma": "^0.6.0"
+        "bulma": "^0.6.0",
+        "prismjs": "^1.8.4"
     }
 }

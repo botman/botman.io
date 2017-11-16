@@ -8,24 +8,13 @@
  * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
  */
 @tailwind preflight;
+ 
+@import "../../../node_modules/prismjs/themes/prism.css";
+@import "../../../node_modules/prismjs/themes/prism-coy.css";
+@import "../../../node_modules/botui/build/botui.min.css";
+@import "../../../node_modules/botui/build/botui-theme-default.css";
 
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
- a {
+a {
     @apply .text-teal
 }
 a:hover {
@@ -36,6 +25,23 @@ p {
     @apply .mb-4
 }
 
+pre, pre[class*="language-"] {
+    @apply .my-4;
+}
+
+pre[class*="language-"] > code {
+    @apply .border-teal;
+    box-shadow: none;
+}
+
+.landing-code pre[class*="language-"] > code {
+    border-color: #919292;
+}
+
+pre[class*="language-"]::before, pre[class*="language-"]::after {
+    box-shadow: none;
+}
+
 code {
     @apply .bg-grey-lighter .px-2 .py-1
 }
@@ -44,117 +50,100 @@ h1, h2, h3, h4 {
     @apply .mb-4 mt-2
 }
 
-@media(max-width: 576px) {
-    .menu-closed {
-        transform: translateX(-60vw);
-    }
-}
-
-@media(min-width: 577px) and (max-width: 768px) {
-    .menu-closed {
-        transform: translateX(-33vw);
-    }
-}
-
-.browser-mockup {
-    background-color: #fff;
-    border-top: 2em solid rgba(230, 230, 230, 0.7);
-    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
-    position: relative;
-    border-radius: 3px 3px 0 0
-}
-
-.browser-mockup:before {
-    display: block;
-    position: absolute;
-    content: '';
-    top: -1.25em;
-    left: 1em;
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 50%;
-    background-color: #f44;
-    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
-}
-
-.landing-code {
-    height: 240px;
-}
-
-.landing-code pre[class*="language-"] {
-    margin: 0;
-    box-shadow: none;
-    border: none;
-}
-
-.btn {
-    @apply .py-4 .px-6 .no-underline .text-center .uppercase .tracking-wide .text-sm .inline-block;
-    transition: 200ms;
-}
-
-.btn-rounded-hover:hover {
-    @apply .rounded-full
-}
-
-.btn-outline {
-    @apply .border .rounded-full .mx-4
-}
-
-.btn-outline:hover {
-    @apply .bg-white .text-black
-}
-
-.botman-sidebar ul {
-    @apply .list-reset
-}
-
-.botman-sidebar > ul > li > ul {
-    @apply .mb-8
-}
-
-.botman-sidebar p {
-    @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide
-}
-
-.botman-sidebar p > a {
-    @apply .text-base .normal-case .leading-normal .text-black .tracking-normal
-}
-
-.botman-sidebar a {
-    @apply .leading-normal .text-black .no-underline
-}
-
-.botman-documentation-content h1 + ul {
-    @apply .list-reset .mt-4 .mb-8
-}
-
-.botman-documentation-content h1 + ul li a {
-    @apply .block .no-underline
-}
-
-@import "../../../node_modules/botui/build/botui.min.css";
-
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
  */
 @tailwind utilities;
 
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor..
- *
- * @import "utilities/backgrond-patterns";
- * @import "utilities/skew-transforms";
- */
-
  .transition-200ms {
      transition: 200ms;
+ }
+ 
+ @media(max-width: 576px) {
+     .menu-closed {
+         transform: translateX(-60vw);
+     }
+ }
+ 
+ @media(min-width: 577px) and (max-width: 768px) {
+     .menu-closed {
+         transform: translateX(-33vw);
+     }
+ }
+ 
+ .browser-mockup {
+     background-color: #fff;
+     border-top: 2em solid rgba(230, 230, 230, 0.7);
+     box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+     position: relative;
+     border-radius: 3px 3px 0 0
+ }
+ 
+ .browser-mockup:before {
+     display: block;
+     position: absolute;
+     content: '';
+     top: -1.25em;
+     left: 1em;
+     width: 0.5em;
+     height: 0.5em;
+     border-radius: 50%;
+     background-color: #f44;
+     box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+ }
+ 
+ .landing-code {
+     height: 240px;
+ }
+ 
+ .landing-code pre[class*="language-"] {
+     margin: 0;
+     box-shadow: none;
+     border: none;
+ }
+ 
+ .btn {
+     @apply .py-4 .px-6 .no-underline .text-center .uppercase .tracking-wide .text-sm .inline-block;
+     transition: 200ms;
+ }
+ 
+ .btn-rounded-hover:hover {
+     @apply .rounded-full
+ }
+ 
+ .btn-outline {
+     @apply .border .rounded-full .mx-4
+ }
+ 
+ .btn-outline:hover {
+     @apply .bg-white .text-black
+ }
+ 
+ .botman-sidebar ul {
+     @apply .list-reset
+ }
+ 
+ .botman-sidebar > ul > li > ul {
+     @apply .mb-8
+ }
+ 
+ .botman-sidebar p {
+     @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide
+ }
+ 
+ .botman-sidebar p > a {
+     @apply .text-base .normal-case .leading-normal .text-black .tracking-normal
+ }
+ 
+ .botman-sidebar a {
+     @apply .leading-normal .text-black .no-underline
+ }
+ 
+ .botman-documentation-content h1 + ul {
+     @apply .list-reset .mt-4 .mb-8
+ }
+ 
+ .botman-documentation-content h1 + ul li a {
+     @apply .block .no-underline
  }
