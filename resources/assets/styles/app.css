@@ -47,7 +47,7 @@ code {
 }
 
 h1, h2, h3, h4 {
-    @apply .mb-4 mt-2
+    @apply .mb-2 mt-8
 }
 
 /**
