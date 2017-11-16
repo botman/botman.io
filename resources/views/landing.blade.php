@@ -43,21 +43,21 @@
         </div>
         <footer class="p-4 mt-8 text-sm md:mt-16">
             <div class="text-center text-white">
-                <p>
+                <div>
                     <span>BotMan by</span>
-                    <a class="text-white" href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
-                </p>
-                <p class="mt-2">
-                    <a class="text-white px-1" href="https://github.com/botman/botman/stargazers">
+                    <a class="text-white no-underline" href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
+                </div>
+                <div class="mt-2">
+                    <a class="text-white px-1 no-underline" href="https://github.com/botman/botman/stargazers">
                         <i class="fa fa-star"></i> {{ $stars }} stargazers
                     </a>
-                    <a class="text-white px-1" href="https://twitter.com/botman_io">
+                    <a class="text-white px-1 no-underline" href="https://twitter.com/botman_io">
                         <i class="fa fa-twitter"></i> @botman_io
                     </a>
-                    <a class="text-white px-1" href="https://slack.botman.io">
+                    <a class="text-white px-1 no-underline" href="https://slack.botman.io">
                         <i class="fa fa-slack"></i> Slack
                     </a>
-                </p>
+                </div>
             </div>
         </footer>
     </section>

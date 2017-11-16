@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);/*
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);/*
  * botui 0.3.4
  * A JS library to build the UI for your bot
  * https://botui.org
@@ -613,7 +613,31 @@ button,
  */
 
 a {
-  text-decoration: none;
+  color: #4dc0b5;
+}
+
+a:hover {
+  color: #174e4b;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+code {
+  background-color: #f3f7f9;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 576px) {
@@ -724,6 +748,20 @@ a {
 .botman-sidebar a {
   line-height: 1.5;
   color: #222b2f;
+  text-decoration: none;
+}
+
+.botman-documentation-content h1 + ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.botman-documentation-content h1 + ul li a {
+  display: block;
+  text-decoration: none;
 }
 
 /**

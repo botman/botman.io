@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 /**
@@ -26,8 +25,23 @@
  * @import "components/forms";
  */
 
-a {
-    @apply .no-underline
+ a {
+    @apply .text-teal
+}
+a:hover {
+    @apply .text-teal-darker
+}
+
+p {
+    @apply .mb-4
+}
+
+code {
+    @apply .bg-grey-lighter .px-2 .py-1
+}
+
+h1, h2, h3, h4 {
+    @apply .mb-4 mt-2
 }
 
 @media(max-width: 576px) {
@@ -107,7 +121,15 @@ a {
 }
 
 .botman-sidebar a {
-    @apply .leading-normal .text-black
+    @apply .leading-normal .text-black .no-underline
+}
+
+.botman-documentation-content h1 + ul {
+    @apply .list-reset .mt-4 .mb-8
+}
+
+.botman-documentation-content h1 + ul li a {
+    @apply .block .no-underline
 }
 
 @import "../../../node_modules/botui/build/botui.min.css";
