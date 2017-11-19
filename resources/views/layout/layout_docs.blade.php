@@ -50,8 +50,8 @@
               <div class="navbar-item">
                 <div class="field is-grouped">
                   <p class="control">
-                    <a class="button is-inverted is-rounded is-outlined is-primary" href="https://buildachatbot.io/?utm_source=docs&utm_medium=navigation&utm_campaign=video_course" target="_blank">
-                      Video Course
+                    <a class="button is-inverted is-rounded is-primary" href="https://buildachatbot.io/?utm_source=docs&utm_medium=navigation&utm_campaign=video_course" target="_blank">
+                      <i class="fa fa-graduation-cap"></i>&nbsp;Video Course
                     </a>
                   </p>
                 </div>
