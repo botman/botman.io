@@ -1,4 +1,4 @@
-<nav class="fixed w-full flex items-center justify-between flex-wrap bg-teal h-16 p-6 z-50">
+<nav class="fixed w-full flex items-center justify-between flex-wrap bg-teal h-16 px-6 z-50">
   <div class="flex items-center flex-no-shrink text-white mr-6">
     <a href="/{{ config('botman.default_version') }}" class="inline-block align-middle">
         @svg('botman-head', ['class' => 'h-8 w-auto mr-2 -mt-1'])
