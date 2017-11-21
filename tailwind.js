@@ -474,6 +474,7 @@ module.exports = {
     '3/5-screen': '60vw',
     '4/3-screen': '133vw',
     '1/3-screen': '33vw',
+    '2/3-screen': '67vw',
     'full': '100%',
     'screen': '100vw'
   },

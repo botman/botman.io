@@ -59,16 +59,16 @@ h1, h2, h3, h4 {
 .transition-200ms {
     transition: 200ms;
 }
+
+@media(min-width: 577px) and (max-width: 768px) {
+   .menu-closed {
+       transform: translateX(-33vw);
+   }
+}
  
 @media(max-width: 576px) {
     .menu-closed {
         transform: translateX(-60vw);
-    }
-}
- 
-@media(min-width: 577px) and (max-width: 768px) {
-    .menu-closed {
-        transform: translateX(-33vw);
     }
 }
  
