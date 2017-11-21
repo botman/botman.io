@@ -4678,6 +4678,19 @@ h4 {
   text-decoration: none;
 }
 
+.carbon-text {
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.carbon-poweredby {
+  display: block;
+  font-size: .75rem;
+  text-decoration: none;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

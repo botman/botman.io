@@ -47,7 +47,7 @@ code {
 }
 
 h1, h2, h3, h4 {
-    @apply .mb-2 mt-8
+    @apply .mb-2 .mt-8
 }
 
 /**
@@ -56,21 +56,21 @@ h1, h2, h3, h4 {
  */
 @tailwind utilities;
 
- .transition-200ms {
-     transition: 200ms;
- }
+.transition-200ms {
+    transition: 200ms;
+}
  
- @media(max-width: 576px) {
-     .menu-closed {
-         transform: translateX(-60vw);
-     }
- }
+@media(max-width: 576px) {
+    .menu-closed {
+        transform: translateX(-60vw);
+    }
+}
  
- @media(min-width: 577px) and (max-width: 768px) {
-     .menu-closed {
-         transform: translateX(-33vw);
-     }
- }
+@media(min-width: 577px) and (max-width: 768px) {
+    .menu-closed {
+        transform: translateX(-33vw);
+    }
+}
  
  .browser-mockup {
      background-color: #fff;
@@ -147,3 +147,11 @@ h1, h2, h3, h4 {
  .botman-documentation-content h1 + ul li a {
      @apply .block .no-underline
  }
+
+.carbon-text {
+    @apply .block .mb-2 .leading-normal .no-underline
+}
+
+.carbon-poweredby {
+    @apply .block .text-xs .no-underline
+}
