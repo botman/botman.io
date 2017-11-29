@@ -60,16 +60,20 @@ h1, h2, h3, h4 {
     transition: 200ms;
 }
 
-@media(min-width: 577px) and (max-width: 768px) {
+.menu-closed {
+    transform: translateX(-60vw);
+}
+
+@screen sm {
    .menu-closed {
        transform: translateX(-33vw);
    }
 }
- 
-@media(max-width: 576px) {
-    .menu-closed {
-        transform: translateX(-60vw);
-    }
+
+@screen md {
+   .menu-closed {
+       transform: translateX(0);
+   }
 }
 
 .fill-none {

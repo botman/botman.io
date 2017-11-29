@@ -4557,17 +4557,22 @@ h4 {
   transition: 200ms;
 }
 
-@media (min-width: 577px) and (max-width: 768px) {
+.menu-closed {
+  -webkit-transform: translateX(-60vw);
+          transform: translateX(-60vw);
+}
+
+@media (min-width: 576px) {
   .menu-closed {
     -webkit-transform: translateX(-33vw);
             transform: translateX(-33vw);
   }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   .menu-closed {
-    -webkit-transform: translateX(-60vw);
-            transform: translateX(-60vw);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
