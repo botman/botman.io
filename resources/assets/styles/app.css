@@ -71,6 +71,14 @@ h1, h2, h3, h4 {
         transform: translateX(-60vw);
     }
 }
+
+.fill-none {
+    fill: none
+}
+
+.stroke-current {
+    stroke: currentColor;
+}
  
  .browser-mockup {
      background-color: #fff;
@@ -107,6 +115,16 @@ h1, h2, h3, h4 {
      @apply .py-4 .px-6 .no-underline .text-center .uppercase .tracking-wide .text-sm .inline-block;
      transition: 200ms;
  }
+ 
+ .btn-icon {
+     @apply .p-2;
+     line-height: 0.5rem;
+ }
+ 
+ .btn-icon-landing {
+     @apply .p-4;
+     line-height: 0.5rem;
+ }
 
  .btn-sm {
      @apply .py-2 .px-4
@@ -117,7 +135,7 @@ h1, h2, h3, h4 {
  }
  
  .btn-outline {
-     @apply .border .rounded-full .mx-4
+     @apply .border .rounded-full .mr-4
  }
  
  .btn-outline:hover {

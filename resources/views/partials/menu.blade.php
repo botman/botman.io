@@ -10,14 +10,18 @@
         </div>
         <div class="hidden"></div>
         <div class="w-2/3 text-right md:py-2">
-            <a class="btn text-white text-lg hidden md:inline" href="https://github.com/botman/botman">
-                <i class="fa fa-github"></i>
+            <a class="btn btn-icon-landing btn-rounded-hover border border-teal-light mr-4  text-white text-lg
+                rounded-full hidden md:inline-block align-middle hover:bg-teal-light"
+                href="https://github.com/botman/botman">
+                @svg('github', ['class' => 'h-4 w-4 fill-none stroke-current'])
             </a>
-            <a class="btn text-white text-lg hidden md:inline" href="https://twitter.com/botman_io">
-                <i class="fa fa-twitter"></i>
+            <a class="btn btn-icon-landing btn-rounded-hover border border-teal-light mr-4 text-white text-lg
+                rounded-full hidden md:inline-block align-middle hover:bg-teal-light"
+                href="https://twitter.com/botman_io">
+                @svg('twitter', ['class' => 'h-4 w-4 fill-none stroke-current'])
             </a>
             <a class="btn text-white btn-rounded-hover border border-teal-light rounded-full
-                hover:bg-teal-light"
+                hover:bg-teal-light mr-4"
                href="/{{ config('botman.default_version') }}">
                 Documentation
             </a>

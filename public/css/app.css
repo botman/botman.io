@@ -4571,6 +4571,14 @@ h4 {
   }
 }
 
+.fill-none {
+  fill: none;
+}
+
+.stroke-current {
+  stroke: currentColor;
+}
+
 .browser-mockup {
   background-color: #fff;
   border-top: 2em solid rgba(230, 230, 230, 0.7);
@@ -4620,6 +4628,16 @@ h4 {
   transition: 200ms;
 }
 
+.btn-icon {
+  padding: 0.5rem;
+  line-height: 0.5rem;
+}
+
+.btn-icon-landing {
+  padding: 1rem;
+  line-height: 0.5rem;
+}
+
 .btn-sm {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -4634,7 +4652,6 @@ h4 {
 .btn-outline {
   border-width: 1px;
   border-radius: 9999px;
-  margin-left: 1rem;
   margin-right: 1rem;
 }
 

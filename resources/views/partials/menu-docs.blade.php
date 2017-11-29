@@ -9,26 +9,16 @@
   </div>
   <div class="block md:hidden">
     <button class="js-toggle flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light">
-        <svg class="js-toggle-close h-3 w-3 hidden" viewBox="0 0 20 20" version="1.1"
-            xmlns="http://www.w3.org/2000/svg">
-            <line x1="1" y1="20" 
-                x2="20" y2="1" 
-                stroke="white" 
-                stroke-width="1"/>
-            <line x1="1" y1="1" 
-                x2="20" y2="20" 
-                stroke="white" 
-                stroke-width="1"/>
-        </svg>
-        <svg class="js-toggle-open h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        @svg('close', ['class' => 'js-toggle-close h-3 w-3 hidden'])
+        @svg('open', ['class' => 'js-toggle-open h-3 w-3'])
     </button>
   </div>
   <div class="w-full block hidden md:flex md:justify-end md:w-auto md:items-center">
-    <a class="btn text-white text-lg hidden md:inline" href="https://github.com/botman/botman">
-        <i class="fa fa-github"></i>
+    <a class="btn btn-outline btn-icon text-white text-lg rounded-full hidden md:inline" href="https://github.com/botman/botman">
+        @svg('github', ['class' => 'h-4 w-4 fill-none stroke-current'])
     </a>
-    <a class="btn text-white text-lg hidden md:inline" href="https://twitter.com/botman_io">
-        <i class="fa fa-twitter"></i>
+    <a class="btn btn-outline btn-icon text-white text-lg rounded-full hidden md:inline" href="https://twitter.com/botman_io">
+        @svg('twitter', ['class' => 'h-4 w-4 fill-none stroke-current'])
     </a>
     <a class="btn btn-sm btn-outline text-white border border-white hidden md:inline"
         href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
