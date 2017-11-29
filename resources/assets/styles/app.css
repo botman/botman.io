@@ -107,6 +107,10 @@ h1, h2, h3, h4 {
      @apply .py-4 .px-6 .no-underline .text-center .uppercase .tracking-wide .text-sm .inline-block;
      transition: 200ms;
  }
+
+ .btn-sm {
+     @apply .py-2 .px-4
+ }
  
  .btn-rounded-hover:hover {
      @apply .rounded-full

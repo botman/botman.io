@@ -23,21 +23,17 @@
         <svg class="js-toggle-open h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
-  <div class="w-full block flex-grow hidden md:flex md:justify-end md:w-auto">
+  <div class="w-full block hidden md:flex md:justify-end md:w-auto md:items-center">
     <a class="btn text-white text-lg hidden md:inline" href="https://github.com/botman/botman">
         <i class="fa fa-github"></i>
     </a>
     <a class="btn text-white text-lg hidden md:inline" href="https://twitter.com/botman_io">
         <i class="fa fa-twitter"></i>
     </a>
-    <a class="btn text-white btn-rounded-hover border border-teal-light rounded-full
-        hover:bg-teal-light"
-        href="/{{ config('botman.default_version') }}">
-        Documentation
-    </a>
-    <a class="btn btn-outline text-white border border-white hidden md:inline"
+    <a class="btn btn-sm btn-outline text-white border border-white hidden md:inline"
         href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
-        target="_blank">
+        target="_blank"
+    >
         Video Course
     </a>
   </div>
