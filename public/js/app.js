@@ -343,6 +343,10 @@ document.querySelector('.js-toggle').addEventListener('click', function (event) 
     document.querySelector('.js-toggle-open').classList.toggle('hidden');
 });
 
+document.querySelector('.js-version-switcher').addEventListener('change', function (event) {
+    document.location.href = '/' + event.target.value + '/' + window.location.pathname.split('/').slice(2).join('/');
+});
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {

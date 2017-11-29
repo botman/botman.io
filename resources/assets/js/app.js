@@ -177,3 +177,7 @@ document.querySelector('.js-toggle').addEventListener('click', event => {
     document.querySelector('.js-toggle-close').classList.toggle('hidden');
     document.querySelector('.js-toggle-open').classList.toggle('hidden');
 })
+
+document.querySelector('.js-version-switcher').addEventListener('change', event => {
+    document.location.href = '/' + event.target.value + '/' + window.location.pathname.split('/').slice(2).join('/');
+})
