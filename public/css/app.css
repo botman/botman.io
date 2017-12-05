@@ -4729,6 +4729,12 @@ h4 {
   max-width: 40rem;
 }
 
+.autocomplete-wrapper em {
+  font-style: normal;
+  background-color: #f3f7f9;
+  display: inline-block;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;
