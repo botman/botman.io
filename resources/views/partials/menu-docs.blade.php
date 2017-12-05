@@ -31,14 +31,15 @@
     >
         Video Course
     </a>
-    <div class="px-4 py-2 rounded-full border border-white">
-        <select class="js-version-switcher uppercase text-sm bg-transparent border-0 text-white outline-none">
+    <div class="px-4 py-2 rounded-full border border-white text-white">
+        <select class="js-version-switcher uppercase text-sm bg-transparent text-white appearance-none border-0">
             @foreach(config('botman.available_versions') as $version)
                 <option {{ ($version == $currentVersion) ? 'selected' : ''  }} value="{{ $version }}" class="text-black">
                     {{ $version }}
                 </option>
             @endforeach
         </select>
+        <span>&#9662;</span>
     </div>
   </div>
 </nav>
