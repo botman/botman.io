@@ -4724,6 +4724,11 @@ h4 {
   text-decoration: none;
 }
 
+.twitter-typeahead {
+  width: 100%;
+  max-width: 40rem;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

@@ -181,3 +181,7 @@ h1, h2, h3, h4 {
 .carbon-poweredby {
     @apply .block .text-xs .no-underline
 }
+
+.twitter-typeahead {
+    @apply .w-full .max-w-md
+}

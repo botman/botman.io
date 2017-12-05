@@ -154,7 +154,7 @@ exports.clearImmediate = clearImmediate;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(3);
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(20);
 
 
 /***/ }),
@@ -163,7 +163,7 @@ module.exports = __webpack_require__(18);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_botui__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_botui__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_botui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_botui__);
 
 /**
@@ -173,10 +173,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 __webpack_require__(4);
-__webpack_require__(28);
+__webpack_require__(16);
 
-var algoliasearch = __webpack_require__(27);
-var Hogan = __webpack_require__(16);
+var algoliasearch = __webpack_require__(17);
+var Hogan = __webpack_require__(18);
 
 
 if ($('#landing-bot').length > 0) {
@@ -44696,780 +44696,187 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*!
- *  Copyright 2011 Twitter, Inc.
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *  http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-var Hogan = {};
+/*!
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=f615d1faad9e6857969fccaa7220ae5a)
+ * Config saved to config.json and https://gist.github.com/f615d1faad9e6857969fccaa7220ae5a
+ */
+if (typeof jQuery === 'undefined') {
+  throw new Error('Bootstrap\'s JavaScript requires jQuery');
+}
++function ($) {
+  'use strict';
 
-(function (Hogan) {
-    Hogan.Template = function (codeObj, text, compiler, options) {
-        codeObj = codeObj || {};
-        this.r = codeObj.code || this.r;
-        this.c = compiler;
-        this.options = options || {};
-        this.text = text || '';
-        this.partials = codeObj.partials || {};
-        this.subs = codeObj.subs || {};
-        this.buf = '';
-    };
+  var version = $.fn.jquery.split(' ')[0].split('.');
+  if (version[0] < 2 && version[1] < 9 || version[0] == 1 && version[1] == 9 && version[2] < 1 || version[0] > 3) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4');
+  }
+}(jQuery);
 
-    Hogan.Template.prototype = {
-        // render: replaced by generated code.
-        r: function r(context, partials, indent) {
-            return '';
-        },
+/* ========================================================================
+ * Bootstrap: affix.js v3.3.7
+ * http://getbootstrap.com/javascript/#affix
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
 
-        // variable escaping
-        v: hoganEscape,
++function ($) {
+  'use strict';
 
-        // triple stache
-        t: coerceToString,
+  // AFFIX CLASS DEFINITION
+  // ======================
 
-        render: function render(context, partials, indent) {
-            return this.ri([context], partials || {}, indent);
-        },
+  var Affix = function Affix(element, options) {
+    this.options = $.extend({}, Affix.DEFAULTS, options);
 
-        // render internal -- a hook for overrides that catches partials too
-        ri: function ri(context, partials, indent) {
-            return this.r(context, partials, indent);
-        },
+    this.$target = $(this.options.target).on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this)).on('click.bs.affix.data-api', $.proxy(this.checkPositionWithEventLoop, this));
 
-        // ensurePartial
-        ep: function ep(symbol, partials) {
-            var partial = this.partials[symbol];
+    this.$element = $(element);
+    this.affixed = null;
+    this.unpin = null;
+    this.pinnedOffset = null;
 
-            // check to see that if we've instantiated this partial before
-            var template = partials[partial.name];
-            if (partial.instance && partial.base == template) {
-                return partial.instance;
-            }
+    this.checkPosition();
+  };
 
-            if (typeof template == 'string') {
-                if (!this.c) {
-                    throw new Error("No compiler available.");
-                }
-                template = this.c.compile(template, this.options);
-            }
+  Affix.VERSION = '3.3.7';
 
-            if (!template) {
-                return null;
-            }
+  Affix.RESET = 'affix affix-top affix-bottom';
 
-            // We use this to check whether the partials dictionary has changed
-            this.partials[symbol].base = template;
+  Affix.DEFAULTS = {
+    offset: 0,
+    target: window
+  };
 
-            if (partial.subs) {
-                // Make sure we consider parent template now
-                if (!partials.stackText) partials.stackText = {};
-                for (key in partial.subs) {
-                    if (!partials.stackText[key]) {
-                        partials.stackText[key] = this.activeSub !== undefined && partials.stackText[this.activeSub] ? partials.stackText[this.activeSub] : this.text;
-                    }
-                }
-                template = createSpecializedPartial(template, partial.subs, partial.partials, this.stackSubs, this.stackPartials, partials.stackText);
-            }
-            this.partials[symbol].instance = template;
+  Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
+    var scrollTop = this.$target.scrollTop();
+    var position = this.$element.offset();
+    var targetHeight = this.$target.height();
 
-            return template;
-        },
+    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false;
 
-        // tries to find a partial in the current scope and render it
-        rp: function rp(symbol, context, partials, indent) {
-            var partial = this.ep(symbol, partials);
-            if (!partial) {
-                return '';
-            }
-
-            return partial.ri(context, partials, indent);
-        },
-
-        // render a section
-        rs: function rs(context, partials, section) {
-            var tail = context[context.length - 1];
-
-            if (!isArray(tail)) {
-                section(context, partials, this);
-                return;
-            }
-
-            for (var i = 0; i < tail.length; i++) {
-                context.push(tail[i]);
-                section(context, partials, this);
-                context.pop();
-            }
-        },
-
-        // maybe start a section
-        s: function s(val, ctx, partials, inverted, start, end, tags) {
-            var pass;
-
-            if (isArray(val) && val.length === 0) {
-                return false;
-            }
-
-            if (typeof val == 'function') {
-                val = this.ms(val, ctx, partials, inverted, start, end, tags);
-            }
-
-            pass = !!val;
-
-            if (!inverted && pass && ctx) {
-                ctx.push((typeof val === 'undefined' ? 'undefined' : _typeof(val)) == 'object' ? val : ctx[ctx.length - 1]);
-            }
-
-            return pass;
-        },
-
-        // find values with dotted names
-        d: function d(key, ctx, partials, returnFound) {
-            var found,
-                names = key.split('.'),
-                val = this.f(names[0], ctx, partials, returnFound),
-                doModelGet = this.options.modelGet,
-                cx = null;
-
-            if (key === '.' && isArray(ctx[ctx.length - 2])) {
-                val = ctx[ctx.length - 1];
-            } else {
-                for (var i = 1; i < names.length; i++) {
-                    found = findInScope(names[i], val, doModelGet);
-                    if (found !== undefined) {
-                        cx = val;
-                        val = found;
-                    } else {
-                        val = '';
-                    }
-                }
-            }
-
-            if (returnFound && !val) {
-                return false;
-            }
-
-            if (!returnFound && typeof val == 'function') {
-                ctx.push(cx);
-                val = this.mv(val, ctx, partials);
-                ctx.pop();
-            }
-
-            return val;
-        },
-
-        // find values with normal names
-        f: function f(key, ctx, partials, returnFound) {
-            var val = false,
-                v = null,
-                found = false,
-                doModelGet = this.options.modelGet;
-
-            for (var i = ctx.length - 1; i >= 0; i--) {
-                v = ctx[i];
-                val = findInScope(key, v, doModelGet);
-                if (val !== undefined) {
-                    found = true;
-                    break;
-                }
-            }
-
-            if (!found) {
-                return returnFound ? false : "";
-            }
-
-            if (!returnFound && typeof val == 'function') {
-                val = this.mv(val, ctx, partials);
-            }
-
-            return val;
-        },
-
-        // higher order templates
-        ls: function ls(func, cx, partials, text, tags) {
-            var oldTags = this.options.delimiters;
-
-            this.options.delimiters = tags;
-            this.b(this.ct(coerceToString(func.call(cx, text)), cx, partials));
-            this.options.delimiters = oldTags;
-
-            return false;
-        },
-
-        // compile text
-        ct: function ct(text, cx, partials) {
-            if (this.options.disableLambda) {
-                throw new Error('Lambda features disabled.');
-            }
-            return this.c.compile(text, this.options).render(cx, partials);
-        },
-
-        // template result buffering
-        b: function b(s) {
-            this.buf += s;
-        },
-
-        fl: function fl() {
-            var r = this.buf;this.buf = '';return r;
-        },
-
-        // method replace section
-        ms: function ms(func, ctx, partials, inverted, start, end, tags) {
-            var textSource,
-                cx = ctx[ctx.length - 1],
-                result = func.call(cx);
-
-            if (typeof result == 'function') {
-                if (inverted) {
-                    return true;
-                } else {
-                    textSource = this.activeSub && this.subsText && this.subsText[this.activeSub] ? this.subsText[this.activeSub] : this.text;
-                    return this.ls(result, cx, partials, textSource.substring(start, end), tags);
-                }
-            }
-
-            return result;
-        },
-
-        // method replace variable
-        mv: function mv(func, ctx, partials) {
-            var cx = ctx[ctx.length - 1];
-            var result = func.call(cx);
-
-            if (typeof result == 'function') {
-                return this.ct(coerceToString(result.call(cx)), cx, partials);
-            }
-
-            return result;
-        },
-
-        sub: function sub(name, context, partials, indent) {
-            var f = this.subs[name];
-            if (f) {
-                this.activeSub = name;
-                f(context, partials, this, indent);
-                this.activeSub = false;
-            }
-        }
-
-    };
-
-    //Find a key in an object
-    function findInScope(key, scope, doModelGet) {
-        var val;
-
-        if (scope && (typeof scope === 'undefined' ? 'undefined' : _typeof(scope)) == 'object') {
-
-            if (scope[key] !== undefined) {
-                val = scope[key];
-
-                // try lookup with get for backbone or similar model data
-            } else if (doModelGet && scope.get && typeof scope.get == 'function') {
-                val = scope.get(key);
-            }
-        }
-
-        return val;
+    if (this.affixed == 'bottom') {
+      if (offsetTop != null) return scrollTop + this.unpin <= position.top ? false : 'bottom';
+      return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
     }
 
-    function createSpecializedPartial(instance, subs, partials, stackSubs, stackPartials, stackText) {
-        function PartialTemplate() {};
-        PartialTemplate.prototype = instance;
-        function Substitutions() {};
-        Substitutions.prototype = instance.subs;
-        var key;
-        var partial = new PartialTemplate();
-        partial.subs = new Substitutions();
-        partial.subsText = {}; //hehe. substext.
-        partial.buf = '';
+    var initializing = this.affixed == null;
+    var colliderTop = initializing ? scrollTop : position.top;
+    var colliderHeight = initializing ? targetHeight : height;
 
-        stackSubs = stackSubs || {};
-        partial.stackSubs = stackSubs;
-        partial.subsText = stackText;
-        for (key in subs) {
-            if (!stackSubs[key]) stackSubs[key] = subs[key];
-        }
-        for (key in stackSubs) {
-            partial.subs[key] = stackSubs[key];
-        }
+    if (offsetTop != null && scrollTop <= offsetTop) return 'top';
+    if (offsetBottom != null && colliderTop + colliderHeight >= scrollHeight - offsetBottom) return 'bottom';
 
-        stackPartials = stackPartials || {};
-        partial.stackPartials = stackPartials;
-        for (key in partials) {
-            if (!stackPartials[key]) stackPartials[key] = partials[key];
-        }
-        for (key in stackPartials) {
-            partial.partials[key] = stackPartials[key];
-        }
+    return false;
+  };
 
-        return partial;
+  Affix.prototype.getPinnedOffset = function () {
+    if (this.pinnedOffset) return this.pinnedOffset;
+    this.$element.removeClass(Affix.RESET).addClass('affix');
+    var scrollTop = this.$target.scrollTop();
+    var position = this.$element.offset();
+    return this.pinnedOffset = position.top - scrollTop;
+  };
+
+  Affix.prototype.checkPositionWithEventLoop = function () {
+    setTimeout($.proxy(this.checkPosition, this), 1);
+  };
+
+  Affix.prototype.checkPosition = function () {
+    if (!this.$element.is(':visible')) return;
+
+    var height = this.$element.height();
+    var offset = this.options.offset;
+    var offsetTop = offset.top;
+    var offsetBottom = offset.bottom;
+    var scrollHeight = Math.max($(document).height(), $(document.body).height());
+
+    if ((typeof offset === 'undefined' ? 'undefined' : _typeof(offset)) != 'object') offsetBottom = offsetTop = offset;
+    if (typeof offsetTop == 'function') offsetTop = offset.top(this.$element);
+    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element);
+
+    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
+
+    if (this.affixed != affix) {
+      if (this.unpin != null) this.$element.css('top', '');
+
+      var affixType = 'affix' + (affix ? '-' + affix : '');
+      var e = $.Event(affixType + '.bs.affix');
+
+      this.$element.trigger(e);
+
+      if (e.isDefaultPrevented()) return;
+
+      this.affixed = affix;
+      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null;
+
+      this.$element.removeClass(Affix.RESET).addClass(affixType).trigger(affixType.replace('affix', 'affixed') + '.bs.affix');
     }
 
-    var rAmp = /&/g,
-        rLt = /</g,
-        rGt = />/g,
-        rApos = /\'/g,
-        rQuot = /\"/g,
-        hChars = /[&<>\"\']/;
-
-    function coerceToString(val) {
-        return String(val === null || val === undefined ? '' : val);
+    if (affix == 'bottom') {
+      this.$element.offset({
+        top: scrollHeight - height - offsetBottom
+      });
     }
+  };
 
-    function hoganEscape(str) {
-        str = coerceToString(str);
-        return hChars.test(str) ? str.replace(rAmp, '&amp;').replace(rLt, '&lt;').replace(rGt, '&gt;').replace(rApos, '&#39;').replace(rQuot, '&quot;') : str;
-    }
+  // AFFIX PLUGIN DEFINITION
+  // =======================
 
-    var isArray = Array.isArray || function (a) {
-        return Object.prototype.toString.call(a) === '[object Array]';
-    };
-})( true ? exports : Hogan);
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this);
+      var data = $this.data('bs.affix');
+      var options = (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option;
 
-(function (Hogan) {
-    // Setup regex  assignments
-    // remove whitespace according to Mustache spec
-    var rIsWhitespace = /\S/,
-        rQuot = /\"/g,
-        rNewline = /\n/g,
-        rCr = /\r/g,
-        rSlash = /\\/g,
-        rLineSep = /\u2028/,
-        rParagraphSep = /\u2029/;
+      if (!data) $this.data('bs.affix', data = new Affix(this, options));
+      if (typeof option == 'string') data[option]();
+    });
+  }
 
-    Hogan.tags = {
-        '#': 1, '^': 2, '<': 3, '$': 4,
-        '/': 5, '!': 6, '>': 7, '=': 8, '_v': 9,
-        '{': 10, '&': 11, '_t': 12
-    };
+  var old = $.fn.affix;
 
-    Hogan.scan = function scan(text, delimiters) {
-        var len = text.length,
-            IN_TEXT = 0,
-            IN_TAG_TYPE = 1,
-            IN_TAG = 2,
-            state = IN_TEXT,
-            tagType = null,
-            tag = null,
-            buf = '',
-            tokens = [],
-            seenTag = false,
-            i = 0,
-            lineStart = 0,
-            otag = '{{',
-            ctag = '}}';
+  $.fn.affix = Plugin;
+  $.fn.affix.Constructor = Affix;
 
-        function addBuf() {
-            if (buf.length > 0) {
-                tokens.push({ tag: '_t', text: new String(buf) });
-                buf = '';
-            }
-        }
+  // AFFIX NO CONFLICT
+  // =================
 
-        function lineIsWhitespace() {
-            var isAllWhitespace = true;
-            for (var j = lineStart; j < tokens.length; j++) {
-                isAllWhitespace = Hogan.tags[tokens[j].tag] < Hogan.tags['_v'] || tokens[j].tag == '_t' && tokens[j].text.match(rIsWhitespace) === null;
-                if (!isAllWhitespace) {
-                    return false;
-                }
-            }
+  $.fn.affix.noConflict = function () {
+    $.fn.affix = old;
+    return this;
+  };
 
-            return isAllWhitespace;
-        }
+  // AFFIX DATA-API
+  // ==============
 
-        function filterLine(haveSeenTag, noNewLine) {
-            addBuf();
+  $(window).on('load', function () {
+    $('[data-spy="affix"]').each(function () {
+      var $spy = $(this);
+      var data = $spy.data();
 
-            if (haveSeenTag && lineIsWhitespace()) {
-                for (var j = lineStart, next; j < tokens.length; j++) {
-                    if (tokens[j].text) {
-                        if ((next = tokens[j + 1]) && next.tag == '>') {
-                            // set indent to token value
-                            next.indent = tokens[j].text.toString();
-                        }
-                        tokens.splice(j, 1);
-                    }
-                }
-            } else if (!noNewLine) {
-                tokens.push({ tag: '\n' });
-            }
+      data.offset = data.offset || {};
 
-            seenTag = false;
-            lineStart = tokens.length;
-        }
+      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom;
+      if (data.offsetTop != null) data.offset.top = data.offsetTop;
 
-        function changeDelimiters(text, index) {
-            var close = '=' + ctag,
-                closeIndex = text.indexOf(close, index),
-                delimiters = trim(text.substring(text.indexOf('=', index) + 1, closeIndex)).split(' ');
-
-            otag = delimiters[0];
-            ctag = delimiters[delimiters.length - 1];
-
-            return closeIndex + close.length - 1;
-        }
-
-        if (delimiters) {
-            delimiters = delimiters.split(' ');
-            otag = delimiters[0];
-            ctag = delimiters[1];
-        }
-
-        for (i = 0; i < len; i++) {
-            if (state == IN_TEXT) {
-                if (tagChange(otag, text, i)) {
-                    --i;
-                    addBuf();
-                    state = IN_TAG_TYPE;
-                } else {
-                    if (text.charAt(i) == '\n') {
-                        filterLine(seenTag);
-                    } else {
-                        buf += text.charAt(i);
-                    }
-                }
-            } else if (state == IN_TAG_TYPE) {
-                i += otag.length - 1;
-                tag = Hogan.tags[text.charAt(i + 1)];
-                tagType = tag ? text.charAt(i + 1) : '_v';
-                if (tagType == '=') {
-                    i = changeDelimiters(text, i);
-                    state = IN_TEXT;
-                } else {
-                    if (tag) {
-                        i++;
-                    }
-                    state = IN_TAG;
-                }
-                seenTag = i;
-            } else {
-                if (tagChange(ctag, text, i)) {
-                    tokens.push({ tag: tagType, n: trim(buf), otag: otag, ctag: ctag,
-                        i: tagType == '/' ? seenTag - otag.length : i + ctag.length });
-                    buf = '';
-                    i += ctag.length - 1;
-                    state = IN_TEXT;
-                    if (tagType == '{') {
-                        if (ctag == '}}') {
-                            i++;
-                        } else {
-                            cleanTripleStache(tokens[tokens.length - 1]);
-                        }
-                    }
-                } else {
-                    buf += text.charAt(i);
-                }
-            }
-        }
-
-        filterLine(seenTag, true);
-
-        return tokens;
-    };
-
-    function cleanTripleStache(token) {
-        if (token.n.substr(token.n.length - 1) === '}') {
-            token.n = token.n.substring(0, token.n.length - 1);
-        }
-    }
-
-    function trim(s) {
-        if (s.trim) {
-            return s.trim();
-        }
-
-        return s.replace(/^\s*|\s*$/g, '');
-    }
-
-    function tagChange(tag, text, index) {
-        if (text.charAt(index) != tag.charAt(0)) {
-            return false;
-        }
-
-        for (var i = 1, l = tag.length; i < l; i++) {
-            if (text.charAt(index + i) != tag.charAt(i)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    // the tags allowed inside super templates
-    var allowedInSuper = { '_t': true, '\n': true, '$': true, '/': true };
-
-    function buildTree(tokens, kind, stack, customTags) {
-        var instructions = [],
-            opener = null,
-            tail = null,
-            token = null;
-
-        tail = stack[stack.length - 1];
-
-        while (tokens.length > 0) {
-            token = tokens.shift();
-
-            if (tail && tail.tag == '<' && !(token.tag in allowedInSuper)) {
-                throw new Error('Illegal content in < super tag.');
-            }
-
-            if (Hogan.tags[token.tag] <= Hogan.tags['$'] || isOpener(token, customTags)) {
-                stack.push(token);
-                token.nodes = buildTree(tokens, token.tag, stack, customTags);
-            } else if (token.tag == '/') {
-                if (stack.length === 0) {
-                    throw new Error('Closing tag without opener: /' + token.n);
-                }
-                opener = stack.pop();
-                if (token.n != opener.n && !isCloser(token.n, opener.n, customTags)) {
-                    throw new Error('Nesting error: ' + opener.n + ' vs. ' + token.n);
-                }
-                opener.end = token.i;
-                return instructions;
-            } else if (token.tag == '\n') {
-                token.last = tokens.length == 0 || tokens[0].tag == '\n';
-            }
-
-            instructions.push(token);
-        }
-
-        if (stack.length > 0) {
-            throw new Error('missing closing tag: ' + stack.pop().n);
-        }
-
-        return instructions;
-    }
-
-    function isOpener(token, tags) {
-        for (var i = 0, l = tags.length; i < l; i++) {
-            if (tags[i].o == token.n) {
-                token.tag = '#';
-                return true;
-            }
-        }
-    }
-
-    function isCloser(close, open, tags) {
-        for (var i = 0, l = tags.length; i < l; i++) {
-            if (tags[i].c == close && tags[i].o == open) {
-                return true;
-            }
-        }
-    }
-
-    function stringifySubstitutions(obj) {
-        var items = [];
-        for (var key in obj) {
-            items.push('"' + esc(key) + '": function(c,p,t,i) {' + obj[key] + '}');
-        }
-        return "{ " + items.join(",") + " }";
-    }
-
-    function stringifyPartials(codeObj) {
-        var partials = [];
-        for (var key in codeObj.partials) {
-            partials.push('"' + esc(key) + '":{name:"' + esc(codeObj.partials[key].name) + '", ' + stringifyPartials(codeObj.partials[key]) + "}");
-        }
-        return "partials: {" + partials.join(",") + "}, subs: " + stringifySubstitutions(codeObj.subs);
-    }
-
-    Hogan.stringify = function (codeObj, text, options) {
-        return "{code: function (c,p,i) { " + Hogan.wrapMain(codeObj.code) + " }," + stringifyPartials(codeObj) + "}";
-    };
-
-    var serialNo = 0;
-    Hogan.generate = function (tree, text, options) {
-        serialNo = 0;
-        var context = { code: '', subs: {}, partials: {} };
-        Hogan.walk(tree, context);
-
-        if (options.asString) {
-            return this.stringify(context, text, options);
-        }
-
-        return this.makeTemplate(context, text, options);
-    };
-
-    Hogan.wrapMain = function (code) {
-        return 'var t=this;t.b(i=i||"");' + code + 'return t.fl();';
-    };
-
-    Hogan.template = Hogan.Template;
-
-    Hogan.makeTemplate = function (codeObj, text, options) {
-        var template = this.makePartials(codeObj);
-        template.code = new Function('c', 'p', 'i', this.wrapMain(codeObj.code));
-        return new this.template(template, text, this, options);
-    };
-
-    Hogan.makePartials = function (codeObj) {
-        var key,
-            template = { subs: {}, partials: codeObj.partials, name: codeObj.name };
-        for (key in template.partials) {
-            template.partials[key] = this.makePartials(template.partials[key]);
-        }
-        for (key in codeObj.subs) {
-            template.subs[key] = new Function('c', 'p', 't', 'i', codeObj.subs[key]);
-        }
-        return template;
-    };
-
-    function esc(s) {
-        return s.replace(rSlash, '\\\\').replace(rQuot, '\\\"').replace(rNewline, '\\n').replace(rCr, '\\r').replace(rLineSep, '\\u2028').replace(rParagraphSep, '\\u2029');
-    }
-
-    function chooseMethod(s) {
-        return ~s.indexOf('.') ? 'd' : 'f';
-    }
-
-    function createPartial(node, context) {
-        var prefix = "<" + (context.prefix || "");
-        var sym = prefix + node.n + serialNo++;
-        context.partials[sym] = { name: node.n, partials: {} };
-        context.code += 't.b(t.rp("' + esc(sym) + '",c,p,"' + (node.indent || '') + '"));';
-        return sym;
-    }
-
-    Hogan.codegen = {
-        '#': function _(node, context) {
-            context.code += 'if(t.s(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,1),' + 'c,p,0,' + node.i + ',' + node.end + ',"' + node.otag + " " + node.ctag + '")){' + 't.rs(c,p,' + 'function(c,p,t){';
-            Hogan.walk(node.nodes, context);
-            context.code += '});c.pop();}';
-        },
-
-        '^': function _(node, context) {
-            context.code += 'if(!t.s(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,1),c,p,1,0,0,"")){';
-            Hogan.walk(node.nodes, context);
-            context.code += '};';
-        },
-
-        '>': createPartial,
-        '<': function _(node, context) {
-            var ctx = { partials: {}, code: '', subs: {}, inPartial: true };
-            Hogan.walk(node.nodes, ctx);
-            var template = context.partials[createPartial(node, context)];
-            template.subs = ctx.subs;
-            template.partials = ctx.partials;
-        },
-
-        '$': function $(node, context) {
-            var ctx = { subs: {}, code: '', partials: context.partials, prefix: node.n };
-            Hogan.walk(node.nodes, ctx);
-            context.subs[node.n] = ctx.code;
-            if (!context.inPartial) {
-                context.code += 't.sub("' + esc(node.n) + '",c,p,i);';
-            }
-        },
-
-        '\n': function _(node, context) {
-            context.code += write('"\\n"' + (node.last ? '' : ' + i'));
-        },
-
-        '_v': function _v(node, context) {
-            context.code += 't.b(t.v(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,0)));';
-        },
-
-        '_t': function _t(node, context) {
-            context.code += write('"' + esc(node.text) + '"');
-        },
-
-        '{': tripleStache,
-
-        '&': tripleStache
-    };
-
-    function tripleStache(node, context) {
-        context.code += 't.b(t.t(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,0)));';
-    }
-
-    function write(s) {
-        return 't.b(' + s + ');';
-    }
-
-    Hogan.walk = function (nodelist, context) {
-        var func;
-        for (var i = 0, l = nodelist.length; i < l; i++) {
-            func = Hogan.codegen[nodelist[i].tag];
-            func && func(nodelist[i], context);
-        }
-        return context;
-    };
-
-    Hogan.parse = function (tokens, text, options) {
-        options = options || {};
-        return buildTree(tokens, '', [], options.sectionTags || []);
-    };
-
-    Hogan.cache = {};
-
-    Hogan.cacheKey = function (text, options) {
-        return [text, !!options.asString, !!options.disableLambda, options.delimiters, !!options.modelGet].join('||');
-    };
-
-    Hogan.compile = function (text, options) {
-        options = options || {};
-        var key = Hogan.cacheKey(text, options);
-        var template = this.cache[key];
-
-        if (template) {
-            var partials = template.partials;
-            for (var name in partials) {
-                delete partials[name].instance;
-            }
-            return template;
-        }
-
-        template = this.generate(this.parse(this.scan(text, options.delimiters), text, options), text, options);
-        return this.cache[key] = template;
-    };
-})( true ? exports : Hogan);
+      Plugin.call($spy, data);
+    });
+  });
+}(jQuery);
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
- * botui 0.3.4
- * A JS library to build the UI for your bot
- * https://botui.org
- *
- * Copyright 2017, Moin Uddin
- * Released under the MIT license.
-*/
-
-!function(e,t){"use strict"; true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function(){return e.BotUI=t(e)}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):e.BotUI=t(e)}("undefined"!=typeof window?window:this,function(e,t){"use strict";return function(t,n){function o(e,t,n,o){return"<a class='botui-message-content-link' target='"+(o?"blank":"")+"' href='"+n+"'>"+t+"</a>"}function i(e){return e.replace(v.image,"<img class='botui-message-content-image' src='$2' alt='$1' />").replace(v.icon,"<i class='botui-icon botui-message-content-icon fa fa-$1'></i>").replace(v.link,o)}function r(e,t){var n=document.createElement("script");n.type="text/javascript",n.src=e,t&&(n.onload=t),document.body.appendChild(n)}function s(e){y.action.addMessage&&h.message.human({delay:100,content:e}),y.action.show=!y.action.autoHide}function a(e){if(!e.loading&&!e.content)throw Error('BotUI: "content" is required in a non-loading message object.');e.type=e.type||"text",e.visible=!e.delay&&!e.loading;var t=y.messages.push(e)-1;return new Promise(function(n,o){setTimeout(function(){e.delay&&(e.visible=!0,e.loading&&(e.loading=!1)),n(t)},e.delay||0)})}function u(e){return"string"==typeof e&&(e={content:e}),e||{}}function c(e,t){for(var n in e)t.hasOwnProperty(n)||(t[n]=e[n])}function d(e){if(!e.action)throw Error('BotUI: "action" property is required.')}function l(e){return d(e),c({type:"text",cssClass:"",autoHide:!0,addMessage:!0},e),y.action.type=e.type,y.action.cssClass=e.cssClass,y.action.autoHide=e.autoHide,y.action.addMessage=e.addMessage,new Promise(function(t,n){p=t,setTimeout(function(){y.action.show=!0},e.delay||0)})}if(n=n||{},!t)throw Error("BotUI: Container id is required as first argument.");if(!document.getElementById(t))throw Error("BotUI: Element with id #"+t+" does not exist.");if(!e.Vue&&!n.vue)throw Error("BotUI: Vue is required but not found.");var f,m,p,g={debug:!1,fontawesome:!0},h={},v={icon:/!\(([^\)]+)\)/gim,image:/!\[(.*?)\]\((.*?)\)/gim,link:/\[([^\[]+)\]\(([^\)]+)\)(\^?)/gim};e.Vue=e.Vue||n.vue;for(var b in g)n.hasOwnProperty(b)&&(g[b]=n[b]);e.Promise||Promise||options.promise||r("https://cdn.jsdelivr.net/es6-promise/4.1.0/es6-promise.min.js");var w={template:"<div class=\"botui botui-container\" v-botui-container><div class=\"botui-messages-container\"><div v-for=\"msg in messages\" class=\"botui-message\" :class=\"msg.cssClass\" v-botui-scroll><transition name=\"slide-fade\"><div v-if=\"msg.visible\" :class=\"[{human: msg.human, \'botui-message-content\': true}, msg.type]\"><span v-if=\"msg.type == \'text\'\" v-text=\"msg.content\" v-botui-markdown></span> <iframe v-if=\"msg.type == \'embed\'\" :src=\"msg.content\" frameborder=\"0\" allowfullscreen></iframe></div></transition><div v-if=\"msg.loading\" class=\"botui-message-content loading\"><i class=\"dot\"></i><i class=\"dot\"></i><i class=\"dot\"></i></div></div></div><div class=\"botui-actions-container\"><transition name=\"slide-fade\"><div v-if=\"action.show\" v-botui-scroll><form v-if=\"action.type == \'text\'\" class=\"botui-actions-text\" @submit.prevent=\"handle_action_text()\" :class=\"action.cssClass\"><i v-if=\"action.text.icon\" class=\"botui-icon botui-action-text-icon fa\" :class=\"\'fa-\' + action.text.icon\"></i> <input type=\"text\" ref=\"input\" :type=\"action.text.sub_type\" v-model=\"action.text.value\" class=\"botui-actions-text-input\" :placeholder=\"action.text.placeholder\" :size=\"action.text.size\" :value=\"action.text.value\" :class=\"action.text.cssClass\" required v-focus/> <button type=\"submit\" :class=\"{\'botui-actions-buttons-button\': !!action.text.button, \'botui-actions-text-submit\': !action.text.button}\"><i v-if=\"action.text.button && action.text.button.icon\" class=\"botui-icon botui-action-button-icon fa\" :class=\"\'fa-\' + action.text.button.icon\"></i> <span>{{(action.text.button && action.text.button.label) || \'Go\'}}</span></button></form><div v-if=\"action.type == \'button\'\" class=\"botui-actions-buttons\" :class=\"action.cssClass\"> <button type=\"button\" :class=\"button.cssClass\" class=\"botui-actions-buttons-button\" v-for=\"button in action.button.buttons\" @click=\"handle_action_button(button)\" autofocus><i v-if=\"button.icon\" class=\"botui-icon botui-action-button-icon fa\" :class=\"\'fa-\' + button.icon\"></i> {{button.text}}</button></div></div></transition></div></div>",data:function(){return{action:{text:{size:30,placeholder:"Write here .."},button:{},show:!1,type:"text",autoHide:!0,addMessage:!0},messages:[]}},computed:{isMobile:function(){return e.innerWidth&&e.innerWidth<=768}},methods:{handle_action_button:function(e){s(e.text);var t={type:"button",text:e.text,value:e.value};for(var n in e)e.hasOwnProperty(n)&&"type"!==n&&"text"!==n&&"value"!==n&&(t[n]=e[n]);p(t)},handle_action_text:function(){this.action.text.value&&(s(this.action.text.value),p({type:"text",value:this.action.text.value}),this.action.text.value="")}}};e.Vue.directive("botui-markdown",function(e,t){"false"!=t.value&&(e.innerHTML=i(e.textContent))}),e.Vue.directive("botui-scroll",{inserted:function(e){m.scrollTop=m.scrollHeight}}),e.Vue.directive("focus",{inserted:function(e){e.focus()}}),e.Vue.directive("botui-container",{inserted:function(e){m=e}}),f=new e.Vue({components:{"bot-ui":w}}).$mount("#"+t);var y=f.$children[0];return h.message={add:function(e){return a(u(e))},bot:function(e){return e=u(e),a(e)},human:function(e){return e=u(e),e.human=!0,a(e)},get:function(e){return Promise.resolve(y.messages[e])},remove:function(e){return y.messages.splice(e,1),Promise.resolve()},update:function(e,t){var n=y.messages[e];return n.content=t.content,n.visible=!t.loading,n.loading=!!t.loading,Promise.resolve(t.content)},removeAll:function(){return y.messages.splice(0,y.messages.length),Promise.resolve()}},h.action={show:l,hide:function(){return y.action.show=!1,Promise.resolve()},text:function(e){return d(e),y.action.text=e.action,l(e)},button:function(e){return d(e),e.type="button",y.action.button.buttons=e.action,l(e)}},g.fontawesome&&r("https://use.fontawesome.com/ea731dcb6f.js"),g.debug&&(h._botApp=f),h}});
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var require;var require;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -46728,185 +46135,770 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 28 */
-/***/ (function(module, exports) {
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *  Copyright 2011 Twitter, Inc.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
-/*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=f615d1faad9e6857969fccaa7220ae5a)
- * Config saved to config.json and https://gist.github.com/f615d1faad9e6857969fccaa7220ae5a
- */
-if (typeof jQuery === 'undefined') {
-  throw new Error('Bootstrap\'s JavaScript requires jQuery');
-}
-+function ($) {
-  'use strict';
+var Hogan = {};
 
-  var version = $.fn.jquery.split(' ')[0].split('.');
-  if (version[0] < 2 && version[1] < 9 || version[0] == 1 && version[1] == 9 && version[2] < 1 || version[0] > 3) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4');
-  }
-}(jQuery);
+(function (Hogan) {
+    Hogan.Template = function (codeObj, text, compiler, options) {
+        codeObj = codeObj || {};
+        this.r = codeObj.code || this.r;
+        this.c = compiler;
+        this.options = options || {};
+        this.text = text || '';
+        this.partials = codeObj.partials || {};
+        this.subs = codeObj.subs || {};
+        this.buf = '';
+    };
 
-/* ========================================================================
- * Bootstrap: affix.js v3.3.7
- * http://getbootstrap.com/javascript/#affix
- * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+    Hogan.Template.prototype = {
+        // render: replaced by generated code.
+        r: function r(context, partials, indent) {
+            return '';
+        },
 
-+function ($) {
-  'use strict';
+        // variable escaping
+        v: hoganEscape,
 
-  // AFFIX CLASS DEFINITION
-  // ======================
+        // triple stache
+        t: coerceToString,
 
-  var Affix = function Affix(element, options) {
-    this.options = $.extend({}, Affix.DEFAULTS, options);
+        render: function render(context, partials, indent) {
+            return this.ri([context], partials || {}, indent);
+        },
 
-    this.$target = $(this.options.target).on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this)).on('click.bs.affix.data-api', $.proxy(this.checkPositionWithEventLoop, this));
+        // render internal -- a hook for overrides that catches partials too
+        ri: function ri(context, partials, indent) {
+            return this.r(context, partials, indent);
+        },
 
-    this.$element = $(element);
-    this.affixed = null;
-    this.unpin = null;
-    this.pinnedOffset = null;
+        // ensurePartial
+        ep: function ep(symbol, partials) {
+            var partial = this.partials[symbol];
 
-    this.checkPosition();
-  };
+            // check to see that if we've instantiated this partial before
+            var template = partials[partial.name];
+            if (partial.instance && partial.base == template) {
+                return partial.instance;
+            }
 
-  Affix.VERSION = '3.3.7';
+            if (typeof template == 'string') {
+                if (!this.c) {
+                    throw new Error("No compiler available.");
+                }
+                template = this.c.compile(template, this.options);
+            }
 
-  Affix.RESET = 'affix affix-top affix-bottom';
+            if (!template) {
+                return null;
+            }
 
-  Affix.DEFAULTS = {
-    offset: 0,
-    target: window
-  };
+            // We use this to check whether the partials dictionary has changed
+            this.partials[symbol].base = template;
 
-  Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
-    var scrollTop = this.$target.scrollTop();
-    var position = this.$element.offset();
-    var targetHeight = this.$target.height();
+            if (partial.subs) {
+                // Make sure we consider parent template now
+                if (!partials.stackText) partials.stackText = {};
+                for (key in partial.subs) {
+                    if (!partials.stackText[key]) {
+                        partials.stackText[key] = this.activeSub !== undefined && partials.stackText[this.activeSub] ? partials.stackText[this.activeSub] : this.text;
+                    }
+                }
+                template = createSpecializedPartial(template, partial.subs, partial.partials, this.stackSubs, this.stackPartials, partials.stackText);
+            }
+            this.partials[symbol].instance = template;
 
-    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false;
+            return template;
+        },
 
-    if (this.affixed == 'bottom') {
-      if (offsetTop != null) return scrollTop + this.unpin <= position.top ? false : 'bottom';
-      return scrollTop + targetHeight <= scrollHeight - offsetBottom ? false : 'bottom';
+        // tries to find a partial in the current scope and render it
+        rp: function rp(symbol, context, partials, indent) {
+            var partial = this.ep(symbol, partials);
+            if (!partial) {
+                return '';
+            }
+
+            return partial.ri(context, partials, indent);
+        },
+
+        // render a section
+        rs: function rs(context, partials, section) {
+            var tail = context[context.length - 1];
+
+            if (!isArray(tail)) {
+                section(context, partials, this);
+                return;
+            }
+
+            for (var i = 0; i < tail.length; i++) {
+                context.push(tail[i]);
+                section(context, partials, this);
+                context.pop();
+            }
+        },
+
+        // maybe start a section
+        s: function s(val, ctx, partials, inverted, start, end, tags) {
+            var pass;
+
+            if (isArray(val) && val.length === 0) {
+                return false;
+            }
+
+            if (typeof val == 'function') {
+                val = this.ms(val, ctx, partials, inverted, start, end, tags);
+            }
+
+            pass = !!val;
+
+            if (!inverted && pass && ctx) {
+                ctx.push((typeof val === 'undefined' ? 'undefined' : _typeof(val)) == 'object' ? val : ctx[ctx.length - 1]);
+            }
+
+            return pass;
+        },
+
+        // find values with dotted names
+        d: function d(key, ctx, partials, returnFound) {
+            var found,
+                names = key.split('.'),
+                val = this.f(names[0], ctx, partials, returnFound),
+                doModelGet = this.options.modelGet,
+                cx = null;
+
+            if (key === '.' && isArray(ctx[ctx.length - 2])) {
+                val = ctx[ctx.length - 1];
+            } else {
+                for (var i = 1; i < names.length; i++) {
+                    found = findInScope(names[i], val, doModelGet);
+                    if (found !== undefined) {
+                        cx = val;
+                        val = found;
+                    } else {
+                        val = '';
+                    }
+                }
+            }
+
+            if (returnFound && !val) {
+                return false;
+            }
+
+            if (!returnFound && typeof val == 'function') {
+                ctx.push(cx);
+                val = this.mv(val, ctx, partials);
+                ctx.pop();
+            }
+
+            return val;
+        },
+
+        // find values with normal names
+        f: function f(key, ctx, partials, returnFound) {
+            var val = false,
+                v = null,
+                found = false,
+                doModelGet = this.options.modelGet;
+
+            for (var i = ctx.length - 1; i >= 0; i--) {
+                v = ctx[i];
+                val = findInScope(key, v, doModelGet);
+                if (val !== undefined) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                return returnFound ? false : "";
+            }
+
+            if (!returnFound && typeof val == 'function') {
+                val = this.mv(val, ctx, partials);
+            }
+
+            return val;
+        },
+
+        // higher order templates
+        ls: function ls(func, cx, partials, text, tags) {
+            var oldTags = this.options.delimiters;
+
+            this.options.delimiters = tags;
+            this.b(this.ct(coerceToString(func.call(cx, text)), cx, partials));
+            this.options.delimiters = oldTags;
+
+            return false;
+        },
+
+        // compile text
+        ct: function ct(text, cx, partials) {
+            if (this.options.disableLambda) {
+                throw new Error('Lambda features disabled.');
+            }
+            return this.c.compile(text, this.options).render(cx, partials);
+        },
+
+        // template result buffering
+        b: function b(s) {
+            this.buf += s;
+        },
+
+        fl: function fl() {
+            var r = this.buf;this.buf = '';return r;
+        },
+
+        // method replace section
+        ms: function ms(func, ctx, partials, inverted, start, end, tags) {
+            var textSource,
+                cx = ctx[ctx.length - 1],
+                result = func.call(cx);
+
+            if (typeof result == 'function') {
+                if (inverted) {
+                    return true;
+                } else {
+                    textSource = this.activeSub && this.subsText && this.subsText[this.activeSub] ? this.subsText[this.activeSub] : this.text;
+                    return this.ls(result, cx, partials, textSource.substring(start, end), tags);
+                }
+            }
+
+            return result;
+        },
+
+        // method replace variable
+        mv: function mv(func, ctx, partials) {
+            var cx = ctx[ctx.length - 1];
+            var result = func.call(cx);
+
+            if (typeof result == 'function') {
+                return this.ct(coerceToString(result.call(cx)), cx, partials);
+            }
+
+            return result;
+        },
+
+        sub: function sub(name, context, partials, indent) {
+            var f = this.subs[name];
+            if (f) {
+                this.activeSub = name;
+                f(context, partials, this, indent);
+                this.activeSub = false;
+            }
+        }
+
+    };
+
+    //Find a key in an object
+    function findInScope(key, scope, doModelGet) {
+        var val;
+
+        if (scope && (typeof scope === 'undefined' ? 'undefined' : _typeof(scope)) == 'object') {
+
+            if (scope[key] !== undefined) {
+                val = scope[key];
+
+                // try lookup with get for backbone or similar model data
+            } else if (doModelGet && scope.get && typeof scope.get == 'function') {
+                val = scope.get(key);
+            }
+        }
+
+        return val;
     }
 
-    var initializing = this.affixed == null;
-    var colliderTop = initializing ? scrollTop : position.top;
-    var colliderHeight = initializing ? targetHeight : height;
+    function createSpecializedPartial(instance, subs, partials, stackSubs, stackPartials, stackText) {
+        function PartialTemplate() {};
+        PartialTemplate.prototype = instance;
+        function Substitutions() {};
+        Substitutions.prototype = instance.subs;
+        var key;
+        var partial = new PartialTemplate();
+        partial.subs = new Substitutions();
+        partial.subsText = {}; //hehe. substext.
+        partial.buf = '';
 
-    if (offsetTop != null && scrollTop <= offsetTop) return 'top';
-    if (offsetBottom != null && colliderTop + colliderHeight >= scrollHeight - offsetBottom) return 'bottom';
+        stackSubs = stackSubs || {};
+        partial.stackSubs = stackSubs;
+        partial.subsText = stackText;
+        for (key in subs) {
+            if (!stackSubs[key]) stackSubs[key] = subs[key];
+        }
+        for (key in stackSubs) {
+            partial.subs[key] = stackSubs[key];
+        }
 
-    return false;
-  };
+        stackPartials = stackPartials || {};
+        partial.stackPartials = stackPartials;
+        for (key in partials) {
+            if (!stackPartials[key]) stackPartials[key] = partials[key];
+        }
+        for (key in stackPartials) {
+            partial.partials[key] = stackPartials[key];
+        }
 
-  Affix.prototype.getPinnedOffset = function () {
-    if (this.pinnedOffset) return this.pinnedOffset;
-    this.$element.removeClass(Affix.RESET).addClass('affix');
-    var scrollTop = this.$target.scrollTop();
-    var position = this.$element.offset();
-    return this.pinnedOffset = position.top - scrollTop;
-  };
-
-  Affix.prototype.checkPositionWithEventLoop = function () {
-    setTimeout($.proxy(this.checkPosition, this), 1);
-  };
-
-  Affix.prototype.checkPosition = function () {
-    if (!this.$element.is(':visible')) return;
-
-    var height = this.$element.height();
-    var offset = this.options.offset;
-    var offsetTop = offset.top;
-    var offsetBottom = offset.bottom;
-    var scrollHeight = Math.max($(document).height(), $(document.body).height());
-
-    if ((typeof offset === 'undefined' ? 'undefined' : _typeof(offset)) != 'object') offsetBottom = offsetTop = offset;
-    if (typeof offsetTop == 'function') offsetTop = offset.top(this.$element);
-    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element);
-
-    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom);
-
-    if (this.affixed != affix) {
-      if (this.unpin != null) this.$element.css('top', '');
-
-      var affixType = 'affix' + (affix ? '-' + affix : '');
-      var e = $.Event(affixType + '.bs.affix');
-
-      this.$element.trigger(e);
-
-      if (e.isDefaultPrevented()) return;
-
-      this.affixed = affix;
-      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null;
-
-      this.$element.removeClass(Affix.RESET).addClass(affixType).trigger(affixType.replace('affix', 'affixed') + '.bs.affix');
+        return partial;
     }
 
-    if (affix == 'bottom') {
-      this.$element.offset({
-        top: scrollHeight - height - offsetBottom
-      });
+    var rAmp = /&/g,
+        rLt = /</g,
+        rGt = />/g,
+        rApos = /\'/g,
+        rQuot = /\"/g,
+        hChars = /[&<>\"\']/;
+
+    function coerceToString(val) {
+        return String(val === null || val === undefined ? '' : val);
     }
-  };
 
-  // AFFIX PLUGIN DEFINITION
-  // =======================
+    function hoganEscape(str) {
+        str = coerceToString(str);
+        return hChars.test(str) ? str.replace(rAmp, '&amp;').replace(rLt, '&lt;').replace(rGt, '&gt;').replace(rApos, '&#39;').replace(rQuot, '&quot;') : str;
+    }
 
-  function Plugin(option) {
-    return this.each(function () {
-      var $this = $(this);
-      var data = $this.data('bs.affix');
-      var options = (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option;
+    var isArray = Array.isArray || function (a) {
+        return Object.prototype.toString.call(a) === '[object Array]';
+    };
+})( true ? exports : Hogan);
 
-      if (!data) $this.data('bs.affix', data = new Affix(this, options));
-      if (typeof option == 'string') data[option]();
-    });
-  }
+(function (Hogan) {
+    // Setup regex  assignments
+    // remove whitespace according to Mustache spec
+    var rIsWhitespace = /\S/,
+        rQuot = /\"/g,
+        rNewline = /\n/g,
+        rCr = /\r/g,
+        rSlash = /\\/g,
+        rLineSep = /\u2028/,
+        rParagraphSep = /\u2029/;
 
-  var old = $.fn.affix;
+    Hogan.tags = {
+        '#': 1, '^': 2, '<': 3, '$': 4,
+        '/': 5, '!': 6, '>': 7, '=': 8, '_v': 9,
+        '{': 10, '&': 11, '_t': 12
+    };
 
-  $.fn.affix = Plugin;
-  $.fn.affix.Constructor = Affix;
+    Hogan.scan = function scan(text, delimiters) {
+        var len = text.length,
+            IN_TEXT = 0,
+            IN_TAG_TYPE = 1,
+            IN_TAG = 2,
+            state = IN_TEXT,
+            tagType = null,
+            tag = null,
+            buf = '',
+            tokens = [],
+            seenTag = false,
+            i = 0,
+            lineStart = 0,
+            otag = '{{',
+            ctag = '}}';
 
-  // AFFIX NO CONFLICT
-  // =================
+        function addBuf() {
+            if (buf.length > 0) {
+                tokens.push({ tag: '_t', text: new String(buf) });
+                buf = '';
+            }
+        }
 
-  $.fn.affix.noConflict = function () {
-    $.fn.affix = old;
-    return this;
-  };
+        function lineIsWhitespace() {
+            var isAllWhitespace = true;
+            for (var j = lineStart; j < tokens.length; j++) {
+                isAllWhitespace = Hogan.tags[tokens[j].tag] < Hogan.tags['_v'] || tokens[j].tag == '_t' && tokens[j].text.match(rIsWhitespace) === null;
+                if (!isAllWhitespace) {
+                    return false;
+                }
+            }
 
-  // AFFIX DATA-API
-  // ==============
+            return isAllWhitespace;
+        }
 
-  $(window).on('load', function () {
-    $('[data-spy="affix"]').each(function () {
-      var $spy = $(this);
-      var data = $spy.data();
+        function filterLine(haveSeenTag, noNewLine) {
+            addBuf();
 
-      data.offset = data.offset || {};
+            if (haveSeenTag && lineIsWhitespace()) {
+                for (var j = lineStart, next; j < tokens.length; j++) {
+                    if (tokens[j].text) {
+                        if ((next = tokens[j + 1]) && next.tag == '>') {
+                            // set indent to token value
+                            next.indent = tokens[j].text.toString();
+                        }
+                        tokens.splice(j, 1);
+                    }
+                }
+            } else if (!noNewLine) {
+                tokens.push({ tag: '\n' });
+            }
 
-      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom;
-      if (data.offsetTop != null) data.offset.top = data.offsetTop;
+            seenTag = false;
+            lineStart = tokens.length;
+        }
 
-      Plugin.call($spy, data);
-    });
-  });
-}(jQuery);
+        function changeDelimiters(text, index) {
+            var close = '=' + ctag,
+                closeIndex = text.indexOf(close, index),
+                delimiters = trim(text.substring(text.indexOf('=', index) + 1, closeIndex)).split(' ');
+
+            otag = delimiters[0];
+            ctag = delimiters[delimiters.length - 1];
+
+            return closeIndex + close.length - 1;
+        }
+
+        if (delimiters) {
+            delimiters = delimiters.split(' ');
+            otag = delimiters[0];
+            ctag = delimiters[1];
+        }
+
+        for (i = 0; i < len; i++) {
+            if (state == IN_TEXT) {
+                if (tagChange(otag, text, i)) {
+                    --i;
+                    addBuf();
+                    state = IN_TAG_TYPE;
+                } else {
+                    if (text.charAt(i) == '\n') {
+                        filterLine(seenTag);
+                    } else {
+                        buf += text.charAt(i);
+                    }
+                }
+            } else if (state == IN_TAG_TYPE) {
+                i += otag.length - 1;
+                tag = Hogan.tags[text.charAt(i + 1)];
+                tagType = tag ? text.charAt(i + 1) : '_v';
+                if (tagType == '=') {
+                    i = changeDelimiters(text, i);
+                    state = IN_TEXT;
+                } else {
+                    if (tag) {
+                        i++;
+                    }
+                    state = IN_TAG;
+                }
+                seenTag = i;
+            } else {
+                if (tagChange(ctag, text, i)) {
+                    tokens.push({ tag: tagType, n: trim(buf), otag: otag, ctag: ctag,
+                        i: tagType == '/' ? seenTag - otag.length : i + ctag.length });
+                    buf = '';
+                    i += ctag.length - 1;
+                    state = IN_TEXT;
+                    if (tagType == '{') {
+                        if (ctag == '}}') {
+                            i++;
+                        } else {
+                            cleanTripleStache(tokens[tokens.length - 1]);
+                        }
+                    }
+                } else {
+                    buf += text.charAt(i);
+                }
+            }
+        }
+
+        filterLine(seenTag, true);
+
+        return tokens;
+    };
+
+    function cleanTripleStache(token) {
+        if (token.n.substr(token.n.length - 1) === '}') {
+            token.n = token.n.substring(0, token.n.length - 1);
+        }
+    }
+
+    function trim(s) {
+        if (s.trim) {
+            return s.trim();
+        }
+
+        return s.replace(/^\s*|\s*$/g, '');
+    }
+
+    function tagChange(tag, text, index) {
+        if (text.charAt(index) != tag.charAt(0)) {
+            return false;
+        }
+
+        for (var i = 1, l = tag.length; i < l; i++) {
+            if (text.charAt(index + i) != tag.charAt(i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // the tags allowed inside super templates
+    var allowedInSuper = { '_t': true, '\n': true, '$': true, '/': true };
+
+    function buildTree(tokens, kind, stack, customTags) {
+        var instructions = [],
+            opener = null,
+            tail = null,
+            token = null;
+
+        tail = stack[stack.length - 1];
+
+        while (tokens.length > 0) {
+            token = tokens.shift();
+
+            if (tail && tail.tag == '<' && !(token.tag in allowedInSuper)) {
+                throw new Error('Illegal content in < super tag.');
+            }
+
+            if (Hogan.tags[token.tag] <= Hogan.tags['$'] || isOpener(token, customTags)) {
+                stack.push(token);
+                token.nodes = buildTree(tokens, token.tag, stack, customTags);
+            } else if (token.tag == '/') {
+                if (stack.length === 0) {
+                    throw new Error('Closing tag without opener: /' + token.n);
+                }
+                opener = stack.pop();
+                if (token.n != opener.n && !isCloser(token.n, opener.n, customTags)) {
+                    throw new Error('Nesting error: ' + opener.n + ' vs. ' + token.n);
+                }
+                opener.end = token.i;
+                return instructions;
+            } else if (token.tag == '\n') {
+                token.last = tokens.length == 0 || tokens[0].tag == '\n';
+            }
+
+            instructions.push(token);
+        }
+
+        if (stack.length > 0) {
+            throw new Error('missing closing tag: ' + stack.pop().n);
+        }
+
+        return instructions;
+    }
+
+    function isOpener(token, tags) {
+        for (var i = 0, l = tags.length; i < l; i++) {
+            if (tags[i].o == token.n) {
+                token.tag = '#';
+                return true;
+            }
+        }
+    }
+
+    function isCloser(close, open, tags) {
+        for (var i = 0, l = tags.length; i < l; i++) {
+            if (tags[i].c == close && tags[i].o == open) {
+                return true;
+            }
+        }
+    }
+
+    function stringifySubstitutions(obj) {
+        var items = [];
+        for (var key in obj) {
+            items.push('"' + esc(key) + '": function(c,p,t,i) {' + obj[key] + '}');
+        }
+        return "{ " + items.join(",") + " }";
+    }
+
+    function stringifyPartials(codeObj) {
+        var partials = [];
+        for (var key in codeObj.partials) {
+            partials.push('"' + esc(key) + '":{name:"' + esc(codeObj.partials[key].name) + '", ' + stringifyPartials(codeObj.partials[key]) + "}");
+        }
+        return "partials: {" + partials.join(",") + "}, subs: " + stringifySubstitutions(codeObj.subs);
+    }
+
+    Hogan.stringify = function (codeObj, text, options) {
+        return "{code: function (c,p,i) { " + Hogan.wrapMain(codeObj.code) + " }," + stringifyPartials(codeObj) + "}";
+    };
+
+    var serialNo = 0;
+    Hogan.generate = function (tree, text, options) {
+        serialNo = 0;
+        var context = { code: '', subs: {}, partials: {} };
+        Hogan.walk(tree, context);
+
+        if (options.asString) {
+            return this.stringify(context, text, options);
+        }
+
+        return this.makeTemplate(context, text, options);
+    };
+
+    Hogan.wrapMain = function (code) {
+        return 'var t=this;t.b(i=i||"");' + code + 'return t.fl();';
+    };
+
+    Hogan.template = Hogan.Template;
+
+    Hogan.makeTemplate = function (codeObj, text, options) {
+        var template = this.makePartials(codeObj);
+        template.code = new Function('c', 'p', 'i', this.wrapMain(codeObj.code));
+        return new this.template(template, text, this, options);
+    };
+
+    Hogan.makePartials = function (codeObj) {
+        var key,
+            template = { subs: {}, partials: codeObj.partials, name: codeObj.name };
+        for (key in template.partials) {
+            template.partials[key] = this.makePartials(template.partials[key]);
+        }
+        for (key in codeObj.subs) {
+            template.subs[key] = new Function('c', 'p', 't', 'i', codeObj.subs[key]);
+        }
+        return template;
+    };
+
+    function esc(s) {
+        return s.replace(rSlash, '\\\\').replace(rQuot, '\\\"').replace(rNewline, '\\n').replace(rCr, '\\r').replace(rLineSep, '\\u2028').replace(rParagraphSep, '\\u2029');
+    }
+
+    function chooseMethod(s) {
+        return ~s.indexOf('.') ? 'd' : 'f';
+    }
+
+    function createPartial(node, context) {
+        var prefix = "<" + (context.prefix || "");
+        var sym = prefix + node.n + serialNo++;
+        context.partials[sym] = { name: node.n, partials: {} };
+        context.code += 't.b(t.rp("' + esc(sym) + '",c,p,"' + (node.indent || '') + '"));';
+        return sym;
+    }
+
+    Hogan.codegen = {
+        '#': function _(node, context) {
+            context.code += 'if(t.s(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,1),' + 'c,p,0,' + node.i + ',' + node.end + ',"' + node.otag + " " + node.ctag + '")){' + 't.rs(c,p,' + 'function(c,p,t){';
+            Hogan.walk(node.nodes, context);
+            context.code += '});c.pop();}';
+        },
+
+        '^': function _(node, context) {
+            context.code += 'if(!t.s(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,1),c,p,1,0,0,"")){';
+            Hogan.walk(node.nodes, context);
+            context.code += '};';
+        },
+
+        '>': createPartial,
+        '<': function _(node, context) {
+            var ctx = { partials: {}, code: '', subs: {}, inPartial: true };
+            Hogan.walk(node.nodes, ctx);
+            var template = context.partials[createPartial(node, context)];
+            template.subs = ctx.subs;
+            template.partials = ctx.partials;
+        },
+
+        '$': function $(node, context) {
+            var ctx = { subs: {}, code: '', partials: context.partials, prefix: node.n };
+            Hogan.walk(node.nodes, ctx);
+            context.subs[node.n] = ctx.code;
+            if (!context.inPartial) {
+                context.code += 't.sub("' + esc(node.n) + '",c,p,i);';
+            }
+        },
+
+        '\n': function _(node, context) {
+            context.code += write('"\\n"' + (node.last ? '' : ' + i'));
+        },
+
+        '_v': function _v(node, context) {
+            context.code += 't.b(t.v(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,0)));';
+        },
+
+        '_t': function _t(node, context) {
+            context.code += write('"' + esc(node.text) + '"');
+        },
+
+        '{': tripleStache,
+
+        '&': tripleStache
+    };
+
+    function tripleStache(node, context) {
+        context.code += 't.b(t.t(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,0)));';
+    }
+
+    function write(s) {
+        return 't.b(' + s + ');';
+    }
+
+    Hogan.walk = function (nodelist, context) {
+        var func;
+        for (var i = 0, l = nodelist.length; i < l; i++) {
+            func = Hogan.codegen[nodelist[i].tag];
+            func && func(nodelist[i], context);
+        }
+        return context;
+    };
+
+    Hogan.parse = function (tokens, text, options) {
+        options = options || {};
+        return buildTree(tokens, '', [], options.sectionTags || []);
+    };
+
+    Hogan.cache = {};
+
+    Hogan.cacheKey = function (text, options) {
+        return [text, !!options.asString, !!options.disableLambda, options.delimiters, !!options.modelGet].join('||');
+    };
+
+    Hogan.compile = function (text, options) {
+        options = options || {};
+        var key = Hogan.cacheKey(text, options);
+        var template = this.cache[key];
+
+        if (template) {
+            var partials = template.partials;
+            for (var name in partials) {
+                delete partials[name].instance;
+            }
+            return template;
+        }
+
+        template = this.generate(this.parse(this.scan(text, options.delimiters), text, options), text, options);
+        return this.cache[key] = template;
+    };
+})( true ? exports : Hogan);
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+ * botui 0.3.4
+ * A JS library to build the UI for your bot
+ * https://botui.org
+ *
+ * Copyright 2017, Moin Uddin
+ * Released under the MIT license.
+*/
+
+!function(e,t){"use strict"; true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function(){return e.BotUI=t(e)}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):e.BotUI=t(e)}("undefined"!=typeof window?window:this,function(e,t){"use strict";return function(t,n){function o(e,t,n,o){return"<a class='botui-message-content-link' target='"+(o?"blank":"")+"' href='"+n+"'>"+t+"</a>"}function i(e){return e.replace(v.image,"<img class='botui-message-content-image' src='$2' alt='$1' />").replace(v.icon,"<i class='botui-icon botui-message-content-icon fa fa-$1'></i>").replace(v.link,o)}function r(e,t){var n=document.createElement("script");n.type="text/javascript",n.src=e,t&&(n.onload=t),document.body.appendChild(n)}function s(e){y.action.addMessage&&h.message.human({delay:100,content:e}),y.action.show=!y.action.autoHide}function a(e){if(!e.loading&&!e.content)throw Error('BotUI: "content" is required in a non-loading message object.');e.type=e.type||"text",e.visible=!e.delay&&!e.loading;var t=y.messages.push(e)-1;return new Promise(function(n,o){setTimeout(function(){e.delay&&(e.visible=!0,e.loading&&(e.loading=!1)),n(t)},e.delay||0)})}function u(e){return"string"==typeof e&&(e={content:e}),e||{}}function c(e,t){for(var n in e)t.hasOwnProperty(n)||(t[n]=e[n])}function d(e){if(!e.action)throw Error('BotUI: "action" property is required.')}function l(e){return d(e),c({type:"text",cssClass:"",autoHide:!0,addMessage:!0},e),y.action.type=e.type,y.action.cssClass=e.cssClass,y.action.autoHide=e.autoHide,y.action.addMessage=e.addMessage,new Promise(function(t,n){p=t,setTimeout(function(){y.action.show=!0},e.delay||0)})}if(n=n||{},!t)throw Error("BotUI: Container id is required as first argument.");if(!document.getElementById(t))throw Error("BotUI: Element with id #"+t+" does not exist.");if(!e.Vue&&!n.vue)throw Error("BotUI: Vue is required but not found.");var f,m,p,g={debug:!1,fontawesome:!0},h={},v={icon:/!\(([^\)]+)\)/gim,image:/!\[(.*?)\]\((.*?)\)/gim,link:/\[([^\[]+)\]\(([^\)]+)\)(\^?)/gim};e.Vue=e.Vue||n.vue;for(var b in g)n.hasOwnProperty(b)&&(g[b]=n[b]);e.Promise||Promise||options.promise||r("https://cdn.jsdelivr.net/es6-promise/4.1.0/es6-promise.min.js");var w={template:"<div class=\"botui botui-container\" v-botui-container><div class=\"botui-messages-container\"><div v-for=\"msg in messages\" class=\"botui-message\" :class=\"msg.cssClass\" v-botui-scroll><transition name=\"slide-fade\"><div v-if=\"msg.visible\" :class=\"[{human: msg.human, \'botui-message-content\': true}, msg.type]\"><span v-if=\"msg.type == \'text\'\" v-text=\"msg.content\" v-botui-markdown></span> <iframe v-if=\"msg.type == \'embed\'\" :src=\"msg.content\" frameborder=\"0\" allowfullscreen></iframe></div></transition><div v-if=\"msg.loading\" class=\"botui-message-content loading\"><i class=\"dot\"></i><i class=\"dot\"></i><i class=\"dot\"></i></div></div></div><div class=\"botui-actions-container\"><transition name=\"slide-fade\"><div v-if=\"action.show\" v-botui-scroll><form v-if=\"action.type == \'text\'\" class=\"botui-actions-text\" @submit.prevent=\"handle_action_text()\" :class=\"action.cssClass\"><i v-if=\"action.text.icon\" class=\"botui-icon botui-action-text-icon fa\" :class=\"\'fa-\' + action.text.icon\"></i> <input type=\"text\" ref=\"input\" :type=\"action.text.sub_type\" v-model=\"action.text.value\" class=\"botui-actions-text-input\" :placeholder=\"action.text.placeholder\" :size=\"action.text.size\" :value=\"action.text.value\" :class=\"action.text.cssClass\" required v-focus/> <button type=\"submit\" :class=\"{\'botui-actions-buttons-button\': !!action.text.button, \'botui-actions-text-submit\': !action.text.button}\"><i v-if=\"action.text.button && action.text.button.icon\" class=\"botui-icon botui-action-button-icon fa\" :class=\"\'fa-\' + action.text.button.icon\"></i> <span>{{(action.text.button && action.text.button.label) || \'Go\'}}</span></button></form><div v-if=\"action.type == \'button\'\" class=\"botui-actions-buttons\" :class=\"action.cssClass\"> <button type=\"button\" :class=\"button.cssClass\" class=\"botui-actions-buttons-button\" v-for=\"button in action.button.buttons\" @click=\"handle_action_button(button)\" autofocus><i v-if=\"button.icon\" class=\"botui-icon botui-action-button-icon fa\" :class=\"\'fa-\' + button.icon\"></i> {{button.text}}</button></div></div></transition></div></div>",data:function(){return{action:{text:{size:30,placeholder:"Write here .."},button:{},show:!1,type:"text",autoHide:!0,addMessage:!0},messages:[]}},computed:{isMobile:function(){return e.innerWidth&&e.innerWidth<=768}},methods:{handle_action_button:function(e){s(e.text);var t={type:"button",text:e.text,value:e.value};for(var n in e)e.hasOwnProperty(n)&&"type"!==n&&"text"!==n&&"value"!==n&&(t[n]=e[n]);p(t)},handle_action_text:function(){this.action.text.value&&(s(this.action.text.value),p({type:"text",value:this.action.text.value}),this.action.text.value="")}}};e.Vue.directive("botui-markdown",function(e,t){"false"!=t.value&&(e.innerHTML=i(e.textContent))}),e.Vue.directive("botui-scroll",{inserted:function(e){m.scrollTop=m.scrollHeight}}),e.Vue.directive("focus",{inserted:function(e){e.focus()}}),e.Vue.directive("botui-container",{inserted:function(e){m=e}}),f=new e.Vue({components:{"bot-ui":w}}).$mount("#"+t);var y=f.$children[0];return h.message={add:function(e){return a(u(e))},bot:function(e){return e=u(e),a(e)},human:function(e){return e=u(e),e.human=!0,a(e)},get:function(e){return Promise.resolve(y.messages[e])},remove:function(e){return y.messages.splice(e,1),Promise.resolve()},update:function(e,t){var n=y.messages[e];return n.content=t.content,n.visible=!t.loading,n.loading=!!t.loading,Promise.resolve(t.content)},removeAll:function(){return y.messages.splice(0,y.messages.length),Promise.resolve()}},h.action={show:l,hide:function(){return y.action.show=!1,Promise.resolve()},text:function(e){return d(e),y.action.text=e.action,l(e)},button:function(e){return d(e),e.type="button",y.action.button.buttons=e.action,l(e)}},g.fontawesome&&r("https://use.fontawesome.com/ea731dcb6f.js"),g.debug&&(h._botApp=f),h}});
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -1,15 +1,15 @@
 <script id="search_suggestion_template" type="text/template">
-	<div class="autocomplete-wrapper">
+	<div class="autocomplete-wrapper bg-white p-4 leading-normal border border-grey-lighter text-black w-full">
 		{{#_highlightResult.h1}}
-		<div class="h1">
+		<div class="h1 font-bold">
 			{{{ _highlightResult.h1.value }}}
 		</div>
 		{{/_highlightResult.h1}}
 
-		<div class="sub-section">
+		<div class="sub-section mt-2">
 			{{#_highlightResult.h2}}
-			<div class="h2">
-				<span class="hash">#</span> {{{ _highlightResult.h2.value }}}
+			<div class="h2 font-normal">
+				<span class="hash text-teal font-light">#</span> {{{ _highlightResult.h2.value }}}
 			</div>
 			{{/_highlightResult.h2}}
 
@@ -27,7 +27,7 @@
 		</div>
 
 		{{#_highlightResult.content}}
-		<div class="content">
+		<div class="content mt-2 text-sm">
 			{{{ _highlightResult.content.value }}}
 		</div>
 		{{/_highlightResult.content}}
@@ -41,11 +41,10 @@
 </script>
 
 <script id="search_footer_template" type="text/template">
-	<div class="footer">
-		<a target="_blank" href="https://www.algolia.com/">
-			<img width="50" src="/img/algolia-logo.png">
-			<div class="powered">powered by</div>
-			<div style="clear: both"></div>
+	<div class="footer block bg-white border border-grey-lighter border-t-0 text-right p-2">
+		<a target="_blank" href="https://www.algolia.com/" class="text-sm no-underline text-grey">
+			<div class="inline-block align-middle">powered by</div>
+			<img class="inline-block h-4 align-middle" src="/img/algolia-logo.png">
 		</a>
 	</div>
 </script>
