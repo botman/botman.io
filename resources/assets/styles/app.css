@@ -186,6 +186,14 @@ h1, h2, h3, h4 {
     @apply .w-full .max-w-md
 }
 
+.tt-dropdown-menu {
+    @apply .mt-8 .border .border-grey-light .min-w-full
+}
+
+.autocomplete-wrapper {
+    @apply .font-normal .bg-white .p-4 .leading-normal .border .border-grey-lighter .text-black .w-full;
+}
+
 .autocomplete-wrapper em {
     @apply .roman .bg-grey-lighter .inline-block
 }

@@ -4729,6 +4729,24 @@ h4 {
   max-width: 40rem;
 }
 
+.tt-dropdown-menu {
+  margin-top: 2rem;
+  border-width: 1px;
+  border-color: #dae4e9;
+  min-width: 100%;
+}
+
+.autocomplete-wrapper {
+  font-weight: 400;
+  background-color: #ffffff;
+  padding: 1rem;
+  line-height: 1.5;
+  border-width: 1px;
+  border-color: #f3f7f9;
+  color: #222b2f;
+  width: 100%;
+}
+
 .autocomplete-wrapper em {
   font-style: normal;
   background-color: #f3f7f9;

@@ -1,5 +1,5 @@
 <script id="search_suggestion_template" type="text/template">
-	<div class="autocomplete-wrapper font-normal bg-white p-4 leading-normal border border-grey-lighter text-black w-full">
+	<div class="autocomplete-wrapper">
 		{{#_highlightResult.h1}}
 		<div class="h1 font-bold text-lg">
 			{{{ _highlightResult.h1.value }}}
