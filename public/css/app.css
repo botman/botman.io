@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);@import url(https://fonts.googleapis.com/css?family=Open+Sans);/**
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);@import url(https://fonts.googleapis.com/css?family=Open+Sans);/**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
@@ -1157,10 +1157,13 @@ pre,
 pre[class*="language-"] {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }
 
 pre[class*="language-"] > code {
   border-color: #4dc0b5;
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: .875rem;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -4787,6 +4790,43 @@ td {
   font-style: normal;
   background-color: #f3f7f9;
   display: inline-block;
+}
+
+.notification {
+  background-color: #6574cd;
+  color: #ffffff;
+  padding: 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.notification svg {
+  fill: none;
+  stroke: currentColor;
+  margin-right: 1rem;
+  height: 2rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.notification p {
+  margin: 0;
+  font-weight: 300;
+}
+
+.notification a {
+  color: #ffffff;
+}
+
+.notification a:hover {
+  color: #b2b7ff;
 }
 
 @media (min-width: 576px) {

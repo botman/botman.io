@@ -55,7 +55,7 @@ $(function(){
         }
     });
 
-    $('#documentation blockquote p:first-child').each(function() {
+    $('.botman-documentation-content blockquote p:first-child').each(function() {
         var str = $(this).html();
         var match = str.match(/\{(.*?)\}/);
 
@@ -68,15 +68,19 @@ $(function(){
             $(this).html(str.replace(/\{(.*?)\}/, ''));
             word = word.replace('callout', 'is');
             var icon = word.substr(3);
-            $(this).parent().prepend($('<div class="pull-left fa fa-3x fa-'+icon+'"></div>'));
+
+            switch (icon) {
+                case "info":
+                    icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>'
+                    break;
+                default:
+                    break;
+            }
+
+            $(this).parent().prepend(icon);
             $(this).parent().addClass('notification');
             $(this).parent().addClass(word);
         }
-    });
-
-    $('#versionswitch').change(function(){
-        var version = $('#versionswitch option:selected').val();
-        document.location.href = '/'+version+'/installation';
     });
 
     $('.nav-toggle').click(function() {

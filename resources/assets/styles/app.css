@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
 /**
  * This injects Tailwind's base styles, which is a combination of
@@ -26,11 +26,11 @@ p {
 }
 
 pre, pre[class*="language-"] {
-    @apply .my-4;
+    @apply .my-4 .font-mono;
 }
 
 pre[class*="language-"] > code {
-    @apply .border-teal;
+    @apply .border-teal .font-mono .text-sm;
     box-shadow: none;
 }
 
@@ -214,4 +214,24 @@ td {
 
 .autocomplete-wrapper em {
     @apply .roman .bg-grey-lighter .inline-block
+}
+
+.notification {
+    @apply .bg-indigo .text-white .p-4 .leading-normal .flex .items-start .my-8;
+}
+
+.notification svg {
+    @apply .fill-none .stroke-current .mr-4 .h-8 .flex-no-shrink
+}
+
+.notification p {
+    @apply .m-0 .font-light;
+}
+
+.notification a {
+    @apply .text-white
+}
+
+.notification a:hover {
+    @apply .text-indigo-lighter
 }
