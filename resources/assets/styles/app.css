@@ -97,10 +97,6 @@ td {
 .fill-none {
     fill: none
 }
-
-.stroke-current {
-    stroke: currentColor;
-}
  
  .browser-mockup {
      background-color: #fff;
