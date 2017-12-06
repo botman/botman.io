@@ -50,6 +50,24 @@ h1, h2, h3, h4 {
     @apply .mb-2 .mt-8
 }
 
+table {
+    @apply .text-left .my-4;
+    border-collapse: collapse;
+}
+
+th {
+    @apply .py-4 .px-6 .bg-grey-lighter .font-sans .font-normal .uppercase .text-sm .text-grey;
+    @apply .border-b .border-grey-light .tracking-wide
+}
+
+tr:hover {
+    @apply .bg-blue-lightest
+}
+
+td {
+    @apply .py-4 .px-6 .border-b .border-grey-light
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
