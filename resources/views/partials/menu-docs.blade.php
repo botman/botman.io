@@ -8,9 +8,11 @@
             BotMan
         </div>
     </div>
+    @if(!isset($isPage) || isset($isPage) && !$isPage)
     <div class="flex items-center justify-center md:flex-grow">
         <input class="p-2 w-full max-w-md border border-grey" type="text" placeholder="" id="search-input">
     </div>
+    @endif
   </div>
   <div class="flex md:hidden">
     <button class="js-toggle flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light">
@@ -31,6 +33,14 @@
     >
         Video Course
     </a>
+    @if(isset($isPage) && $isPage)
+    <a class="btn btn-sm text-white btn-rounded-hover border border-white rounded-full
+        hover:bg-white hover:text-black mr-4"
+        href="/{{ config('botman.default_version') }}">
+        Documentation
+    </a>
+    @endif
+    @if(isset($currentVersion))
     <div class="px-4 py-2 rounded-full border border-white text-white">
         <select class="js-version-switcher uppercase text-sm bg-transparent text-white appearance-none border-0">
             @foreach(config('botman.available_versions') as $version)
@@ -41,5 +51,6 @@
         </select>
         <span>&#9662;</span>
     </div>
+    @endif
   </div>
 </nav>
