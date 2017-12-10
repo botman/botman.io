@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ */
+@tailwind preflight;
+ 
+@import "../../../node_modules/prismjs/themes/prism.css";
+@import "../../../node_modules/prismjs/themes/prism-coy.css";
+@import "../../../node_modules/botui/build/botui.min.css";
+@import "../../../node_modules/botui/build/botui-theme-default.css";
+
+a {
+    @apply .text-teal
+}
+a:hover {
+    @apply .text-teal-darker
+}
+
+p {
+    @apply .mb-4
+}
+
+pre, pre[class*="language-"] {
+    @apply .my-4 .font-mono;
+}
+
+pre[class*="language-"] > code {
+    @apply .border-teal .font-mono .text-sm;
+    box-shadow: none;
+}
+
+.landing-code pre[class*="language-"] > code {
+    border-color: #919292;
+}
+
+pre[class*="language-"]::before, pre[class*="language-"]::after {
+    box-shadow: none;
+}
+
+code {
+    @apply .bg-grey-lighter .px-2 .py-1
+}
+
+h1, h2, h3, h4 {
+    @apply .mb-2 .mt-8
+}
+
+table {
+    @apply .text-left .my-4;
+    border-collapse: collapse;
+}
+
+th {
+    @apply .py-4 .px-6 .bg-grey-lighter .font-sans .font-normal .uppercase .text-sm .text-grey;
+    @apply .border-b .border-grey-light .tracking-wide
+}
+
+tr:hover {
+    @apply .bg-blue-lightest
+}
+
+td {
+    @apply .py-4 .px-6 .border-b .border-grey-light
+}
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@tailwind utilities;
+
+.transition-200ms {
+    transition: 200ms;
+}
+
+.menu-closed {
+    transform: translateX(-60vw);
+}
+
+@screen sm {
+   .menu-closed {
+       transform: translateX(-33vw);
+   }
+}
+
+@screen md {
+   .menu-closed {
+       transform: translateX(0);
+   }
+}
+
+.fill-none {
+    fill: none
+}
+ 
+ .browser-mockup {
+     background-color: #fff;
+     border-top: 2em solid rgba(230, 230, 230, 0.7);
+     box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+     position: relative;
+     border-radius: 3px 3px 0 0
+ }
+ 
+ .browser-mockup:before {
+     display: block;
+     position: absolute;
+     content: '';
+     top: -1.25em;
+     left: 1em;
+     width: 0.5em;
+     height: 0.5em;
+     border-radius: 50%;
+     background-color: #f44;
+     box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+ }
+ 
+ .landing-code {
+     height: 240px;
+ }
+ 
+ .landing-code pre[class*="language-"] {
+     margin: 0;
+     box-shadow: none;
+     border: none;
+ }
+ 
+ .btn {
+     @apply .py-4 .px-6 .no-underline .text-center .uppercase .tracking-wide .text-sm .inline-block;
+     transition: 200ms;
+ }
+ 
+ .btn-icon {
+     @apply .p-2;
+     line-height: 0.5rem;
+ }
+ 
+ .btn-icon-landing {
+     @apply .p-4;
+     line-height: 0.5rem;
+ }
+
+ .btn-sm {
+     @apply .py-2 .px-4
+ }
+ 
+ .btn-rounded-hover:hover {
+     @apply .rounded-full
+ }
+ 
+ .btn-outline {
+     @apply .border .rounded-full .mr-4
+ }
+ 
+ .btn-outline:hover {
+     @apply .bg-white .text-black
+ }
+ 
+ .botman-sidebar ul {
+     @apply .list-reset
+ }
+ 
+ .botman-sidebar > ul > li > ul {
+     @apply .mb-8
+ }
+ 
+ .botman-sidebar p {
+     @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide .mb-0
+ }
+ 
+ .botman-sidebar p > a {
+     @apply .text-base .normal-case .leading-normal .text-black .tracking-normal
+ }
+ 
+ .botman-sidebar a {
+     @apply .leading-normal .text-black .no-underline
+ }
+ 
+ .botman-documentation-content h1 + ul {
+     @apply .list-reset .mt-4 .mb-8
+ }
+ 
+ .botman-documentation-content h1 + ul li a {
+     @apply .block .no-underline
+ }
+
+.carbon-text {
+    @apply .block .mb-2 .leading-normal .no-underline
+}
+
+.carbon-poweredby {
+    @apply .block .text-xs .no-underline
+}
+
+.twitter-typeahead {
+    @apply .w-full .max-w-md
+}
+
+.tt-dropdown-menu {
+    @apply .mt-8 .border .border-grey-light .min-w-full
+}
+
+.autocomplete-wrapper {
+    @apply .font-normal .bg-white .p-4 .leading-normal .border .border-grey-lighter .text-black .w-full;
+}
+
+.autocomplete-wrapper em {
+    @apply .roman .bg-grey-lighter .inline-block
+}
+
+.notification {
+    @apply .bg-indigo .text-white .p-4 .leading-normal .flex .items-start .my-8;
+}
+
+.notification svg {
+    @apply .fill-none .stroke-current .mr-4 .h-8 .flex-no-shrink
+}
+
+.notification p {
+    @apply .m-0 .font-light;
+}
+
+.notification a {
+    @apply .text-white
+}
+
+.notification a:hover {
+    @apply .text-indigo-lighter
+}

@@ -1,9 +1,10 @@
-@extends('layout/layout_docs')
+@extends('layout/layout')
 
 @section('content')
-    <div class="container">
-        <div class="columns">
-            <div class="column">
+    <section class="font-sans">
+        @include('partials.menu-docs', ['isPage' => true])
+        <div class="pt-16 h-screen overflow-hidden">
+            <div class="container mx-auto max-w-md">
                 <h1 class="title">Responsible for this website</h1>
                 Marcel Pociot<br/>
                 Kleinenbroicher Str. 71<br>
@@ -31,5 +32,5 @@
                 SOFTWARE.
             </div>
         </div>
-    </div>
+    </section>
 @endsection
