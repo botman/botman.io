@@ -15,13 +15,13 @@
                 </h2>
             </div>
             <div class="w-full flex flex-wrap mt-8 md:mt-16">
-                <div class="w-full mx-1 overflow-hidden md:w-1/3 md:ml-auto">
-                    <div class="browser-mockup landing-code h-64 w-full ">
+                <div class="w-full overflow-hidden md:w-1/2 md:ml-auto">
+                    <div class="browser-mockup landing-code h-64 w-full md:w-5/6 ">
                         <pre>@include('partials.landing-code')</pre>
                     </div>
                 </div>
-                <div class="w-full mt-1 mx-1 md:w-1/3 md:mt-0 md:mr-auto" id="landing-bot">
-                    <div class="browser-mockup botui-app-container h-64 w-full">
+                <div class="w-full mt-1 md:w-1/2 md:mt-0 md:mr-auto" id="landing-bot">
+                    <div class="browser-mockup botui-app-container h-64 w-full md:w-5/6">
                         <bot-ui></bot-ui>
                     </div>
                 </div>

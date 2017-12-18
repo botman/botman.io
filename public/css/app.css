@@ -1143,7 +1143,7 @@ button,
 }
 
 a {
-  color: #4dc0b5;
+  color: #4db1bc;
 }
 
 a:hover {
@@ -1162,7 +1162,7 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] > code {
-  border-color: #4dc0b5;
+  border-color: #4db1bc;
   font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-size: .875rem;
   -webkit-box-shadow: none;
@@ -1451,7 +1451,7 @@ td {
 }
 
 .bg-teal {
-  background-color: #4dc0b5;
+  background-color: #4db1bc;
 }
 
 .bg-teal-light {
@@ -1743,7 +1743,7 @@ td {
 }
 
 .hover\:bg-teal:hover {
-  background-color: #4dc0b5;
+  background-color: #4db1bc;
 }
 
 .hover\:bg-teal-light:hover {
@@ -2095,7 +2095,7 @@ td {
 }
 
 .border-teal {
-  border-color: #4dc0b5;
+  border-color: #4db1bc;
 }
 
 .border-teal-light {
@@ -2387,7 +2387,7 @@ td {
 }
 
 .hover\:border-teal:hover {
-  border-color: #4dc0b5;
+  border-color: #4db1bc;
 }
 
 .hover\:border-teal-light:hover {
@@ -4556,7 +4556,7 @@ td {
 }
 
 .text-teal {
-  color: #4dc0b5;
+  color: #4db1bc;
 }
 
 .text-teal-light {
@@ -4848,7 +4848,7 @@ td {
 }
 
 .hover\:text-teal:hover {
-  color: #4dc0b5;
+  color: #4db1bc;
 }
 
 .hover\:text-teal-light:hover {
@@ -5776,7 +5776,7 @@ td {
   }
 
   .sm\:bg-teal {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .sm\:bg-teal-light {
@@ -6068,7 +6068,7 @@ td {
   }
 
   .sm\:hover\:bg-teal:hover {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .sm\:hover\:bg-teal-light:hover {
@@ -6420,7 +6420,7 @@ td {
   }
 
   .sm\:border-teal {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .sm\:border-teal-light {
@@ -6712,7 +6712,7 @@ td {
   }
 
   .sm\:hover\:border-teal:hover {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .sm\:hover\:border-teal-light:hover {
@@ -8873,7 +8873,7 @@ td {
   }
 
   .sm\:text-teal {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .sm\:text-teal-light {
@@ -9165,7 +9165,7 @@ td {
   }
 
   .sm\:hover\:text-teal:hover {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .sm\:hover\:text-teal-light:hover {
@@ -9862,7 +9862,7 @@ td {
   }
 
   .md\:bg-teal {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .md\:bg-teal-light {
@@ -10154,7 +10154,7 @@ td {
   }
 
   .md\:hover\:bg-teal:hover {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .md\:hover\:bg-teal-light:hover {
@@ -10506,7 +10506,7 @@ td {
   }
 
   .md\:border-teal {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .md\:border-teal-light {
@@ -10798,7 +10798,7 @@ td {
   }
 
   .md\:hover\:border-teal:hover {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .md\:hover\:border-teal-light:hover {
@@ -12959,7 +12959,7 @@ td {
   }
 
   .md\:text-teal {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .md\:text-teal-light {
@@ -13251,7 +13251,7 @@ td {
   }
 
   .md\:hover\:text-teal:hover {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .md\:hover\:text-teal-light:hover {
@@ -13948,7 +13948,7 @@ td {
   }
 
   .lg\:bg-teal {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .lg\:bg-teal-light {
@@ -14240,7 +14240,7 @@ td {
   }
 
   .lg\:hover\:bg-teal:hover {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .lg\:hover\:bg-teal-light:hover {
@@ -14592,7 +14592,7 @@ td {
   }
 
   .lg\:border-teal {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .lg\:border-teal-light {
@@ -14884,7 +14884,7 @@ td {
   }
 
   .lg\:hover\:border-teal:hover {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .lg\:hover\:border-teal-light:hover {
@@ -17045,7 +17045,7 @@ td {
   }
 
   .lg\:text-teal {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .lg\:text-teal-light {
@@ -17337,7 +17337,7 @@ td {
   }
 
   .lg\:hover\:text-teal:hover {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .lg\:hover\:text-teal-light:hover {
@@ -18034,7 +18034,7 @@ td {
   }
 
   .xl\:bg-teal {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .xl\:bg-teal-light {
@@ -18326,7 +18326,7 @@ td {
   }
 
   .xl\:hover\:bg-teal:hover {
-    background-color: #4dc0b5;
+    background-color: #4db1bc;
   }
 
   .xl\:hover\:bg-teal-light:hover {
@@ -18678,7 +18678,7 @@ td {
   }
 
   .xl\:border-teal {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .xl\:border-teal-light {
@@ -18970,7 +18970,7 @@ td {
   }
 
   .xl\:hover\:border-teal:hover {
-    border-color: #4dc0b5;
+    border-color: #4db1bc;
   }
 
   .xl\:hover\:border-teal-light:hover {
@@ -21131,7 +21131,7 @@ td {
   }
 
   .xl\:text-teal {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .xl\:text-teal-light {
@@ -21423,7 +21423,7 @@ td {
   }
 
   .xl\:hover\:text-teal:hover {
-    color: #4dc0b5;
+    color: #4db1bc;
   }
 
   .xl\:hover\:text-teal-light:hover {

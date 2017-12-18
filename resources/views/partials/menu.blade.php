@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="hidden"></div>
-        <div class="w-2/3 text-right md:py-2">
+        <div class="w-2/3 text-right md:py-2 invisible sm:invisible md:visible">
             <a class="btn btn-icon-landing btn-rounded-hover border border-teal-light mr-4  text-white text-lg
                 rounded-full hidden md:inline-block align-middle hover:bg-teal-light"
                 href="https://github.com/botman/botman">

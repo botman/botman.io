@@ -21,7 +21,7 @@
                 </div>
                 <div class="w-screen overflow-y-scroll leading-loose lg:w-2/3 xl:w-4/5
                     md:w-2/3-screen botman-documentation-content">
-                    <div class="py-4 px-8 lg:max-w-md lg:px-16 xl:max-w-lg xl:ml-8">
+                    <div class="py-4 px-8 lg:max-w-md lg:px-16 xl:max-w-full xl:ml-8">
                         {!! $documentation !!}
                     </div>
                     <div class="mt-8">
