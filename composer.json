@@ -58,11 +58,7 @@
             "@php artisan package:discover"
         ],        
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "git clone -b 1.4 https://github.com/botman/docs.git resources/docs/1.4",
-            "git clone -b 1.5 https://github.com/botman/docs.git resources/docs/1.5",
-            "git clone -b 2.0 https://github.com/botman/docs.git resources/docs/2.0",
-            "git clone -b master https://github.com/botman/docs.git resources/docs/master"
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
