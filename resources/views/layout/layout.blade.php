@@ -6,14 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BotMan - The PHP messaging and chatbot library</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/css/botui.min.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
-  <link rel="stylesheet" type="text/css" href="/css/prism.css">
   <link rel="icon" href="/favicon.png">
 </head>
 <body>
   @yield('content')
+  <script>
+      var algolia_app_id = '{{ Config::get("algolia.connections.main.id", false) }}';
+      var algolia_search_key = '{{ Config::get("algolia.connections.main.search_key", false) }}';
+      @if(isset($currentVersion))
+        var version = '{{ $currentVersion }}';
+      @endif
+  </script>
+  @include('partials.algolia_template')
   <script async type="text/javascript" src="/js/app.js"></script>
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

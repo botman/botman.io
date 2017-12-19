@@ -15,17 +15,20 @@ class DocumentationController extends Controller
      * @var Documentation
      */
     protected $docs;
+
     /**
      * Create a new controller instance.
      *
-     * @param  Documentation  $docs
-     * @return void
+     * @param  Documentation $docs
      */
     public function __construct(Documentation $docs)
     {
         $this->docs = $docs;
     }
 
+    /**
+     * @return $this
+     */
     public function landing()
     {
         $stars = Cache::remember('github_stars', 120, function() {
@@ -36,6 +39,11 @@ class DocumentationController extends Controller
         return view('landing')->with('stars', $stars);
     }
 
+    /**
+     * @param null $version
+     * @param null $page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function show($version = null, $page = null)
     {
         if (is_null($version)) {
@@ -45,7 +53,7 @@ class DocumentationController extends Controller
         if (is_null($page)) {
             $page = $version;
             $version = config('botman.default_version');
-            $path = base_path('resources/docs/'.$version.'/'.$page.'.md');
+            $path = resource_path('docs/'.$version.'/'.$page.'.md');
             if (File::exists($path)) {
                 return redirect('/'.$version.'/'.$page, 301);
             } else {
