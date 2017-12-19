@@ -10,7 +10,7 @@ require('./bootstrap/bootstrap.js');
 
 const algoliasearch = require('./vendor/algoliasearch.js');
 const Hogan = require('./vendor/hogan.js');
-import BotUI from 'botui'
+import BotUI from './vendor/botui'
 
 if ($('#landing-bot').length > 0) {    
     var botui = new BotUI('landing-bot');

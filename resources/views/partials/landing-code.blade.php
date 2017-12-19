@@ -1,4 +1,5 @@
-<code class="language-php">
+<code class="language-php">&lt;?php
+
 $botman->hears('Hello BotMan!', function($bot) {
     $bot->reply('Hello!');
     $bot->ask('Whats your name?', function($answer, $bot) {
