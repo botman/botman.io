@@ -4,7 +4,7 @@
     <section class="font-sans bg-teal bg-gradient min-h-screen">
         @include('partials.menu')
 
-        <div class="container mx-auto text-center h-screen min-h-screen">
+        <div class="container mx-auto text-center">
             <div class="w-full text-center pt-12">
                 @svg('botman', ['class' => 'botman-logo h-full w-full -ml-8'])
                 <h1 class="font-varela-round antialiased text-4xl text-white font-normal mt-4">
