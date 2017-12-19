@@ -30,7 +30,7 @@
     <a class="text-white no-underline hidden md:inline mr-8" href="https://twitter.com/botman_io">
         Twitter
     </a>
-    <a class="text-white no-underline hidden md:inline mr-8" href="https://twitter.com/botman_io">
+    <a class="text-white no-underline hidden md:inline mr-8" href="https://slack.botman.io">
         Community
     </a>
     <a class="text-white no-underline hidden md:inline mr-8"
