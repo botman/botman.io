@@ -11,10 +11,6 @@
                         overflow-hidden text-sm text-center">
                         <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=botmanio" id="_carbonads_js"></script>
                     </div>
-                    <a class="inline-block bg-teal text-white no-underline my-4 p-2 rounded hover:bg-teal-dark
-                        hover:text-white" href="https://patreon.com/botman">
-                        Become a Backer
-                    </a>
                     <div class="botman-sidebar">
                     {!! $index !!}
                     </div>
