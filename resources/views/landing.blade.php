@@ -55,7 +55,7 @@
                 </div>
                 <div class="flex border-b">
                     <div class="overflow-hidden h-64 hidden lg:flex lg:w-3/5">
-                        <div class="browser-mockup mt-8 ml-4 w-full">
+                        <div class="browser-mockup mt-8 ml-4 mr-4 w-full">
                             <div class="bg-black text-green-lighter h-full w-full font-mono p-4">
                                 ~/my-bot$ botman new chatbot
                             </div>
