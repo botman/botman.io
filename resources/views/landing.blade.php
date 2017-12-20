@@ -8,7 +8,7 @@
             <div class="w-full text-center pt-12">
                 @svg('botman', ['class' => 'botman-logo h-full w-full -ml-8'])
                 <h1 class="font-varela-round antialiased text-4xl text-white font-normal mt-4">
-                    BotMan
+                    <a class="no-underline text-white" href="/{{ config('botman.default_version') }}">BotMan</a>
                 </h1>
                 <h2 class="font-varela-round antialiased text-xl text-white font-normal mt-2 px-4 leading-normal">
                     The only PHP chatbot framework you will ever need.
