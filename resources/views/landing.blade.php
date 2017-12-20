@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-    <section class="font-sans bg-teal bg-gradient min-h-screen">
+    <section class="font-sans bg-teal min-h-screen">
         @include('partials.menu')
 
         <div class="container mx-auto text-center">
