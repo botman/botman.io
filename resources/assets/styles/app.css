@@ -237,6 +237,7 @@ td {
     @apply .font-normal .bg-white .p-4 .leading-normal .border .border-grey-lighter .text-black .w-full;
 }
 
+/* purgecss ignore */
 .autocomplete-wrapper em {
     @apply .roman .bg-grey-lighter .inline-block
 }
