@@ -42,7 +42,9 @@ if (mix.inProduction()) {
 		      path.join(__dirname, "resources/assets/js/**/*.js")
 		    ]),
 		    whitelist: [
-		    	'autocomplete-wrapper em'
+		    	'autocomplete-wrapper em',
+		    	'loading',
+		    	'dot'
 		    ],
     		whitelistPatterns: [
     			/^em$/,
