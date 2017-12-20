@@ -38,7 +38,7 @@
     var _botApp, // current vue instance.
     _options = {
       debug: false,
-      fontawesome: true
+      fontawesome: false
     },
     _container, // the outermost Element. Needed to scroll to bottom, for now.
     _interface = {}, // methods returned by a BotUI() instance.
