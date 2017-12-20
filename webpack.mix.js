@@ -47,6 +47,7 @@ if (mix.inProduction()) {
     		whitelistPatterns: [
     			/^em$/,
     			/^carbon-/,
+    			/^botui-/,
     			/^autocomplete-/,
     			/^tt-dropdown-menu/,
     			/^twitter-typeahead/
