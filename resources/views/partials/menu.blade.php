@@ -37,12 +37,14 @@
         href="/{{ config('botman.default_version') }}">
         Documentation
     </a>
-    <a class="text-white no-underline hidden md:inline"
-        href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
-        target="_blank"
-    >
-        Video Course
-    </a>
+    <div class="hidden shadow md:inline px-4 py-1 rounded-full border border-white text-teal bg-white">
+        <a class="text-teal no-underline"
+            href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
+            target="_blank"
+        >
+            Video Course
+        </a>
+    </div>
     @if(isset($currentVersion))
     <div class="ml-8 px-4 py-2 rounded-full border border-white text-white">
         <select class="js-version-switcher uppercase text-sm bg-transparent text-white appearance-none border-0">
