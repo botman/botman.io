@@ -15,7 +15,7 @@
                     {!! $index !!}
                     </div>
                 </div>
-                <div class="w-screen overflow-y-scroll leading-loose lg:w-2/3 xl:w-4/5
+                <div class="w-screen overflow-touch overflow-y-scroll leading-loose lg:w-2/3 xl:w-4/5
                     md:w-2/3-screen botman-documentation-content">
                     <div class="text-grey-darkest py-4 px-8 lg:max-w-md lg:px-16 xl:max-w-full xl:ml-8">
                         {!! $documentation !!}

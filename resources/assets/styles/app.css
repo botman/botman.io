@@ -150,6 +150,10 @@ td {
      line-height: 0.5rem;
  }
 
+ .overflow-touch {
+    -webkit-overflow-scrolling: touch;
+ }
+
 #search-input::-webkit-input-placeholder,
 #search-input::-moz-placeholder {
   color: white
