@@ -27,5 +27,6 @@ php artisan key:generate
 # run the following to fetch the documentation
 git clone -b 1.4 git@github.com:botman/docs.git resources/docs/1.4
 git clone -b 1.5 git@github.com:botman/docs.git resources/docs/1.5
+git clone -b 2.0 git@github.com:botman/docs.git resources/docs/2.0
 git clone -b master git@github.com:botman/docs.git resources/docs/master
 ```
