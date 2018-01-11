@@ -32,10 +32,10 @@
         </div>
         <div class="container mx-auto px-4 md:px-0 mt-32 md:mt-0">
             <div class="block md:flex flex-wrap w-full md:w-4/5 mx-auto bg-white shadow-lg rounded-sm">
-                <div class="flex border-b">
-                    <div class="flex w-full lg:w-2/5 h-64">
-                        <div class="ml-8 mt-8">
-                            <h1 class="font-varela-round text-teal antialiased text-grey-darkest text-2xl">
+                <div class="flex border-b  items-end">
+                    <div class="flex w-full lg:w-2/5">
+                        <div class="my-8 mx-4">
+                            <h1 class="font-varela-round text-teal antialiased text-grey-darkest text-2xl m-0">
                                 Want to support a new messenger? Easy!
                             </h1>
                             <p class="mt-4 text-grey-darkest leading-normal">
@@ -43,7 +43,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="overflow-hidden h-64 hidden lg:flex lg:w-3/5">
+                    <div class="overflow-hidden hidden lg:flex h-64 lg:w-3/5">
                         <div class="browser-mockup mt-8 ml-4 w-full">
                             <div class="bg-black text-green-lighter h-full w-full font-mono p-4">
                                 ~/my-bot$ composer require botman/driver-slack<br/>
@@ -53,31 +53,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex border-b">
-                    <div class="overflow-hidden h-64 hidden lg:flex lg:w-3/5">
-                        <div class="browser-mockup mt-8 ml-4 mr-4 w-full">
+                <div class="flex border-b items-end md:pt-4">
+                    <div class="overflow-hiddenhidden lg:flex lg:w-3/5 h-64 sm:hidden">
+                        <div class="browser-mockup m-5 w-full">
                             <div class="bg-black text-green-lighter h-full w-full font-mono p-4">
                                 ~/my-bot$ botman new chatbot
                             </div>
                         </div>
                     </div>
-                    <div class="flex w-full lg:w-2/5 h-64">
-                        <div class="ml-8 mt-8">
-                            <h1 class="mt-0 font-varela-round text-teal antialiased text-grey-darkest text-2xl">
+                    <div class="flex w-full lg:w-2/5">
+                        <div class="my-8 mx-4">
+                            <h1 class="m-0 font-varela-round text-teal antialiased text-grey-darkest text-2xl">
                                 Existing project?<br>
                                 Starting from scratch?<br>
                                 We got you covered!
                             </h1>
-                            <p class="mt-4 pr-8 text-grey-darkest leading-normal">
+                            <p class="mt-4 text-grey-darkest leading-normal">
                                 BotMan is framework agnostic - that means you can use it in your existing codebase, whatever framework you might use. Starting a new chatbot project? <b class="text-teal">BotMan Studio</b> is a Laravel 5.5 boiler project to get you started in no time!
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="flex border-b">
+                <div class="flex border-b items-end">
                     <div class="flex w-full lg:w-2/5 h-64">
-                        <div class="ml-8 mt-8">
-                            <h1 class="font-varela-round text-teal antialiased text-grey-darkest text-2xl">
+                        <div class="my-8 mx-4">
+                            <h1 class="font-varela-round text-teal antialiased text-grey-darkest text-2xl m-0">
                                 We like readable code
                             </h1>
                             <p class="mt-4 text-grey-darkest leading-normal">
@@ -97,7 +97,7 @@
 
             <div class="w-full flex flex-wrap text-center mt-8">
                 <div class="w-full md:w-1/2 md:text-right">
-                    <a class="btn btn-outline text-white border-white"
+                    <a class="btn btn-outline text-white border-white md:mr-4"
                        href="https://github.com/botman/botman">
                         GitHub
                     </a>
