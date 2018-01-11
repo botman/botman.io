@@ -10,28 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use League\CommonMark\Converter;
-use League\CommonMark\DocParser;
-use League\CommonMark\Environment;
-use League\CommonMark\HtmlRenderer;
-use Webuni\CommonMark\TableExtension\TableExtension;
 
-/**
- * Convert some text to Markdown...
- */
-if (!function_exists('markdown')) {
-    function markdown($text)
-    {
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addExtension(new TableExtension());
-
-        $converter = new Converter(new DocParser($environment), new HtmlRenderer($environment));
-
-        return $converter->convertToHtml($text);
-    }
-}
 Route::get('/', 'DocumentationController@landing');
-Route::get('/imprint', function(){
+Route::get('/imprint', function () {
     return view('imprint')->with('title', 'Imprint');
 });
 
