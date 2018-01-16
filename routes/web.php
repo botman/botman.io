@@ -34,5 +34,8 @@ Route::get('/', 'DocumentationController@landing');
 Route::get('/imprint', function(){
     return view('imprint')->with('title', 'Imprint');
 });
+Route::get('/partners', function(){
+    return view('partner')->with('title', 'Partners');
+});
 
 Route::get('/{version?}/{page?}', 'DocumentationController@show');

@@ -1,10 +1,10 @@
 @extends('layout/layout')
 
 @section('content')
-    <section class="font-sans">
-        @include('partials.menu-docs', ['isPage' => true])
+    <section class="font-sans bg-teal">
+        @include('partials.menu')
         <div class="pt-16 h-screen overflow-hidden">
-            <div class="container mx-auto max-w-md">
+            <div class="container mx-auto max-w-md text-white">
                 <h1 class="title">Responsible for this website</h1>
                 Marcel Pociot<br/>
                 Kleinenbroicher Str. 71<br>

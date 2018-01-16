@@ -24,6 +24,9 @@
       </div>
   @endif
   <div class="w-full block hidden md:flex md:justify-end md:w-auto md:items-center">
+      <a class="text-white no-underline hidden md:inline mr-8" href="/partners">
+          Partners
+      </a>
     <a class="text-white no-underline hidden md:inline mr-8" href="https://github.com/botman/botman">
         GitHub
     </a>

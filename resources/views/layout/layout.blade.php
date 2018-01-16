@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BotMan - The PHP messaging and chatbot library</title>
+  <title>BotMan - {{ $title or 'The PHP messaging and chatbot library' }}</title>
   <link rel="stylesheet" type="text/css" href="{{ mix('/css/app.css') }}">
   <link rel="icon" href="/favicon.png">
 </head>
