@@ -27,12 +27,6 @@
       <a class="text-white no-underline hidden md:inline mr-8" href="/partners">
           Partners
       </a>
-    <a class="text-white no-underline hidden md:inline mr-8" href="https://github.com/botman/botman">
-        GitHub
-    </a>
-    <a class="text-white no-underline hidden md:inline mr-8" href="https://twitter.com/botman_io">
-        Twitter
-    </a>
     <a class="text-white no-underline hidden md:inline mr-8" href="https://slack.botman.io">
         Community
     </a>
@@ -40,12 +34,20 @@
         href="/{{ config('botman.default_version') }}">
         Documentation
     </a>
-    <div class="hidden shadow md:inline px-4 py-1 rounded-full border border-white text-teal bg-white">
+    <div class="hidden shadow md:inline mr-8 px-4 py-1 rounded-full border border-white text-teal bg-white">
         <a class="text-teal no-underline"
             href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
             target="_blank"
         >
             Video Course
+        </a>
+    </div>
+    <div class="hidden shadow md:inline px-4 py-1 rounded-full border border-white text-teal bg-white">
+        <a class="text-teal no-underline"
+            href="https://playground.botman.io/"
+            target="_blank"
+        >
+            Playground
         </a>
     </div>
     @if(isset($currentVersion))
