@@ -31,6 +31,9 @@ if (!function_exists('markdown')) {
     }
 }
 Route::get('/', 'DocumentationController@landing');
+Route::any('/botman', function() {
+    app('botman')->listen();
+});
 Route::get('/imprint', function(){
     return view('imprint')->with('title', 'Imprint');
 });

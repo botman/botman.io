@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "botman/botman": "^2.1",
+        "botman/driver-web": "^1.5",
         "erusev/parsedown-extra": "0.7.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",

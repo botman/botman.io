@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "925972281805e1c424ad39c5452bcb16",
+    "content-hash": "f6c4dc8dd90db7370e3a211494831ea0",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -131,6 +131,64 @@
                 "chatbot"
             ],
             "time": "2017-12-04T07:14:18+00:00"
+        },
+        {
+            "name": "botman/driver-web",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/botman/driver-web.git",
+                "reference": "9d685306388fd1c12d5a8c08d7aee51b9e1ddb95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/botman/driver-web/zipball/9d685306388fd1c12d5a8c08d7aee51b9e1ddb95",
+                "reference": "9d685306388fd1c12d5a8c08d7aee51b9e1ddb95",
+                "shasum": ""
+            },
+            "require": {
+                "botman/botman": "~2.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "botman/driver-facebook": "dev-master",
+                "botman/studio-addons": "~1.0",
+                "ext-curl": "*",
+                "illuminate/contracts": "~5.5.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BotMan\\Drivers\\Web\\Providers\\WebServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BotMan\\Drivers\\Web\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "m.pociot@gmail.com"
+                }
+            ],
+            "description": "Web driver for BotMan",
+            "homepage": "http://github.com/botman/driver-web",
+            "keywords": [
+                "Botman",
+                "bot",
+                "web"
+            ],
+            "time": "2018-03-06T11:04:46+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

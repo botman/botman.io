@@ -112,7 +112,8 @@
             <div class="text-center text-white mt-6">
                 <div>
                     <span>BotMan by</span>
-                    <a class="text-white no-underline" href="https://twitter.com/marcelpociot">Marcel Pociot</a>.
+                    <a class="text-white no-underline" href="https://twitter.com/marcelpociot">Marcel Pociot</a> -
+                    <a class="text-white no-underline" href="https://beyondco.de">Beyond Code GmbH</a>.
                 </div>
                 <div class="mt-6">
                     <a class="text-white px-1 no-underline" href="https://github.com/botman/botman/stargazers">
