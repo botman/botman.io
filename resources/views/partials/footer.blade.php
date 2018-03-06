@@ -15,7 +15,10 @@
     </nav>
     <div class="text-center mt-8 leading-normal lg:mt-4">
         <span class="block text-sm text-grey-dark">BotMan by</span>
-        <a class="block text-lg no-underline font-bold" href="https://twitter.com/marcelpociot">Marcel Pociot</a>
-        <a class="block text-lg no-underline font-bold" href="https://beyondco.de">Beyond Code GmbH</a>
+        <div>
+            <a class="text-lg no-underline font-bold" href="https://twitter.com/marcelpociot">Marcel Pociot</a>
+            <span class="text-sm text-grey-dark">@</span>
+            <a class="text-lg no-underline font-bold" href="https://beyondco.de">Beyond Code GmbH</a>
+        </div>
     </div>
 </footer>
