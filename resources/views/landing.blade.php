@@ -16,12 +16,12 @@
             </div>
             <div class="w-full flex flex-wrap mb-16 mt-8 md:mt-16">
                 <div class="w-full md:w-1/2 md:ml-auto px-4 md:px-0">
-                    <div class="browser-mockup landing-code h-64 mx-auto w-full md:w-11/12 ">
+                    <div class="browser-mockup landing-code h-64 mx-auto w-full md:w-11/12 ml-0">
                         <pre>@include('partials.landing-code')</pre>
                     </div>
                 </div>
                 <div class="w-full mt-1 md:w-1/2 md:mt-0 md:mr-auto px-4 md:px-0 pt-4 md:pt-0" id="landing-bot">
-                    <div class="browser-mockup botui-app-container h-64 w-full md:w-11/12">
+                    <div class="browser-mockup botui-app-container h-64 w-full md:w-11/12 mr-0">
                         <bot-ui></bot-ui>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
             <p class="font-varela-round antialiased text-3xl text-grey-darkest font-normal mt-8"></p>
         </div>
         <div class="container mx-auto px-4 md:px-0 mt-32 md:mt-0">
-            <div class="block md:flex flex-wrap w-full md:w-4/5 mx-auto bg-white shadow-lg rounded-sm">
+            <div class="block md:flex flex-wrap w-full mx-auto bg-white shadow-lg rounded-sm">
                 <div class="flex border-b">
                     <div class="flex w-full lg:w-2/5 h-64">
                         <div class="ml-8 mt-8">
