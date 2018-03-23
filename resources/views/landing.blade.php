@@ -11,7 +11,7 @@
                     <a class="no-underline text-white" href="/{{ config('botman.default_version') }}">BotMan</a>
                 </h1>
                 <h2 class="font-varela-round antialiased text-xl text-white font-normal mt-2 px-4 leading-normal">
-                    The only PHP chatbot framework you will ever need.
+                    The most popular PHP chatbot framework in the world.
                 </h2>
             </div>
             <div class="w-full flex flex-wrap mb-16 mt-8 md:mt-16">
@@ -48,6 +48,7 @@
                             <div class="bg-black text-green-lighter h-full w-full font-mono p-4">
                                 ~/my-bot$ composer require botman/driver-slack<br/>
                                 ~/my-bot$ composer require botman/driver-facebook<br/>
+                                ~/my-bot$ composer require botman/driver-amazon-alexa<br/>
                                 ~/my-bot$ composer require botman/driver-web
                             </div>
                         </div>
