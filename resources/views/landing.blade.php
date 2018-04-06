@@ -70,7 +70,7 @@
                                 We got you covered!
                             </h1>
                             <p class="mt-4 pr-8 text-grey-darkest leading-normal">
-                                BotMan is framework agnostic - that means you can use it in your existing codebase, whatever framework you might use. Starting a new chatbot project? <b class="text-teal">BotMan Studio</b> is a Laravel 5.5 boiler project to get you started in no time!
+                                BotMan is framework agnostic - that means you can use it in your existing codebase, whatever framework you might use. Starting a new chatbot project? <b class="text-teal">BotMan Studio</b> is a Laravel 5.6 boiler project to get you started in no time!
                             </p>
                         </div>
                     </div>
