@@ -15,7 +15,7 @@
         "cross-env": "^5.0.1",
         "glob-all": "^3.1.0",
         "jquery": "^3.1.1",
-        "laravel-mix": "^1.0",
+        "laravel-mix": "^2.1.11",
         "lodash": "^4.17.4",
         "purgecss-webpack-plugin": "^0.16.0",
         "vue": "^2.1.10",
@@ -25,6 +25,7 @@
         "botman-web-widget": "^0.0.6",
         "botui": "^0.3.4",
         "prismjs": "^1.8.4",
-        "tailwindcss": "^0.4.0"
+        "tailwindcss": "^0.4.0",
+        "tough-cookie": "^2.3.4"
     }
 }
