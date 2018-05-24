@@ -9,14 +9,14 @@
  * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
  */
 @tailwind preflight;
- 
+
 @import "../../../node_modules/prismjs/themes/prism.css";
 @import "../../../node_modules/prismjs/themes/prism-coy.css";
 @import "../../../node_modules/botui/build/botui.min.css";
 @import "../../../node_modules/botui/build/botui-theme-default.css";
 
-textarea, input, button { 
-    outline: none; 
+textarea, input, button {
+    outline: none;
 }
 
 a {
@@ -49,6 +49,10 @@ pre[class*="language-"]::before, pre[class*="language-"]::after {
 
 code {
     @apply .bg-grey-lighter .px-2 .py-1
+}
+
+p > code {
+    @apply .text-black
 }
 
 h1, h2, h3, h4 {
@@ -102,7 +106,7 @@ td {
 .fill-none {
     fill: none
 }
- 
+
  .browser-mockup {
      background-color: #fff;
      border-top: 2em solid rgba(230, 230, 230, 0.7);
@@ -110,7 +114,7 @@ td {
      position: relative;
      border-radius: 3px 3px 0 0
  }
- 
+
  .browser-mockup:before {
      display: block;
      position: absolute;
@@ -123,28 +127,28 @@ td {
      background-color: #f44;
      box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
  }
- 
+
  .landing-code {
      @apply .h-64
  }
- 
+
  .landing-code pre[class*="language-"] {
      margin: 0;
      box-shadow: none;
      border: none;
      @apply .h-full
  }
- 
+
  .btn {
      @apply .py-4 .px-6 .no-underline .text-center .uppercase .tracking-wide .text-sm .inline-block;
      transition: 200ms;
  }
- 
+
  .btn-icon {
      @apply .p-2;
      line-height: 0.5rem;
  }
- 
+
  .btn-icon-landing {
      @apply .p-4;
      line-height: 0.5rem;
@@ -162,7 +166,7 @@ td {
  .btn-sm {
      @apply .py-2 .px-4
  }
- 
+
  .btn-rounded-hover:hover {
      @apply .rounded-full
  }
@@ -174,11 +178,11 @@ td {
  .bg-gradient {
     background-image: url(/img/bg.png);
  }
- 
+
  .btn-outline {
      @apply .border .rounded-full .mr-4
  }
- 
+
  .btn-outline:hover {
      @apply .bg-white .text-black
  }
@@ -186,37 +190,37 @@ td {
  .botman-logo {
     max-height: 300px;
  }
- 
+
  .botman-sidebar ul {
      @apply .list-reset
  }
- 
+
  .botman-sidebar > ul > li > ul {
      @apply .mb-3 .ml-1 .border-l .border-grey-light
  }
  .botman-sidebar > ul > li > ul > li {
     @apply .ml-4
  }
- 
+
  .botman-sidebar p {
      @apply .text-sm .uppercase .leading-loose .text-grey-darker .tracking-wide .mb-0
  }
- 
+
  .botman-sidebar p > a {
      @apply .text-base .normal-case .leading-normal .text-black .tracking-normal
  }
- 
+
  .botman-sidebar a {
      @apply .leading-normal .text-grey-darkest .no-underline
  }
   .botman-sidebar a:hover {
     @apply .text-teal
   }
- 
+
  .botman-documentation-content h1 + ul {
      @apply .list-reset .mt-4 .mb-8
  }
- 
+
  .botman-documentation-content h1 + ul li a {
      @apply .block .no-underline
  }
