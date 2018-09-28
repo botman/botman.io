@@ -35,7 +35,7 @@
       </a>
       @if(! isset($currentVersion))
         <a class="text-white no-underline hidden md:inline mr-8"
-            href="/{{ config('botman.default_version') }}">
+            href="/{{ config('botman.default_version') }}/welcome">
             Documentation
         </a>
       @endif
