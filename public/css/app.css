@@ -3264,6 +3264,18 @@ td {
   height: 100vh;
 }
 
+.h-screen-80 {
+  height: 80vh;
+}
+
+.h-screen-70 {
+  height: 70vh;
+}
+
+.h-screen-60 {
+  height: 60vh;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -5580,6 +5592,14 @@ td {
   margin-bottom: 2rem;
 }
 
+.botman-documentation-content h1 {
+  font-size: 2.25rem;
+}
+
+.botman-documentation-content h2 {
+  font-size: 1.875rem;
+}
+
 .botman-documentation-content h1 + ul li a {
   display: block;
   text-decoration: none;
@@ -5663,6 +5683,58 @@ td {
 
 .notification a:hover {
   color: #b2b7ff;
+}
+
+.heroicon-laptop-body {
+  fill: #fff;
+}
+
+.heroicon-laptop-screen-edge {
+  fill: #fff;
+}
+
+.heroicon-laptop-screen {
+  fill: #fff;
+}
+
+.heroicon-chat-bubble-back {
+  fill: #fff;
+}
+
+.heroicon-chat-bubble-front {
+  fill: #fff;
+}
+
+.heroicon-chat-dots-back {
+  fill: #fff;
+}
+
+.heroicon-chat-dots-front {
+  fill: #fff;
+}
+
+.heroicon-announcement-bowl {
+  fill: #fff;
+}
+
+.heroicon-announcement-front {
+  fill: #fff;
+}
+
+.heroicon-announcement-middle {
+  fill: #fff;
+}
+
+.heroicon-announcement-handle {
+  fill: #fff;
+}
+
+.heroicon-announcement-back {
+  fill: #fff;
+}
+
+.heroicon-shadows {
+  fill: #4db1bc;
 }
 
 @media (min-width: 576px) {
@@ -7659,6 +7731,18 @@ td {
 
   .sm\:h-screen {
     height: 100vh;
+  }
+
+  .sm\:h-screen-80 {
+    height: 80vh;
+  }
+
+  .sm\:h-screen-70 {
+    height: 70vh;
+  }
+
+  .sm\:h-screen-60 {
+    height: 60vh;
   }
 
   .sm\:leading-none {
@@ -11785,6 +11869,18 @@ td {
     height: 100vh;
   }
 
+  .md\:h-screen-80 {
+    height: 80vh;
+  }
+
+  .md\:h-screen-70 {
+    height: 70vh;
+  }
+
+  .md\:h-screen-60 {
+    height: 60vh;
+  }
+
   .md\:leading-none {
     line-height: 1;
   }
@@ -15909,6 +16005,18 @@ td {
     height: 100vh;
   }
 
+  .lg\:h-screen-80 {
+    height: 80vh;
+  }
+
+  .lg\:h-screen-70 {
+    height: 70vh;
+  }
+
+  .lg\:h-screen-60 {
+    height: 60vh;
+  }
+
   .lg\:leading-none {
     line-height: 1;
   }
@@ -20031,6 +20139,18 @@ td {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-screen-80 {
+    height: 80vh;
+  }
+
+  .xl\:h-screen-70 {
+    height: 70vh;
+  }
+
+  .xl\:h-screen-60 {
+    height: 60vh;
   }
 
   .xl\:leading-none {

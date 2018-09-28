@@ -216,6 +216,14 @@ td {
  .botman-documentation-content h1 + ul {
      @apply .list-reset .mt-4 .mb-8
  }
+
+ .botman-documentation-content h1 {
+    @apply .text-4xl;
+ }
+
+ .botman-documentation-content h2 {
+    @apply .text-3xl;
+ }
  
  .botman-documentation-content h1 + ul li a {
      @apply .block .no-underline
@@ -264,4 +272,25 @@ td {
 
 .notification a:hover {
     @apply .text-indigo-lighter
+}
+
+
+.heroicon-laptop-body { fill: #FFF; }
+.heroicon-laptop-screen-edge { fill: #FFF; }
+.heroicon-laptop-screen { fill: #FFF; }
+
+
+.heroicon-chat-bubble-back { fill: #FFF; }
+.heroicon-chat-bubble-front { fill: #FFF; }
+.heroicon-chat-dots-back { fill: #FFF; }
+.heroicon-chat-dots-front { fill: #FFF; }
+
+.heroicon-announcement-bowl { fill: #FFF; }
+.heroicon-announcement-front { fill: #FFF; }
+.heroicon-announcement-middle { fill: #FFF; }
+.heroicon-announcement-handle { fill: #FFF; }
+.heroicon-announcement-back { fill: #FFF; }
+
+.heroicon-shadows {
+    fill: #4db1bc;
 }

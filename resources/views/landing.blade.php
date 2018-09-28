@@ -1,19 +1,39 @@
 @extends('layout.layout')
 
 @section('content')
-    <section class="font-sans bg-teal min-h-screen">
+    <section class="font-sans bg-teal">
         @include('partials.menu')
 
         <div class="container mx-auto text-center">
-            <div class="w-full text-center pt-12">
-                @svg('botman', ['class' => 'botman-logo h-full w-full -ml-8'])
-                <h1 class="font-varela-round antialiased text-4xl text-white font-normal mt-4">
-                    <a class="no-underline text-white" href="/{{ config('botman.default_version') }}">BotMan</a>
-                </h1>
-                <h2 class="font-varela-round antialiased text-xl text-white font-normal mt-2 px-4 leading-normal">
-                    The most popular PHP chatbot framework in the world.
-                </h2>
+
+            <div class="h-screen-70 flex flex-wrap items-center">
+                <div class="w-full md:w-1/2 text-left pt-12 px-4">
+                    <h1 class="font-varela-round antialiased text-5xl text-white font-normal mt-4">
+                        The PHP Framework for Chatbot Development
+                    </h1>
+                    <h2 class="font-varela-round antialiased text-xl text-white font-normal mt-4 leading-normal">
+                        The most popular PHP chatbot framework in the world.
+                    </h2>
+
+                    <div class="flex pt-8">
+                        <a class="btn btn-outline text-white border-white"
+                           href="https://github.com/botman/botman">
+                            GitHub
+                        </a>
+                        <a class="btn bg-white rounded-full text-black"
+                           href="/{{ config('botman.default_version') }}">
+                            Documentation
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    @svg('botman', ['class' => 'botman-logo h-full w-full -ml-8'])
+                </div>
             </div>
+        </div>
+    </section>
+    <section class="font-sans bg-white min-h-screen">
+        <div class="container mx-auto text-center">
             <div class="w-full flex flex-wrap mb-16 mt-8 md:mt-16">
                 <div class="w-full md:w-1/2 md:ml-auto px-4 md:px-0">
                     <div class="browser-mockup landing-code h-64 mx-auto w-full md:w-11/12 ml-0">
@@ -94,7 +114,7 @@
                 </div>
             </div>
         </div>
-        <footer class="p-4 mt-8 text-sm md:mt-16">
+        <footer class="bg-teal p-4 mt-8 text-sm md:mt-16">
 
             <div class="w-full flex flex-wrap text-center mt-8">
                 <div class="w-full md:w-1/2 md:text-right">
