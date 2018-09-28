@@ -57,12 +57,12 @@ class DocumentationController extends Controller
             if (File::exists($path)) {
                 return redirect('/'.$version.'/'.$page, 301);
             } else {
-                return redirect('/'.$version.'/index', 301);
+                return redirect('/'.$version.'/welcome', 301);
             }
         }
 
         if (! $this->isVersion($version)) {
-            return redirect('/master/index', 301);
+            return redirect('/master/welcome', 301);
         }
 
         if (! defined('CURRENT_VERSION')) {
