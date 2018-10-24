@@ -42,12 +42,12 @@
       <a class="text-white no-underline hidden md:inline mr-8" href="https://playground.botman.io/" target="_blank">
           Playground
       </a>
-    <div class="hidden shadow md:inline mr-8 px-4 py-1 rounded-full border border-white text-teal bg-white">
-        <a class="text-teal no-underline"
-            href="https://buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
+    <div class="hidden shadow md:inline mr-8 px-4 py-1 rounded-full text-teal bg-white" style="background: #ff7f68">
+        <a class="text-white no-underline"
+            href="https://course.buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
             target="_blank"
         >
-            Video Course
+            Video Course - <span class="font-bold">50% OFF</span>
         </a>
     </div>
     @if(isset($currentVersion))
