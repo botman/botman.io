@@ -47,7 +47,7 @@
             href="https://course.buildachatbot.io/?utm_source=landing&utm_medium=navigation&utm_campaign=video_course"
             target="_blank"
         >
-            Video Course - <span class="font-bold">50% OFF</span>
+            Video Course
         </a>
     </div>
     @if(isset($currentVersion))
