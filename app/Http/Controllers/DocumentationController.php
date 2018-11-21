@@ -85,7 +85,12 @@ class DocumentationController extends Controller
 	    		'title' => count($title) ? $title->text() : null
     		]);
     	}
-    	abort(404);
+
+     	return response()->view('errors.404', [
+     	    'index' => $this->docs->getIndex($version),
+            'currentVersion' => $version,
+            'title' => null
+        ], 404);
     }
 
     /**
