@@ -4,6 +4,10 @@
     <section class="font-sans">
         @include('partials.menu')
         <div class="pt-16">
+            <div class="w-full bg-grey-lightest flex justify-center items-center text-white px-2"  style="background-color: #6574cd">
+                 <p class="pl-2 p-4 mb-0 text-white">
+                    Announcing <a href="https://phppackagedevelopment.com" class="text-white font-bold hover:text-white">PHP Package Development</a> - a new video course launching early 2019!</p>
+            </div>
             <div class="js-content-container transition-200ms w-8/5-screen md:w-4/3-screen lg:w-full flex h-full">
                 <div class="w-3/5-screen bg-white p-4
                     sm:w-1/3-screen lg:w-1/3 xl:w-1/5 xl:p-16">
