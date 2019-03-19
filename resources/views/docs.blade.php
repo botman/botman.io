@@ -6,7 +6,13 @@
         <div class="pt-16">
             <div class="w-full bg-grey-lightest flex justify-center items-center text-white px-2"  style="background-color: #6574cd">
                  <p class="pl-2 p-4 mb-0 text-white">
-                    Announcing <a href="https://phppackagedevelopment.com" class="text-white font-bold hover:text-white">PHP Package Development</a> - a new video course launching early 2019!</p>
+                    Learn reusable <a href="https://phppackagedevelopment.com/?utm_source=botman-docs&amp;utm_medium=navigation&amp;utm_campaign=video_course" target="_blank" class="text-white font-bold hover:text-white">PHP Package Development</a>!
+                    <div class="hidden shadow md:inline mr-8 px-4 py-1 rounded-full text-teal bg-white" style="background: #ff7f68">
+                        <a class="text-white no-underline" href="https://phppackagedevelopment.com/?utm_source=botman-docs&amp;utm_medium=navigation&amp;utm_campaign=video_course" target="_blank">
+                            <span class="font-bold">Get the video course with 40% BotMan discount</span>
+                        </a>
+                    </div>
+                 </p>
             </div>
             <div class="js-content-container transition-200ms w-8/5-screen md:w-4/3-screen lg:w-full flex h-full">
                 <div class="w-3/5-screen bg-white p-4
