@@ -6,10 +6,9 @@
         <div class="pt-16">
             <div class="w-full bg-grey-lightest flex justify-center items-center text-white px-2"  style="background-color: #6574cd">
                  <p class="pl-2 p-4 mb-0 text-white">
-                    Learn reusable <a href="https://phppackagedevelopment.com/?utm_source=botman-docs&amp;utm_medium=navigation&amp;utm_campaign=video_course" target="_blank" class="text-white font-bold hover:text-white">PHP Package Development</a>!
                     <div class="hidden shadow md:inline mr-8 px-4 py-1 rounded-full text-teal bg-white" style="background: #ff7f68">
-                        <a class="text-white no-underline" href="https://phppackagedevelopment.com/?utm_source=botman-docs&amp;utm_medium=navigation&amp;utm_campaign=video_course" target="_blank">
-                            <span class="font-bold">Get the video course with 40% BotMan discount</span>
+                        <a class="text-white no-underline" href="https://tinkerwell.app/?utm_source=botman-docs&amp;utm_medium=navigation&amp;utm_campaign=video_course" target="_blank">
+                            <span class="font-bold">Introducing Tinkerwell - The PHP Code runner app</span>
                         </a>
                     </div>
                  </p>

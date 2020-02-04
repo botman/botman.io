@@ -20,9 +20,13 @@
                            href="https://github.com/botman/botman">
                             GitHub
                         </a>
-                        <a class="btn bg-white rounded-full text-black"
+                        <a class="btn btn-outline text-white mr-4 border-white"
                            href="/{{ config('botman.default_version') }}">
                             Documentation
+                        </a>
+                        <a class="btn bg-white rounded-full text-black flex"
+                           href="https://course.buildachatbot.io/?ref=landing-page">
+                            Video Course
                         </a>
                     </div>
                 </div>
