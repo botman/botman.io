@@ -24,9 +24,6 @@
       </div>
   @endif
   <div class="w-full block hidden md:flex md:justify-end md:w-auto md:items-center">
-      <a class="text-white no-underline hidden md:inline mr-8" href="/partners">
-          Partners
-      </a>
       <a class="text-white no-underline hidden md:inline mr-8" target="_blank" href="https://slack.botman.io">
           Slack
       </a>
@@ -39,9 +36,6 @@
             Documentation
         </a>
       @endif
-      <a class="text-white no-underline hidden md:inline mr-8" href="https://playground.botman.io/" target="_blank">
-          Playground
-      </a>
       <a class="text-white no-underline"
          href="https://course.buildachatbot.io/?utm_source=botman-docs&utm_medium=navigation&utm_campaign=video_course"
          target="_blank"
