@@ -24,7 +24,7 @@
     "dependencies": {
         "botman-web-widget": "^0.0.6",
         "botui": "^0.3.4",
-        "prismjs": "^1.8.4",
+        "prismjs": "^1.23.0",
         "tailwindcss": "^0.4.0"
     }
 }
