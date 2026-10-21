@@ -2,10 +2,9 @@
 
 namespace App\Services;
 
-use ParsedownExtra;
+use Algolia\AlgoliaSearch\Api\SearchClient;
 use App\CustomParser;
 use App\Documentation;
-use Vinkla\Algolia\AlgoliaManager;
 use Illuminate\Filesystem\Filesystem;
 
 class Indexer
@@ -18,16 +17,16 @@ class Indexer
     protected static $index_name = 'docs';
 
     /**
-     * The Algolia Index instance.
+     * The name of the temporary index that is filled and then moved over the live one.
      *
-     * @var \AlgoliaSearch\Index
+     * @var string
      */
     protected $index;
 
     /**
      * The Algolia client instance.
      *
-     * @var \AlgoliaSearch\Client
+     * @var SearchClient
      */
     protected $client;
 
@@ -76,17 +75,19 @@ class Indexer
     /**
      * Create a new indexer service.
      *
-     * @param  AlgoliaManager  $client
      * @param  CustomParser  $markdown
      * @param  Filesystem  $files
      * @return void
      */
-    public function __construct(AlgoliaManager $client, CustomParser $markdown, Filesystem $files)
+    public function __construct(CustomParser $markdown, Filesystem $files)
     {
         $this->files = $files;
-        $this->client = $client;
+        $this->client = SearchClient::create(
+            config('algolia.connections.main.id'),
+            config('algolia.connections.main.key')
+        );
         $this->markdown = $markdown;
-        $this->index = $client->initIndex(static::$index_name.'_tmp');
+        $this->index = static::$index_name.'_tmp';
     }
 
     /**
@@ -102,7 +103,7 @@ class Indexer
 
         $this->setSettings();
 
-        $this->client->moveIndex($this->index->indexName, static::$index_name);
+        $this->client->operationIndex($this->index, ['operation' => 'move', 'destination' => static::$index_name]);
     }
 
     /**
@@ -183,7 +184,7 @@ class Indexer
             }
         }
 
-        $this->index->addObjects($markup);
+        $this->client->saveObjects($this->index, $markup);
 
         echo "Indexed $version.$slug" . PHP_EOL;
     }
@@ -263,8 +264,8 @@ class Indexer
      */
     public function setSettings()
     {
-        $this->index->setSettings([
-            'attributesToIndex'         => [
+        $this->client->setSettings($this->index, [
+            'searchableAttributes'         => [
                 'unordered(text_h1)', 'unordered(text_h2)', 'unordered(text_h3)', 'unordered(text_h4)', 'unordered(text_h5)',
                 'unordered(h1)', 'unordered(h2)', 'unordered(h3)', 'unordered(h4)', 'unordered(h5)', 'unordered(content)'
             ],

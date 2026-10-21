@@ -42,11 +42,11 @@ class Documentation
      */
     public function getIndex($version)
     {
-        return $this->cache->remember('docs.'.$version.'.index', 60, function () use ($version) {
+        return $this->cache->remember('docs.'.$version.'.index', now()->addHour(), function () use ($version) {
             $path = base_path('resources/docs/'.$version.'/documentation.md');
 
             if ($this->files->exists($path)) {
-                return $this->replaceLinks($version, markdown($this->files->get($path)));
+                return static::replaceLinks($version, markdown($this->files->get($path)));
             }
 
             return null;
@@ -62,10 +62,10 @@ class Documentation
      */
     public function getContent($version, $page)
     {
-        return $this->cache->remember('docs.'.$version.'.'.$page, 60, function () use ($version, $page) {
+        return $this->cache->remember('docs.'.$version.'.'.$page, now()->addHour(), function () use ($version, $page) {
             $path = base_path('resources/docs/'.$version.'/'.$page.'.md');
             if ($this->files->exists($path)) {
-                return $this->replaceLinks($version, markdown($this->files->get($path)));
+                return static::replaceLinks($version, markdown($this->files->get($path)));
             }
 
             return null;

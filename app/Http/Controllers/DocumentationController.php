@@ -2,53 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use File;
-use Cache;
 use App\Documentation;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 
 class DocumentationController extends Controller
 {
-    /**
-     * The documentation repository.
-     *
-     * @var Documentation
-     */
-    protected $docs;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @param  Documentation $docs
-     */
-    public function __construct(Documentation $docs)
+    public function __construct(protected Documentation $docs)
     {
-        $this->docs = $docs;
     }
 
-    /**
-     * @return $this
-     */
     public function landing()
     {
-        $stars = Cache::remember('github_stars', 120, function() {
-            $stars = json_decode(file_get_contents('https://packagist.org/packages/botman/botman.json'),true);
-            return array_get($stars, 'package.github_stars');
+        $stars = Cache::remember('github_stars', now()->addHours(2), function () {
+            $package = Http::timeout(5)->get('https://packagist.org/packages/botman/botman.json')->json();
+
+            return Arr::get($package, 'package.github_stars');
         });
 
         return view('landing')->with('stars', $stars);
     }
 
-    /**
-     * @param null $version
-     * @param null $page
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
-     */
     public function show($version = null, $page = null)
     {
-        if (is_null($version)) {
-            $version = config('botman.default_version');
-        }
+        $version ??= config('botman.default_version');
 
         if (is_null($page)) {
             $page = $version;
@@ -70,36 +50,31 @@ class DocumentationController extends Controller
             define('CURRENT_VERSION', $version);
         }
 
-    	$path = base_path('resources/docs/'.$version.'/'.$page.'.md');
-    	if (File::exists($path)) {
-			$file = File::get($path);
+        $path = base_path('resources/docs/'.$version.'/'.$page.'.md');
+        if (File::exists($path)) {
+            $content = markdown(File::get($path));
+            $title = (new Crawler($content))->filterXPath('//h1');
 
-			$content = markdown($file);
-			$title = (new Crawler($content))->filterXPath('//h1');
-
-	    	return view('docs', [
+            return view('docs', [
                 'index' => $this->docs->getIndex($version),
                 'currentVersion' => $version,
                 'page' => $page,
-	    		'documentation' => $this->docs->getContent($version, $page),
-	    		'title' => count($title) ? $title->text() : null
-    		]);
-    	}
+                'documentation' => $this->docs->getContent($version, $page),
+                'title' => count($title) ? $title->text() : null,
+            ]);
+        }
 
-     	return response()->view('errors.404', [
-     	    'index' => $this->docs->getIndex($version),
+        return response()->view('errors.404', [
+            'index' => $this->docs->getIndex($version),
             'currentVersion' => $version,
-            'title' => null
+            'title' => null,
         ], 404);
     }
 
     /**
      * Determine if the given URL segment is a valid version.
-     *
-     * @param  string  $version
-     * @return bool
      */
-    protected function isVersion($version)
+    protected function isVersion($version): bool
     {
         return in_array($version, config('botman.available_versions'));
     }

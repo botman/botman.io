@@ -1,6 +1,7 @@
 <?php
 
 use App\Services\Indexer;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,4 @@ use App\Services\Indexer;
 
 Artisan::command('docs:index', function () {
     app(Indexer::class)->indexAllDocuments();
-})->describe('Index all documentation on Algolia');
+})->purpose('Index all documentation on Algolia');
