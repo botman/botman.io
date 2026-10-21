@@ -1,5 +1,10 @@
 [
   {
+    "name": "Amazon Alexa",
+    "package": "botman/driver-amazon-alexa",
+    "description": "Use BotMan with Amazon Alexa."
+  },
+  {
     "name": "Cisco Spark",
     "package": "botman/driver-cisco-spark",
     "description": "Use BotMan with Cisco Spark."
@@ -38,6 +43,11 @@
     "name": "Telegram",
     "package": "botman/driver-telegram",
     "description": "Use BotMan with the Telegram messenger."
+  },
+  {
+    "name": "Twilio",
+    "package": "botman/driver-twilio",
+    "description": "Use BotMan with Nexmo to send and listen to SMS."
   },
   {
     "name": "Web",

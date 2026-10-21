@@ -16,10 +16,10 @@ class CustomParser extends ParsedownExtra
     public function getBlocks($markdown)
     {
         # make sure no definitions are set
-        $this->DefinitionData = array();
+        $this->DefinitionData = [];
 
         # standardize line breaks
-        $text = str_replace(array("\r\n", "\r"), "\n", $markdown);
+        $text = str_replace(["\r\n", "\r"], "\n", $markdown);
 
         # remove surrounding line breaks
         $text = trim($text, "\n");
@@ -38,7 +38,7 @@ class CustomParser extends ParsedownExtra
                 continue;
             }
 
-            if (strpos($line, "\t") !== false) {
+            if (str_contains($line, "\t")) {
                 $parts = explode("\t", $line);
 
                 $line = $parts[0];
@@ -63,7 +63,7 @@ class CustomParser extends ParsedownExtra
 
             # ~
 
-            $Line = array('body' => $line, 'indent' => $indent, 'text' => $text);
+            $Line = ['body' => $line, 'indent' => $indent, 'text' => $text];
 
             # ~
 

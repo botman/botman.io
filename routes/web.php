@@ -1,44 +1,16 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-use League\CommonMark\Converter;
-use League\CommonMark\DocParser;
-use League\CommonMark\Environment;
-use League\CommonMark\HtmlRenderer;
-use Webuni\CommonMark\TableExtension\TableExtension;
+use App\Http\Controllers\BotManController;
+use App\Http\Controllers\DocumentationController;
+use Illuminate\Support\Facades\Route;
 
-/**
- * Convert some text to Markdown...
- */
-if (!function_exists('markdown')) {
-    function markdown($text)
-    {
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addExtension(new TableExtension());
+Route::get('/', [DocumentationController::class, 'landing']);
+Route::any('/botman', BotManController::class);
+Route::view('/imprint', 'imprint', ['title' => 'Imprint']);
+Route::view('/partners', 'partner', ['title' => 'Partners']);
 
-        $converter = new Converter(new DocParser($environment), new HtmlRenderer($environment));
+// The BotMan installer (`botman new`) downloads http://botman.io/studio/latest.zip; the archives live in object storage.
+Route::get('/studio/{file}', fn (string $file) => redirect()->away(rtrim(config('botman.studio_download_url'), '/').'/studio/'.$file))
+    ->where('file', '[A-Za-z0-9_.-]+\.zip');
 
-        return $converter->convertToHtml($text);
-    }
-}
-Route::get('/', 'DocumentationController@landing');
-Route::any('/botman', function() {
-    app('botman')->listen();
-});
-Route::get('/imprint', function(){
-    return view('imprint')->with('title', 'Imprint');
-});
-Route::get('/partners', function(){
-    return view('partner')->with('title', 'Partners');
-});
-
-Route::get('/{version?}/{page?}', 'DocumentationController@show');
+Route::get('/{version?}/{page?}', [DocumentationController::class, 'show']);
